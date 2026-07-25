@@ -66,6 +66,8 @@ let currentIndex = 0;
 let firstTryCorrectCount = 0;
 let questionResults = [];
 let currentQuestionState = null; // Store state for current question interactions
+let studentName = '';
+let selectedSubToStart = null;
 
 function t(key, isSubject = false, isDesc = false) {
     const langObj = STR[currentLang];
@@ -88,6 +90,7 @@ function shuffleArray(array) {
 const views = {
     selector: document.getElementById('view-selector'),
     subcategories: document.getElementById('view-subcategories'),
+    studentName: document.getElementById('view-student-name'),
     notebook: document.getElementById('view-notebook'),
     summary: document.getElementById('view-summary'),
     diploma: document.getElementById('view-diploma')
@@ -111,6 +114,17 @@ function init() {
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
     document.getElementById('btn-to-diploma').addEventListener('click', showDiploma);
     
+    document.getElementById('btn-start-adventure').addEventListener('click', () => {
+        const input = document.getElementById('student-name-input');
+        if (input.value.trim() === '') {
+            input.classList.add('error');
+            setTimeout(() => input.classList.remove('error'), 400);
+            return;
+        }
+        studentName = input.value.trim();
+        startSubject(selectedSubToStart);
+    });
+
     // Confetti logic respects prefers-reduced-motion
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         window.confettiEnabled = false;
@@ -161,14 +175,17 @@ function showSubcategories(subject) {
     });
     
     for (const [station, count] of Object.entries(stationsCount)) {
-        const card = document.createElement('div');
-        card.className = `subject-card ${subject}`;
-        card.innerHTML = `
+        const subCard = document.createElement('div');
+        subCard.className = `subject-card ${currentSubject}`;
+        subCard.innerHTML = `
             <h2>${station}</h2>
             <span class="q-count">${count} preguntas</span>
         `;
-        card.addEventListener('click', () => loadSubject(subject, station));
-        container.appendChild(card);
+        subCard.onclick = () => {
+            selectedSubToStart = station;
+            showView('studentName');
+        };
+        container.appendChild(subCard);
     }
     
     // "Mezclar Todo" card
@@ -179,11 +196,18 @@ function showSubcategories(subject) {
             <h2>¡Mezclar Todo!</h2>
             <span class="q-count">${subjectQuestions.length} preguntas</span>
         `;
-        mixCard.addEventListener('click', () => loadSubject(subject, null));
+        mixCard.addEventListener('click', () => {
+            selectedSubToStart = null;
+            showView('studentName');
+        });
         container.appendChild(mixCard);
     }
     
     showView('subcategories');
+}
+
+function startSubject(station) {
+    loadSubject(currentSubject, station);
 }
 
 function loadSubject(subject, station) {
@@ -797,24 +821,24 @@ function showSummary() {
 // --- DIPLOMA ---
 function showDiploma() {
     showView('diploma');
+    const qCount = activeQuestions.length;
+    const score = Math.round((firstTryCorrectCount / qCount) * 100);
     
-    // Calculate score
-    const total = activeQuestions.length;
-    let percent = 0;
-    if (total > 0) {
-        percent = Math.round((firstTryCorrectCount / total) * 100);
-    }
+    document.getElementById('diploma-subject').textContent = selectedSubToStart || t(currentSubject, true); 
     
-    document.getElementById('diploma-score-percent').textContent = `${percent}%`;
+    const titleEl = document.getElementById('diploma-title');
+    titleEl.textContent = `¡Misión Cumplida, ${studentName}!`;
+    
+    document.getElementById('diploma-score-percent').textContent = `${score}%`;
     const scoreMessage = document.getElementById('diploma-score-message');
     
-    if (percent === 100) {
+    if (score === 100) {
         scoreMessage.textContent = "¡Excelente! Eres un genio perfecto. 🏆";
         scoreMessage.style.color = "#FFD700"; // Gold
-    } else if (percent >= 80) {
+    } else if (score >= 80) {
         scoreMessage.textContent = "¡Muy bien hecho! Casi perfecto. 🌟";
         scoreMessage.style.color = "#32CD32"; // Green
-    } else if (percent >= 60) {
+    } else if (score >= 60) {
         scoreMessage.textContent = "¡Buen trabajo! Pero podemos mejorar un poco. 👍";
         scoreMessage.style.color = "#FFA500"; // Orange
     } else {
