@@ -9,7 +9,8 @@ module.exports = [
     "options": [
       "Permitir el movimiento mediante la contracción",
       "Digerir los alimentos",
-      "Proteger el cerebro"
+      "Proteger el cerebro",
+      "Producir sangre"
     ],
     "correctAnswer": "Permitir el movimiento mediante la contracción",
     "explain": "Los músculos se contraen y relajan para permitirnos mover."
@@ -36,6 +37,11 @@ module.exports = [
         "id": "p2_3",
         "left": "Músculo de los intestinos",
         "right": "Músculo Liso"
+      },
+      {
+        "id": "p2_4",
+        "left": "Músculo del ojo",
+        "right": "Músculo Ocular"
       }
     ],
     "explain": "Cada tipo de músculo se encuentra en lugares específicos del cuerpo."
@@ -50,7 +56,8 @@ module.exports = [
     "options": [
       "Músculo Cardíaco",
       "Músculo Liso",
-      "Músculo Esquelético"
+      "Músculo Esquelético",
+      "Músculo Involuntario Rígido"
     ],
     "correctAnswer": "Músculo Cardíaco",
     "explain": "El músculo cardíaco es exclusivo del corazón."
@@ -65,7 +72,8 @@ module.exports = [
     "options": [
       "Músculo Liso",
       "Músculo Cardíaco",
-      "Músculo Esquelético"
+      "Músculo Esquelético",
+      "Músculo Nervioso"
     ],
     "correctAnswer": "Músculo Liso",
     "explain": "El músculo liso recubre nuestros órganos internos y funciona sin que lo pensemos."
@@ -80,7 +88,8 @@ module.exports = [
     "options": [
       "Sí, funcionan automáticamente para mantenernos vivos",
       "No, nosotros los controlamos al pensar",
-      "Solo cuando dormimos"
+      "Solo cuando dormimos",
+      "No, solo funcionan si estamos despiertos"
     ],
     "correctAnswer": "Sí, funcionan automáticamente para mantenernos vivos",
     "explain": "No tenemos que pensar para que el corazón lata o el estómago digiera."
@@ -107,6 +116,11 @@ module.exports = [
         "id": "p7_3",
         "left": "Músculo Liso",
         "right": "Involuntario (mueve los órganos solos)"
+      },
+      {
+        "id": "p7_4",
+        "left": "Músculo Ocular",
+        "right": "Movimiento rápido"
       }
     ],
     "explain": "Solo podemos controlar a voluntad los músculos esqueléticos."
@@ -121,7 +135,8 @@ module.exports = [
     "options": [
       "Músculo Esquelético",
       "Músculo Cardíaco",
-      "Músculo Liso"
+      "Músculo Liso",
+      "Músculo Óseo"
     ],
     "correctAnswer": "Músculo Esquelético",
     "explain": "Los usamos para movimientos voluntarios."
@@ -136,7 +151,8 @@ module.exports = [
     "options": [
       "La contracción",
       "La evaporación",
-      "La respiración"
+      "La respiración",
+      "La digestión"
     ],
     "correctAnswer": "La contracción",
     "explain": "Los músculos se contraen y se relajan para tirar de los huesos y generar movimiento."
@@ -151,7 +167,8 @@ module.exports = [
     "options": [
       "Esqueléticos",
       "Lisos",
-      "Cardíacos"
+      "Cardíacos",
+      "Digestivos"
     ],
     "correctAnswer": "Esqueléticos",
     "explain": "Recubren los huesos de nuestro esqueleto."
@@ -178,6 +195,11 @@ module.exports = [
         "id": "p12_3",
         "left": "Músculo liso",
         "right": "Mover los alimentos en el estómago"
+      },
+      {
+        "id": "p12_4",
+        "left": "Músculo respiratorio",
+        "right": "Ayuda a inhalar aire"
       }
     ],
     "explain": "Todos son vitales, pero hacen trabajos distintos."
@@ -192,7 +214,8 @@ module.exports = [
     "options": [
       "El sistema muscular",
       "El sistema digestivo",
-      "El sistema nervioso"
+      "El sistema nervioso",
+      "El sistema circulatorio"
     ],
     "correctAnswer": "El sistema muscular",
     "explain": "El sistema muscular, junto con el esqueleto, forma nuestro sistema locomotor."
@@ -207,7 +230,8 @@ module.exports = [
     "options": [
       "Voluntarios (esqueléticos)",
       "Involuntarios (lisos)",
-      "Involuntarios (cardíacos)"
+      "Involuntarios (cardíacos)",
+      "Voluntarios (lisos)"
     ],
     "correctAnswer": "Voluntarios (esqueléticos)",
     "explain": "Podemos decidir cuándo sonreír."
@@ -234,6 +258,11 @@ module.exports = [
         "id": "p16_3",
         "left": "Digerir el almuerzo",
         "right": "No lo controlo"
+      },
+      {
+        "id": "p16_4",
+        "left": "Mover los ojos",
+        "right": "Sí lo controlo"
       }
     ],
     "explain": "Esquelético es controlado, cardíaco y liso son independientes."
@@ -248,7 +277,8 @@ module.exports = [
     "options": [
       "A los huesos",
       "Al corazón",
-      "Al estómago"
+      "Al estómago",
+      "A la piel"
     ],
     "correctAnswer": "A los huesos",
     "explain": "Se unen a los huesos mediante tendones."
@@ -263,7 +293,8 @@ module.exports = [
     "options": [
       "No, seríamos como gelatina sobre los huesos",
       "Sí, los huesos se mueven solos",
-      "Sí, la piel nos sostendría"
+      "Sí, la piel nos sostendría",
+      "Sí, flotaríamos"
     ],
     "correctAnswer": "No, seríamos como gelatina sobre los huesos",
     "explain": "Los músculos y huesos trabajan juntos para darnos soporte y movimiento."
@@ -290,6 +321,11 @@ module.exports = [
         "id": "p19_3",
         "left": "Esqueleto",
         "right": "Conjunto de huesos al que se unen los músculos"
+      },
+      {
+        "id": "p19_4",
+        "left": "Tendón",
+        "right": "Une el músculo al hueso"
       }
     ],
     "explain": "Los músculos, al contraerse, mueven nuestro esqueleto."
@@ -304,7 +340,8 @@ module.exports = [
     "options": [
       "Hacer ejercicio y comer saludable",
       "Estar sentado todo el día viendo TV",
-      "Comer solo dulces"
+      "Comer solo dulces",
+      "No dormir nunca"
     ],
     "correctAnswer": "Hacer ejercicio y comer saludable",
     "explain": "El ejercicio fortalece nuestros músculos."

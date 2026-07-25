@@ -9,7 +9,8 @@ module.exports = [
     "options": [
       "Los tejidos",
       "Los huesos",
-      "La piel únicamente"
+      "La piel únicamente",
+      "Los músculos de los ojos"
     ],
     "correctAnswer": "Los tejidos",
     "explain": "Las células iguales se juntan para formar los tejidos."
@@ -36,6 +37,11 @@ module.exports = [
         "id": "p2_3",
         "left": "Nivel 4",
         "right": "Sistema"
+      },
+      {
+        "id": "p2_4",
+        "left": "Nivel 2",
+        "right": "Tejido"
       }
     ],
     "explain": "Célula -> Tejido -> Órgano -> Sistema."
@@ -50,7 +56,8 @@ module.exports = [
     "options": [
       "Un Sistema",
       "Una Célula",
-      "Un Tejido"
+      "Un Tejido",
+      "Un Músculo"
     ],
     "correctAnswer": "Un Sistema",
     "explain": "Por ejemplo, el estómago y los intestinos forman el Sistema Digestivo."
@@ -65,7 +72,8 @@ module.exports = [
     "options": [
       "Sistema Respiratorio",
       "Sistema Digestivo",
-      "Sistema Óseo"
+      "Sistema Óseo",
+      "Sistema Circulatorio"
     ],
     "correctAnswer": "Sistema Respiratorio",
     "explain": "Los pulmones son los órganos principales del sistema respiratorio."
@@ -80,7 +88,8 @@ module.exports = [
     "options": [
       "El estómago",
       "Los pulmones",
-      "El cerebro"
+      "El cerebro",
+      "El corazón"
     ],
     "correctAnswer": "El estómago",
     "explain": "El estómago digiere los alimentos que consumimos."
@@ -107,6 +116,11 @@ module.exports = [
         "id": "p7_3",
         "left": "Esqueleto humano",
         "right": "Sistema Óseo"
+      },
+      {
+        "id": "p7_4",
+        "left": "Corazón",
+        "right": "Sistema Circulatorio"
       }
     ],
     "explain": "Cada órgano es parte de un sistema mayor."
@@ -121,7 +135,8 @@ module.exports = [
     "options": [
       "Procesar los alimentos para obtener nutrientes",
       "Tomar el oxígeno del aire",
-      "Bombear sangre"
+      "Bombear sangre",
+      "Bombear la sangre por todo el cuerpo"
     ],
     "correctAnswer": "Procesar los alimentos para obtener nutrientes",
     "explain": "Tritura y deshace los alimentos para que el cuerpo los aproveche."
@@ -136,7 +151,8 @@ module.exports = [
     "options": [
       "Es un órgano",
       "Es un sistema",
-      "Es una célula"
+      "Es una célula",
+      "Es un tejido"
     ],
     "correctAnswer": "Es un órgano",
     "explain": "Un solo hueso es un órgano, todos juntos forman el sistema óseo."
@@ -151,7 +167,8 @@ module.exports = [
     "options": [
       "Está formado por varios órganos trabajando juntos",
       "Es la parte más pequeña del cuerpo",
-      "Solo tiene una célula"
+      "Solo tiene una célula",
+      "Están en el cerebro"
     ],
     "correctAnswer": "Está formado por varios órganos trabajando juntos",
     "explain": "El trabajo en equipo de los órganos forma los sistemas."
@@ -178,6 +195,11 @@ module.exports = [
         "id": "p12_3",
         "left": "Correr usando músculos y huesos",
         "right": "Sistema Locomotor"
+      },
+      {
+        "id": "p12_4",
+        "left": "Pensar en un problema",
+        "right": "Sistema Nervioso"
       }
     ],
     "explain": "Usamos diferentes sistemas para diferentes actividades."
@@ -192,7 +214,8 @@ module.exports = [
     "options": [
       "A los intestinos",
       "A los pulmones",
-      "Al corazón"
+      "Al corazón",
+      "Al cerebro"
     ],
     "correctAnswer": "A los intestinos",
     "explain": "Los intestinos absorben los nutrientes de la comida."
@@ -207,7 +230,8 @@ module.exports = [
     "options": [
       "Dióxido de carbono",
       "Oxígeno puro",
-      "Agua potable"
+      "Agua potable",
+      "Nitrógeno"
     ],
     "correctAnswer": "Dióxido de carbono",
     "explain": "Exhalamos dióxido de carbono como desecho."
@@ -234,6 +258,11 @@ module.exports = [
         "id": "p16_3",
         "left": "Célula de la piel",
         "right": "Célula"
+      },
+      {
+        "id": "p16_4",
+        "left": "Tejido muscular",
+        "right": "Tejido"
       }
     ],
     "explain": "Entender los niveles nos ayuda a comprender cómo estamos construidos."
@@ -248,7 +277,8 @@ module.exports = [
     "options": [
       "La tráquea",
       "El esófago",
-      "Las venas"
+      "Las venas",
+      "Las arterias"
     ],
     "correctAnswer": "La tráquea",
     "explain": "La tráquea es el conducto del sistema respiratorio."
@@ -263,7 +293,8 @@ module.exports = [
     "options": [
       "No, todos trabajan en equipo para mantenernos vivos",
       "Sí, cada uno es independiente",
-      "Solo el digestivo puede"
+      "Solo el digestivo puede",
+      "Solo el sistema respiratorio es independiente"
     ],
     "correctAnswer": "No, todos trabajan en equipo para mantenernos vivos",
     "explain": "Nuestros sistemas están interconectados y dependen unos de otros."
@@ -290,6 +321,11 @@ module.exports = [
         "id": "p19_3",
         "left": "Intestinos",
         "right": "Tubos largos que absorben nutrientes"
+      },
+      {
+        "id": "p19_4",
+        "left": "Corazón",
+        "right": "Bomba que impulsa la sangre"
       }
     ],
     "explain": "Cada órgano tiene una forma perfecta para su función."
@@ -304,7 +340,8 @@ module.exports = [
     "options": [
       "Las células",
       "Los sistemas",
-      "La sangre"
+      "La sangre",
+      "Los huesos"
     ],
     "correctAnswer": "Las células",
     "explain": "Somos millones y millones de células organizadas."

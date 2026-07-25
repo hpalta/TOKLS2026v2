@@ -111,6 +111,7 @@ function init() {
     document.getElementById('btn-back-to-subjects').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-back-diploma').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-solution').addEventListener('click', showSolution);
+    document.getElementById('btn-clear-match').addEventListener('click', clearMatchLines);
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
     document.getElementById('btn-to-diploma').addEventListener('click', showDiploma);
     
@@ -296,39 +297,13 @@ function renderCurrentQuestion() {
     prompt.textContent = q.prompt;
     container.appendChild(prompt);
     
-    if (q.illustration) {
-        const ill = document.createElement('div');
-        ill.className = 'question-illustration';
-        ill.innerHTML = q.illustration;
-        container.appendChild(ill);
-    }
-    
-    // Delegate rendering
-    const qBody = document.createElement('div');
-    if (q.type === 'true_false' || q.type === 'multiple') {
-        renderMultiple(q, qBody);
-    } else if (q.type === 'match') {
-        renderMatch(q, qBody);
-    } else if (q.type === 'label') {
-        renderLabel(q, qBody);
-    } else if (q.type === 'open') {
-        renderOpen(q, qBody);
-    } else if (q.type === 'order_words') {
-        renderOrderWords(q, qBody);
-    }
-    container.appendChild(qBody);
-}
-
 function enableSolution() {
     if (!currentQuestionState.interacted) {
         currentQuestionState.interacted = true;
-        
-        // Track score
-        if (currentQuestionState.isCorrect && currentQuestionState.errorCount === 0) {
-            firstTryCorrectCount++;
-        }
-        
         document.getElementById('btn-solution').classList.remove('hidden');
+        if (activeQuestions[currentIndex].type === 'match') {
+            document.getElementById('btn-clear-match').classList.remove('hidden');
+        }
     }
 }
 
@@ -344,8 +319,8 @@ function renderMultiple(q, container) {
         btn.className = 'option-btn';
         btn.textContent = opt;
         btn.onclick = () => {
-            // Lock interaction
-            currentQuestionState.buttons.forEach(b => b.disabled = true);
+            // Unselect others
+            currentQuestionState.buttons.forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
             currentQuestionState.isCorrect = (opt === q.correctAnswer);
             enableSolution();
@@ -679,9 +654,30 @@ function renderOrderWords(q, container) {
     container.appendChild(currentQuestionState.giveUpBtn);
 }
 
+function clearMatchLines() {
+    const svg = document.querySelector('.match-svg-overlay');
+    if (svg) svg.innerHTML = '';
+    
+    document.querySelectorAll('.match-item').forEach(item => {
+        item.classList.remove('selected', 'matched');
+        delete item.dataset.matchedWith;
+        delete item.dataset.isCorrect;
+    });
+    
+    currentQuestionState.selectedLeft = null;
+    currentQuestionState.selectedRight = null;
+    currentQuestionState.errorCount = 0;
+    currentQuestionState.isCorrect = true;
+    currentQuestionState.interacted = false;
+    
+    document.getElementById('btn-solution').classList.add('hidden');
+    document.getElementById('btn-clear-match').classList.add('hidden');
+}
+
 // --- SOLUTION & NEXT ---
 function showSolution() {
     document.getElementById('btn-solution').classList.add('hidden');
+    document.getElementById('btn-clear-match').classList.add('hidden');
     const btnNext = document.getElementById('btn-next');
     btnNext.classList.remove('hidden');
     
@@ -690,8 +686,14 @@ function showSolution() {
     area.innerHTML = '';
     area.className = 'solution-area'; // reset
     
+    // Track score on evaluation
+    if (currentQuestionState.isCorrect && currentQuestionState.errorCount === 0) {
+        firstTryCorrectCount++;
+    }
+    
     if (q.type === 'true_false' || q.type === 'multiple') {
         currentQuestionState.buttons.forEach(b => {
+            b.disabled = true; // Lock interaction after evaluation
             if (b.textContent === q.correctAnswer) b.classList.add('correct-reveal');
             else if (b.classList.contains('selected')) b.classList.add('incorrect-reveal');
         });

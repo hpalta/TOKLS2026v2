@@ -9,7 +9,8 @@ module.exports = [
     "options": [
       "At six o'clock.",
       "It's a chicken.",
-      "Yes, I do."
+      "Yes, I do.",
+      "I am ten years old."
     ],
     "correctAnswer": "At six o'clock.",
     "explain": "When someone asks 'What time...?', we answer with 'At... o'clock'."
@@ -36,6 +37,11 @@ module.exports = [
         "id": "f3",
         "left": "Chicken",
         "right": "Meat from a bird"
+      },
+      {
+        "id": "f7",
+        "left": "Apple",
+        "right": "Red or green fruit"
       }
     ],
     "explain": "Cheese is yellow, grapes are small fruits, and chicken is a type of meat."
@@ -64,7 +70,8 @@ module.exports = [
     "options": [
       "Fries",
       "Juice",
-      "Sausage"
+      "Sausage",
+      "Apple"
     ],
     "correctAnswer": "Juice",
     "explain": "You eat fries and sausage, but you drink juice."
@@ -79,7 +86,8 @@ module.exports = [
     "options": [
       "Not really.",
       "I have some cheese.",
-      "Sure, that sounds like fun!"
+      "Sure, that sounds like fun!",
+      "He is running."
     ],
     "correctAnswer": "Sure, that sounds like fun!",
     "explain": "When someone suggests a good idea with 'Let's...', we can answer 'Sure, that sounds like fun!'"
@@ -137,6 +145,11 @@ module.exports = [
         "id": "e3",
         "left": "Pear",
         "right": "Pera"
+      },
+      {
+        "id": "e4",
+        "left": "Cheese",
+        "right": "Queso"
       }
     ],
     "explain": "Egg = Huevo, Beans = Frijoles, Pear = Pera."
@@ -151,7 +164,8 @@ module.exports = [
     "options": [
       "What time do you?",
       "What time is it?",
-      "Let's time!"
+      "Let's time!",
+      "How is time?"
     ],
     "correctAnswer": "What time is it?",
     "explain": "To ask the current time, we say: 'What time is it?'"
@@ -180,7 +194,8 @@ module.exports = [
     "options": [
       "some",
       "any",
-      "a"
+      "a",
+      "many"
     ],
     "correctAnswer": "any",
     "explain": "Because the sentence is negative ('don't have'), we must use 'any'."
@@ -221,6 +236,11 @@ module.exports = [
         "id": "f6",
         "left": "Rice",
         "right": "Arroz"
+      },
+      {
+        "id": "f7_2",
+        "left": "Juice",
+        "right": "Jugo"
       }
     ],
     "explain": "Fries are made of potatoes, a sausage is a type of meat, and rice are small white grains."
@@ -235,7 +255,8 @@ module.exports = [
     "options": [
       "I eat breakfast.",
       "I take a bath.",
-      "I get dressed."
+      "I get dressed.",
+      "I watch TV."
     ],
     "correctAnswer": "I take a bath.",
     "explain": "If you are dirty, you need to 'take a bath' to get clean."
@@ -264,7 +285,9 @@ module.exports = [
     "prompt": "Complete the sentence: 'I have ______ cheese.'",
     "options": [
       "any",
-      "some"
+      "some",
+      "a",
+      "Distractor 4"
     ],
     "correctAnswer": "some",
     "explain": "This is an affirmative sentence, so we use 'some'."
@@ -291,6 +314,11 @@ module.exports = [
         "id": "r3",
         "left": "Go to bed",
         "right": "At night"
+      },
+      {
+        "id": "r4",
+        "left": "Eat dinner",
+        "right": "In the evening"
       }
     ],
     "explain": "Breakfast is the first meal, lunch is in the middle of the day, and you sleep at night."

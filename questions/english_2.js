@@ -9,7 +9,8 @@ module.exports = [
     "options": [
       "I eat dinner.",
       "I get up.",
-      "I go to bed."
+      "I go to bed.",
+      "I play soccer."
     ],
     "correctAnswer": "I get up.",
     "explain": "When the alarm rings in the morning, you 'get up' to start your day!"
@@ -31,6 +32,16 @@ module.exports = [
         "id": "g2",
         "left": "I don't have ______ juice.",
         "right": "any (negative)"
+      },
+      {
+        "id": "g3_new",
+        "left": "We have ______ rice.",
+        "right": "some (uncountable)"
+      },
+      {
+        "id": "extra_1_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "We use 'some' for affirmative sentences and 'any' for negative sentences."
@@ -75,7 +86,8 @@ module.exports = [
     "options": [
       "Beans",
       "Cheese",
-      "Chicken"
+      "Chicken",
+      "Apple"
     ],
     "correctAnswer": "Cheese",
     "explain": "Cows give us milk, and we use milk to make cheese!"
@@ -104,7 +116,8 @@ module.exports = [
     "options": [
       "It's twelve o'clock.",
       "It's four o'clock.",
-      "It's time to sleep."
+      "It's time to sleep.",
+      "It's two o'clock."
     ],
     "correctAnswer": "It's four o'clock.",
     "explain": "The short hand tells the hour. If it's on 4, it's four o'clock."
@@ -119,7 +132,8 @@ module.exports = [
     "options": [
       "I don't have some cheese.",
       "I have any cheese.",
-      "I don't have any cheese."
+      "I don't have any cheese.",
+      "I has some cheese."
     ],
     "correctAnswer": "I don't have any cheese.",
     "explain": "Negative sentences use 'don't have' + 'any'."
@@ -146,6 +160,11 @@ module.exports = [
         "id": "c3",
         "left": "Mango",
         "right": "Yellow/Orange"
+      },
+      {
+        "id": "c4",
+        "left": "Strawberry",
+        "right": "Red"
       }
     ],
     "explain": "Grapes are green/purple, milk is white, and mangoes are yellow/orange."
@@ -160,7 +179,8 @@ module.exports = [
     "options": [
       "Yes!",
       "Not really.",
-      "Sure, that sounds like fun!"
+      "Sure, that sounds like fun!",
+      "It's an apple."
     ],
     "correctAnswer": "Not really.",
     "explain": "'Not really' is a good way to decline a suggestion."
@@ -175,7 +195,8 @@ module.exports = [
     "options": [
       "Do homework",
       "Get up",
-      "Eat dinner"
+      "Eat dinner",
+      "Take a bath"
     ],
     "correctAnswer": "Do homework",
     "explain": "Doing assignments from school is called 'doing homework'."
@@ -247,6 +268,11 @@ module.exports = [
         "id": "r6",
         "left": "Take a bath",
         "right": "Bañarse"
+      },
+      {
+        "id": "r7",
+        "left": "Eat breakfast",
+        "right": "Desayunar"
       }
     ],
     "explain": "Get dressed = vestirse. Do homework = hacer tarea. Take a bath = bañarse."
@@ -261,7 +287,8 @@ module.exports = [
     "options": [
       "A grape",
       "A pear",
-      "A bean"
+      "A bean",
+      "A banana"
     ],
     "correctAnswer": "A pear",
     "explain": "A pear is a green fruit with a bell shape."
@@ -290,7 +317,8 @@ module.exports = [
     "options": [
       "Twelve o'clock",
       "Eleven o'clock",
-      "Seven o'clock"
+      "Seven o'clock",
+      "One o'clock"
     ],
     "correctAnswer": "Eleven o'clock",
     "explain": "11:00 is 'Eleven o'clock'."
@@ -312,6 +340,16 @@ module.exports = [
         "id": "g4",
         "left": "I don't have...",
         "right": "...any fries."
+      },
+      {
+        "id": "g5",
+        "left": "He has...",
+        "right": "...some juice."
+      },
+      {
+        "id": "extra_18_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Affirmative = some. Negative = any."

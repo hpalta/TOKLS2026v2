@@ -774,6 +774,7 @@ h1 {
             <!-- La pregunta actual se renderiza aquí -->
         </main>
         <footer id="question-footer" class="question-footer">
+            <button id="btn-clear-match" class="btn-secondary hidden" style="margin-right: 10px;">🧹 Limpiar</button>
             <button id="btn-solution" class="btn-primary hidden">Ver solución</button>
             <div id="solution-area" class="solution-area hidden"></div>
             <div class="nav-buttons">
@@ -830,7 +831,8 @@ h1 {
     "options": [
       "Permitir el movimiento mediante la contracción",
       "Digerir los alimentos",
-      "Proteger el cerebro"
+      "Proteger el cerebro",
+      "Producir sangre"
     ],
     "correctAnswer": "Permitir el movimiento mediante la contracción",
     "explain": "Los músculos se contraen y relajan para permitirnos mover."
@@ -857,6 +859,11 @@ h1 {
         "id": "p2_3",
         "left": "Músculo de los intestinos",
         "right": "Músculo Liso"
+      },
+      {
+        "id": "p2_4",
+        "left": "Músculo del ojo",
+        "right": "Músculo Ocular"
       }
     ],
     "explain": "Cada tipo de músculo se encuentra en lugares específicos del cuerpo."
@@ -871,7 +878,8 @@ h1 {
     "options": [
       "Músculo Cardíaco",
       "Músculo Liso",
-      "Músculo Esquelético"
+      "Músculo Esquelético",
+      "Músculo Involuntario Rígido"
     ],
     "correctAnswer": "Músculo Cardíaco",
     "explain": "El músculo cardíaco es exclusivo del corazón."
@@ -886,7 +894,8 @@ h1 {
     "options": [
       "Músculo Liso",
       "Músculo Cardíaco",
-      "Músculo Esquelético"
+      "Músculo Esquelético",
+      "Músculo Nervioso"
     ],
     "correctAnswer": "Músculo Liso",
     "explain": "El músculo liso recubre nuestros órganos internos y funciona sin que lo pensemos."
@@ -901,7 +910,8 @@ h1 {
     "options": [
       "Sí, funcionan automáticamente para mantenernos vivos",
       "No, nosotros los controlamos al pensar",
-      "Solo cuando dormimos"
+      "Solo cuando dormimos",
+      "No, solo funcionan si estamos despiertos"
     ],
     "correctAnswer": "Sí, funcionan automáticamente para mantenernos vivos",
     "explain": "No tenemos que pensar para que el corazón lata o el estómago digiera."
@@ -928,6 +938,11 @@ h1 {
         "id": "p7_3",
         "left": "Músculo Liso",
         "right": "Involuntario (mueve los órganos solos)"
+      },
+      {
+        "id": "p7_4",
+        "left": "Músculo Ocular",
+        "right": "Movimiento rápido"
       }
     ],
     "explain": "Solo podemos controlar a voluntad los músculos esqueléticos."
@@ -942,7 +957,8 @@ h1 {
     "options": [
       "Músculo Esquelético",
       "Músculo Cardíaco",
-      "Músculo Liso"
+      "Músculo Liso",
+      "Músculo Óseo"
     ],
     "correctAnswer": "Músculo Esquelético",
     "explain": "Los usamos para movimientos voluntarios."
@@ -957,7 +973,8 @@ h1 {
     "options": [
       "La contracción",
       "La evaporación",
-      "La respiración"
+      "La respiración",
+      "La digestión"
     ],
     "correctAnswer": "La contracción",
     "explain": "Los músculos se contraen y se relajan para tirar de los huesos y generar movimiento."
@@ -972,7 +989,8 @@ h1 {
     "options": [
       "Esqueléticos",
       "Lisos",
-      "Cardíacos"
+      "Cardíacos",
+      "Digestivos"
     ],
     "correctAnswer": "Esqueléticos",
     "explain": "Recubren los huesos de nuestro esqueleto."
@@ -999,6 +1017,11 @@ h1 {
         "id": "p12_3",
         "left": "Músculo liso",
         "right": "Mover los alimentos en el estómago"
+      },
+      {
+        "id": "p12_4",
+        "left": "Músculo respiratorio",
+        "right": "Ayuda a inhalar aire"
       }
     ],
     "explain": "Todos son vitales, pero hacen trabajos distintos."
@@ -1013,7 +1036,8 @@ h1 {
     "options": [
       "El sistema muscular",
       "El sistema digestivo",
-      "El sistema nervioso"
+      "El sistema nervioso",
+      "El sistema circulatorio"
     ],
     "correctAnswer": "El sistema muscular",
     "explain": "El sistema muscular, junto con el esqueleto, forma nuestro sistema locomotor."
@@ -1028,7 +1052,8 @@ h1 {
     "options": [
       "Voluntarios (esqueléticos)",
       "Involuntarios (lisos)",
-      "Involuntarios (cardíacos)"
+      "Involuntarios (cardíacos)",
+      "Voluntarios (lisos)"
     ],
     "correctAnswer": "Voluntarios (esqueléticos)",
     "explain": "Podemos decidir cuándo sonreír."
@@ -1055,6 +1080,11 @@ h1 {
         "id": "p16_3",
         "left": "Digerir el almuerzo",
         "right": "No lo controlo"
+      },
+      {
+        "id": "p16_4",
+        "left": "Mover los ojos",
+        "right": "Sí lo controlo"
       }
     ],
     "explain": "Esquelético es controlado, cardíaco y liso son independientes."
@@ -1069,7 +1099,8 @@ h1 {
     "options": [
       "A los huesos",
       "Al corazón",
-      "Al estómago"
+      "Al estómago",
+      "A la piel"
     ],
     "correctAnswer": "A los huesos",
     "explain": "Se unen a los huesos mediante tendones."
@@ -1084,7 +1115,8 @@ h1 {
     "options": [
       "No, seríamos como gelatina sobre los huesos",
       "Sí, los huesos se mueven solos",
-      "Sí, la piel nos sostendría"
+      "Sí, la piel nos sostendría",
+      "Sí, flotaríamos"
     ],
     "correctAnswer": "No, seríamos como gelatina sobre los huesos",
     "explain": "Los músculos y huesos trabajan juntos para darnos soporte y movimiento."
@@ -1111,6 +1143,11 @@ h1 {
         "id": "p19_3",
         "left": "Esqueleto",
         "right": "Conjunto de huesos al que se unen los músculos"
+      },
+      {
+        "id": "p19_4",
+        "left": "Tendón",
+        "right": "Une el músculo al hueso"
       }
     ],
     "explain": "Los músculos, al contraerse, mueven nuestro esqueleto."
@@ -1125,7 +1162,8 @@ h1 {
     "options": [
       "Hacer ejercicio y comer saludable",
       "Estar sentado todo el día viendo TV",
-      "Comer solo dulces"
+      "Comer solo dulces",
+      "No dormir nunca"
     ],
     "correctAnswer": "Hacer ejercicio y comer saludable",
     "explain": "El ejercicio fortalece nuestros músculos."
@@ -1140,7 +1178,8 @@ h1 {
     "options": [
       "Su tamaño, color, apariencia y forma",
       "Su olor y sabor",
-      "Su peso y textura"
+      "Su peso y textura",
+      "Su sonido y temperatura"
     ],
     "correctAnswer": "Su tamaño, color, apariencia y forma",
     "explain": "La luz nos permite ver todas estas características visuales."
@@ -1167,6 +1206,11 @@ h1 {
         "id": "p2_3",
         "left": "Cuerpos luminosos",
         "right": "Desprenden luz o son fuente de luz."
+      },
+      {
+        "id": "p2_4",
+        "left": "Cuerpos translúcidos",
+        "right": "Dejan pasar poca luz."
       }
     ],
     "explain": "Dependiendo del material, los objetos pueden ser transparentes, translúcidos, opacos o luminosos."
@@ -1181,7 +1225,8 @@ h1 {
     "options": [
       "El Sol",
       "Una linterna",
-      "Una vela encendida"
+      "Una vela encendida",
+      "Un bombillo"
     ],
     "correctAnswer": "El Sol",
     "explain": "El Sol emite luz natural, mientras que la linterna y la vela son artificiales."
@@ -1196,7 +1241,8 @@ h1 {
     "options": [
       "Tela translúcida",
       "Tela transparente",
-      "Tela invisible"
+      "Tela invisible",
+      "Tela muy delgada"
     ],
     "correctAnswer": "Tela translúcida",
     "explain": "La tela translúcida permite el paso de poca luz, lo ideal para su necesidad."
@@ -1211,7 +1257,8 @@ h1 {
     "options": [
       "No, porque una cortina transparente deja pasar toda la luz",
       "Sí, porque es bonita",
-      "No, porque la cortina opaca deja pasar toda la luz"
+      "No, porque la cortina opaca deja pasar toda la luz",
+      "Sí, porque la cortina transparente bloquea el calor"
     ],
     "correctAnswer": "No, porque una cortina transparente deja pasar toda la luz",
     "explain": "Si quería poca luz, la tela transparente fue una mala elección."
@@ -1238,6 +1285,11 @@ h1 {
         "id": "p7_3",
         "left": "Vidrio limpio",
         "right": "Cuerpo transparente"
+      },
+      {
+        "id": "p7_4",
+        "left": "Espejo",
+        "right": "Cuerpo reflectante"
       }
     ],
     "explain": "Cada objeto interactúa diferente con la luz dependiendo de qué esté hecho."
@@ -1252,7 +1304,8 @@ h1 {
     "options": [
       "Cuerpos no luminosos",
       "Cuerpos artificiales",
-      "Cuerpos translúcidos"
+      "Cuerpos translúcidos",
+      "Cuerpos invisibles"
     ],
     "correctAnswer": "Cuerpos no luminosos",
     "explain": "Estos objetos necesitan una fuente de luz para poder ser vistos."
@@ -1267,7 +1320,8 @@ h1 {
     "options": [
       "Cuerpos luminosos artificiales",
       "Cuerpos luminosos naturales",
-      "Cuerpos transparentes"
+      "Cuerpos transparentes",
+      "Cuerpos opacos"
     ],
     "correctAnswer": "Cuerpos luminosos artificiales",
     "explain": "Son creados por el ser humano para emitir luz."
@@ -1282,7 +1336,8 @@ h1 {
     "options": [
       "Refleja la luz del Sol (no luminosa)",
       "Emite su propia luz (luminosa)",
-      "Es transparente"
+      "Es transparente",
+      "Es una estrella que genera luz"
     ],
     "correctAnswer": "Refleja la luz del Sol (no luminosa)",
     "explain": "La luna es un cuerpo no luminoso que refleja la luz que le llega del Sol."
@@ -1309,6 +1364,11 @@ h1 {
         "id": "p12_3",
         "left": "Cuerpo Translúcido",
         "right": "Permite ver borroso a través de él"
+      },
+      {
+        "id": "p12_4",
+        "left": "Cuerpo Luminoso",
+        "right": "Emite su propia luz"
       }
     ],
     "explain": "Esta es la forma en que los materiales interactúan con la luz."
@@ -1323,7 +1383,8 @@ h1 {
     "options": [
       "Una fuente de energía luminosa",
       "Una fuente de energía sonora",
-      "Un cuerpo opaco"
+      "Un cuerpo opaco",
+      "Una fuente de energía térmica"
     ],
     "correctAnswer": "Una fuente de energía luminosa",
     "explain": "La luz nos permite observar los objetos y sus detalles."
@@ -1338,7 +1399,8 @@ h1 {
     "options": [
       "Translúcido",
       "Opaco",
-      "Luminoso natural"
+      "Luminoso natural",
+      "Transparente perfecto"
     ],
     "correctAnswer": "Translúcido",
     "explain": "El celofán deja pasar algo de luz, pero a menudo tiñe o difumina lo que hay detrás."
@@ -1365,6 +1427,11 @@ h1 {
         "id": "p16_3",
         "left": "Bombillo",
         "right": "Luminoso Artificial"
+      },
+      {
+        "id": "p16_4",
+        "left": "Láser",
+        "right": "Luminoso Artificial"
       }
     ],
     "explain": "El fuego y el sol son ejemplos naturales (o creados químicamente), el bombillo es artificial."
@@ -1379,7 +1446,8 @@ h1 {
     "options": [
       "La refleja",
       "La absorbe toda",
-      "Produce su propia luz"
+      "Produce su propia luz",
+      "La convierte en sonido"
     ],
     "correctAnswer": "La refleja",
     "explain": "El espejo es un cuerpo no luminoso que refleja casi toda la luz que le llega."
@@ -1394,7 +1462,8 @@ h1 {
     "options": [
       "Cuerpos translúcidos",
       "Cuerpos transparentes",
-      "Cuerpos luminosos"
+      "Cuerpos luminosos",
+      "Cuerpos oscuros"
     ],
     "correctAnswer": "Cuerpos translúcidos",
     "explain": "Las nubes dejan pasar parte de la luz del Sol, por lo que son translúcidas."
@@ -1421,6 +1490,11 @@ h1 {
         "id": "p19_3",
         "left": "Papel mantequilla",
         "right": "Translúcido"
+      },
+      {
+        "id": "p19_4",
+        "left": "Espejo",
+        "right": "Reflectante"
       }
     ],
     "explain": "Diferentes materiales, diferentes interacciones con la luz."
@@ -1435,7 +1509,8 @@ h1 {
     "options": [
       "Energía",
       "Materia",
-      "Fuerza magnética"
+      "Fuerza magnética",
+      "Electricidad"
     ],
     "correctAnswer": "Energía",
     "explain": "La luz es una manifestación de la energía que nos permite observar."
@@ -1450,7 +1525,8 @@ h1 {
     "options": [
       "Los tejidos",
       "Los huesos",
-      "La piel únicamente"
+      "La piel únicamente",
+      "Los músculos de los ojos"
     ],
     "correctAnswer": "Los tejidos",
     "explain": "Las células iguales se juntan para formar los tejidos."
@@ -1477,6 +1553,11 @@ h1 {
         "id": "p2_3",
         "left": "Nivel 4",
         "right": "Sistema"
+      },
+      {
+        "id": "p2_4",
+        "left": "Nivel 2",
+        "right": "Tejido"
       }
     ],
     "explain": "Célula -> Tejido -> Órgano -> Sistema."
@@ -1491,7 +1572,8 @@ h1 {
     "options": [
       "Un Sistema",
       "Una Célula",
-      "Un Tejido"
+      "Un Tejido",
+      "Un Músculo"
     ],
     "correctAnswer": "Un Sistema",
     "explain": "Por ejemplo, el estómago y los intestinos forman el Sistema Digestivo."
@@ -1506,7 +1588,8 @@ h1 {
     "options": [
       "Sistema Respiratorio",
       "Sistema Digestivo",
-      "Sistema Óseo"
+      "Sistema Óseo",
+      "Sistema Circulatorio"
     ],
     "correctAnswer": "Sistema Respiratorio",
     "explain": "Los pulmones son los órganos principales del sistema respiratorio."
@@ -1521,7 +1604,8 @@ h1 {
     "options": [
       "El estómago",
       "Los pulmones",
-      "El cerebro"
+      "El cerebro",
+      "El corazón"
     ],
     "correctAnswer": "El estómago",
     "explain": "El estómago digiere los alimentos que consumimos."
@@ -1548,6 +1632,11 @@ h1 {
         "id": "p7_3",
         "left": "Esqueleto humano",
         "right": "Sistema Óseo"
+      },
+      {
+        "id": "p7_4",
+        "left": "Corazón",
+        "right": "Sistema Circulatorio"
       }
     ],
     "explain": "Cada órgano es parte de un sistema mayor."
@@ -1562,7 +1651,8 @@ h1 {
     "options": [
       "Procesar los alimentos para obtener nutrientes",
       "Tomar el oxígeno del aire",
-      "Bombear sangre"
+      "Bombear sangre",
+      "Bombear la sangre por todo el cuerpo"
     ],
     "correctAnswer": "Procesar los alimentos para obtener nutrientes",
     "explain": "Tritura y deshace los alimentos para que el cuerpo los aproveche."
@@ -1577,7 +1667,8 @@ h1 {
     "options": [
       "Es un órgano",
       "Es un sistema",
-      "Es una célula"
+      "Es una célula",
+      "Es un tejido"
     ],
     "correctAnswer": "Es un órgano",
     "explain": "Un solo hueso es un órgano, todos juntos forman el sistema óseo."
@@ -1592,7 +1683,8 @@ h1 {
     "options": [
       "Está formado por varios órganos trabajando juntos",
       "Es la parte más pequeña del cuerpo",
-      "Solo tiene una célula"
+      "Solo tiene una célula",
+      "Están en el cerebro"
     ],
     "correctAnswer": "Está formado por varios órganos trabajando juntos",
     "explain": "El trabajo en equipo de los órganos forma los sistemas."
@@ -1619,6 +1711,11 @@ h1 {
         "id": "p12_3",
         "left": "Correr usando músculos y huesos",
         "right": "Sistema Locomotor"
+      },
+      {
+        "id": "p12_4",
+        "left": "Pensar en un problema",
+        "right": "Sistema Nervioso"
       }
     ],
     "explain": "Usamos diferentes sistemas para diferentes actividades."
@@ -1633,7 +1730,8 @@ h1 {
     "options": [
       "A los intestinos",
       "A los pulmones",
-      "Al corazón"
+      "Al corazón",
+      "Al cerebro"
     ],
     "correctAnswer": "A los intestinos",
     "explain": "Los intestinos absorben los nutrientes de la comida."
@@ -1648,7 +1746,8 @@ h1 {
     "options": [
       "Dióxido de carbono",
       "Oxígeno puro",
-      "Agua potable"
+      "Agua potable",
+      "Nitrógeno"
     ],
     "correctAnswer": "Dióxido de carbono",
     "explain": "Exhalamos dióxido de carbono como desecho."
@@ -1675,6 +1774,11 @@ h1 {
         "id": "p16_3",
         "left": "Célula de la piel",
         "right": "Célula"
+      },
+      {
+        "id": "p16_4",
+        "left": "Tejido muscular",
+        "right": "Tejido"
       }
     ],
     "explain": "Entender los niveles nos ayuda a comprender cómo estamos construidos."
@@ -1689,7 +1793,8 @@ h1 {
     "options": [
       "La tráquea",
       "El esófago",
-      "Las venas"
+      "Las venas",
+      "Las arterias"
     ],
     "correctAnswer": "La tráquea",
     "explain": "La tráquea es el conducto del sistema respiratorio."
@@ -1704,7 +1809,8 @@ h1 {
     "options": [
       "No, todos trabajan en equipo para mantenernos vivos",
       "Sí, cada uno es independiente",
-      "Solo el digestivo puede"
+      "Solo el digestivo puede",
+      "Solo el sistema respiratorio es independiente"
     ],
     "correctAnswer": "No, todos trabajan en equipo para mantenernos vivos",
     "explain": "Nuestros sistemas están interconectados y dependen unos de otros."
@@ -1731,6 +1837,11 @@ h1 {
         "id": "p19_3",
         "left": "Intestinos",
         "right": "Tubos largos que absorben nutrientes"
+      },
+      {
+        "id": "p19_4",
+        "left": "Corazón",
+        "right": "Bomba que impulsa la sangre"
       }
     ],
     "explain": "Cada órgano tiene una forma perfecta para su función."
@@ -1745,7 +1856,8 @@ h1 {
     "options": [
       "Las células",
       "Los sistemas",
-      "La sangre"
+      "La sangre",
+      "Los huesos"
     ],
     "correctAnswer": "Las células",
     "explain": "Somos millones y millones de células organizadas."
@@ -1760,7 +1872,8 @@ h1 {
     "options": [
       "At six o'clock.",
       "It's a chicken.",
-      "Yes, I do."
+      "Yes, I do.",
+      "I am ten years old."
     ],
     "correctAnswer": "At six o'clock.",
     "explain": "When someone asks 'What time...?', we answer with 'At... o'clock'."
@@ -1787,6 +1900,11 @@ h1 {
         "id": "f3",
         "left": "Chicken",
         "right": "Meat from a bird"
+      },
+      {
+        "id": "f7",
+        "left": "Apple",
+        "right": "Red or green fruit"
       }
     ],
     "explain": "Cheese is yellow, grapes are small fruits, and chicken is a type of meat."
@@ -1815,7 +1933,8 @@ h1 {
     "options": [
       "Fries",
       "Juice",
-      "Sausage"
+      "Sausage",
+      "Apple"
     ],
     "correctAnswer": "Juice",
     "explain": "You eat fries and sausage, but you drink juice."
@@ -1830,7 +1949,8 @@ h1 {
     "options": [
       "Not really.",
       "I have some cheese.",
-      "Sure, that sounds like fun!"
+      "Sure, that sounds like fun!",
+      "He is running."
     ],
     "correctAnswer": "Sure, that sounds like fun!",
     "explain": "When someone suggests a good idea with 'Let's...', we can answer 'Sure, that sounds like fun!'"
@@ -1888,6 +2008,11 @@ h1 {
         "id": "e3",
         "left": "Pear",
         "right": "Pera"
+      },
+      {
+        "id": "e4",
+        "left": "Cheese",
+        "right": "Queso"
       }
     ],
     "explain": "Egg = Huevo, Beans = Frijoles, Pear = Pera."
@@ -1902,7 +2027,8 @@ h1 {
     "options": [
       "What time do you?",
       "What time is it?",
-      "Let's time!"
+      "Let's time!",
+      "How is time?"
     ],
     "correctAnswer": "What time is it?",
     "explain": "To ask the current time, we say: 'What time is it?'"
@@ -1931,7 +2057,8 @@ h1 {
     "options": [
       "some",
       "any",
-      "a"
+      "a",
+      "many"
     ],
     "correctAnswer": "any",
     "explain": "Because the sentence is negative ('don't have'), we must use 'any'."
@@ -1972,6 +2099,11 @@ h1 {
         "id": "f6",
         "left": "Rice",
         "right": "Arroz"
+      },
+      {
+        "id": "f7_2",
+        "left": "Juice",
+        "right": "Jugo"
       }
     ],
     "explain": "Fries are made of potatoes, a sausage is a type of meat, and rice are small white grains."
@@ -1986,7 +2118,8 @@ h1 {
     "options": [
       "I eat breakfast.",
       "I take a bath.",
-      "I get dressed."
+      "I get dressed.",
+      "I watch TV."
     ],
     "correctAnswer": "I take a bath.",
     "explain": "If you are dirty, you need to 'take a bath' to get clean."
@@ -2015,7 +2148,9 @@ h1 {
     "prompt": "Complete the sentence: 'I have ______ cheese.'",
     "options": [
       "any",
-      "some"
+      "some",
+      "a",
+      "Distractor 4"
     ],
     "correctAnswer": "some",
     "explain": "This is an affirmative sentence, so we use 'some'."
@@ -2042,6 +2177,11 @@ h1 {
         "id": "r3",
         "left": "Go to bed",
         "right": "At night"
+      },
+      {
+        "id": "r4",
+        "left": "Eat dinner",
+        "right": "In the evening"
       }
     ],
     "explain": "Breakfast is the first meal, lunch is in the middle of the day, and you sleep at night."
@@ -2070,7 +2210,8 @@ h1 {
     "options": [
       "I eat dinner.",
       "I get up.",
-      "I go to bed."
+      "I go to bed.",
+      "I play soccer."
     ],
     "correctAnswer": "I get up.",
     "explain": "When the alarm rings in the morning, you 'get up' to start your day!"
@@ -2092,6 +2233,16 @@ h1 {
         "id": "g2",
         "left": "I don't have ______ juice.",
         "right": "any (negative)"
+      },
+      {
+        "id": "g3_new",
+        "left": "We have ______ rice.",
+        "right": "some (uncountable)"
+      },
+      {
+        "id": "extra_1_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "We use 'some' for affirmative sentences and 'any' for negative sentences."
@@ -2136,7 +2287,8 @@ h1 {
     "options": [
       "Beans",
       "Cheese",
-      "Chicken"
+      "Chicken",
+      "Apple"
     ],
     "correctAnswer": "Cheese",
     "explain": "Cows give us milk, and we use milk to make cheese!"
@@ -2165,7 +2317,8 @@ h1 {
     "options": [
       "It's twelve o'clock.",
       "It's four o'clock.",
-      "It's time to sleep."
+      "It's time to sleep.",
+      "It's two o'clock."
     ],
     "correctAnswer": "It's four o'clock.",
     "explain": "The short hand tells the hour. If it's on 4, it's four o'clock."
@@ -2180,7 +2333,8 @@ h1 {
     "options": [
       "I don't have some cheese.",
       "I have any cheese.",
-      "I don't have any cheese."
+      "I don't have any cheese.",
+      "I has some cheese."
     ],
     "correctAnswer": "I don't have any cheese.",
     "explain": "Negative sentences use 'don't have' + 'any'."
@@ -2207,6 +2361,11 @@ h1 {
         "id": "c3",
         "left": "Mango",
         "right": "Yellow/Orange"
+      },
+      {
+        "id": "c4",
+        "left": "Strawberry",
+        "right": "Red"
       }
     ],
     "explain": "Grapes are green/purple, milk is white, and mangoes are yellow/orange."
@@ -2221,7 +2380,8 @@ h1 {
     "options": [
       "Yes!",
       "Not really.",
-      "Sure, that sounds like fun!"
+      "Sure, that sounds like fun!",
+      "It's an apple."
     ],
     "correctAnswer": "Not really.",
     "explain": "'Not really' is a good way to decline a suggestion."
@@ -2236,7 +2396,8 @@ h1 {
     "options": [
       "Do homework",
       "Get up",
-      "Eat dinner"
+      "Eat dinner",
+      "Take a bath"
     ],
     "correctAnswer": "Do homework",
     "explain": "Doing assignments from school is called 'doing homework'."
@@ -2308,6 +2469,11 @@ h1 {
         "id": "r6",
         "left": "Take a bath",
         "right": "Bañarse"
+      },
+      {
+        "id": "r7",
+        "left": "Eat breakfast",
+        "right": "Desayunar"
       }
     ],
     "explain": "Get dressed = vestirse. Do homework = hacer tarea. Take a bath = bañarse."
@@ -2322,7 +2488,8 @@ h1 {
     "options": [
       "A grape",
       "A pear",
-      "A bean"
+      "A bean",
+      "A banana"
     ],
     "correctAnswer": "A pear",
     "explain": "A pear is a green fruit with a bell shape."
@@ -2351,7 +2518,8 @@ h1 {
     "options": [
       "Twelve o'clock",
       "Eleven o'clock",
-      "Seven o'clock"
+      "Seven o'clock",
+      "One o'clock"
     ],
     "correctAnswer": "Eleven o'clock",
     "explain": "11:00 is 'Eleven o'clock'."
@@ -2373,6 +2541,16 @@ h1 {
         "id": "g4",
         "left": "I don't have...",
         "right": "...any fries."
+      },
+      {
+        "id": "g5",
+        "left": "He has...",
+        "right": "...some juice."
+      },
+      {
+        "id": "extra_18_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Affirmative = some. Negative = any."
@@ -2388,7 +2566,8 @@ h1 {
     "options": [
       "Partes de su cuerpo (como manos o pies) y elementos de su entorno",
       "Calculadoras y teléfonos",
-      "Láseres y satélites"
+      "Láseres y satélites",
+      "Distractor 4"
     ],
     "correctAnswer": "Partes de su cuerpo (como manos o pies) y elementos de su entorno",
     "explain": "¡Exacto! Como no había reglas, usaban sus propios cuerpos, palos o cuerdas para medir."
@@ -2416,6 +2595,11 @@ h1 {
         "id": "m2_3",
         "left": "Del codo a los dedos",
         "right": "Codo egipcio"
+      },
+      {
+        "id": "extra_1_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada parte del cuerpo servía para medir algo diferente: terrenos (pasos) o mesas (palmos)."
@@ -2446,7 +2630,8 @@ h1 {
     "options": [
       "El codo (distancia entre el codo y la punta de los dedos)",
       "La nariz (el largo de la nariz)",
-      "La pestaña (el largo de las pestañas)"
+      "La pestaña (el largo de las pestañas)",
+      "Distractor 4"
     ],
     "correctAnswer": "El codo (distancia entre el codo y la punta de los dedos)",
     "explain": "El 'codo real egipcio' fue una medida muy famosa en la antigüedad."
@@ -2462,7 +2647,8 @@ h1 {
     "options": [
       "Contar los pasos",
       "Contar los dedos",
-      "Medir con las orejas"
+      "Medir con las orejas",
+      "Distractor 4"
     ],
     "correctAnswer": "Contar los pasos",
     "explain": "¡Muy bien! Los pasos son perfectos para medir distancias largas en terrenos."
@@ -2477,7 +2663,8 @@ h1 {
     "options": [
       "Sí, a veces seguimos contando pasos para armar las canchas",
       "No, está prohibido por la ley",
-      "Solo si eres egipcio"
+      "Solo si eres egipcio",
+      "Distractor 4"
     ],
     "correctAnswer": "Sí, a veces seguimos contando pasos para armar las canchas",
     "explain": "Aunque tenemos reglas, seguimos contando pasos o midiendo con la mano de forma rápida ('¡Falta un palmo para llegar!')."
@@ -2505,6 +2692,11 @@ h1 {
         "id": "m7_3",
         "left": "Una caja muy grande",
         "right": "Cuerdas o palos"
+      },
+      {
+        "id": "extra_6_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Usamos el cuerpo dependiendo del tamaño de lo que queremos medir."
@@ -2520,7 +2712,8 @@ h1 {
     "options": [
       "Porque no todas las manos son del mismo tamaño",
       "Porque la mesa creció por arte de magia",
-      "Porque sumaron mal"
+      "Porque sumaron mal",
+      "Distractor 4"
     ],
     "correctAnswer": "Porque no todas las manos son del mismo tamaño",
     "explain": "¡Exacto! Ese era el gran problema en el pasado: si el cuerpo es diferente, la medida cambia."
@@ -2536,7 +2729,8 @@ h1 {
     "options": [
       "Cuerdas, palos y piedras",
       "Televisores y radios",
-      "Vasos de vidrio"
+      "Vasos de vidrio",
+      "Distractor 4"
     ],
     "correctAnswer": "Cuerdas, palos y piedras",
     "explain": "Usaban palos de un tamaño específico o cuerdas con nudos para hacer sus mediciones."
@@ -2552,7 +2746,8 @@ h1 {
     "options": [
       "Poner un pie pegadito justo enfrente del otro (sin dejar huecos)",
       "Dejar un espacio muy grande entre cada pie",
-      "Saltar de un lado al otro"
+      "Saltar de un lado al otro",
+      "Distractor 4"
     ],
     "correctAnswer": "Poner un pie pegadito justo enfrente del otro (sin dejar huecos)",
     "explain": "¡Exacto! Para medir correctamente con 'pies' no puedes dejar huecos, el talón de uno debe tocar la punta del otro."
@@ -2568,7 +2763,8 @@ h1 {
     "options": [
       "Que es igual en todo el mundo sin importar quién mida",
       "Que solo la pueden usar los científicos",
-      "Que siempre da un número par"
+      "Que siempre da un número par",
+      "Distractor 4"
     ],
     "correctAnswer": "Que es igual en todo el mundo sin importar quién mida",
     "explain": "¡Excelente! Gracias al metro, un metro en Colombia mide exactamente lo mismo que un metro en Japón."
@@ -2583,7 +2779,8 @@ h1 {
     "options": [
       "El metro (m)",
       "El paso largo",
-      "El kilo (kg)"
+      "El kilo (kg)",
+      "Distractor 4"
     ],
     "correctAnswer": "El metro (m)",
     "explain": "El metro es la base para medir longitudes de forma exacta."
@@ -2611,6 +2808,11 @@ h1 {
         "id": "m13_3",
         "left": "1 centímetro",
         "right": "Tamaño pequeñito para borradores"
+      },
+      {
+        "id": "extra_12_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Muy bien! 1 metro son 10 decímetros, y 1 decímetro son 10 centímetros. ¡Todo va de 10 en 10!"
@@ -2641,7 +2843,8 @@ h1 {
     "options": [
       "Centímetros (cm)",
       "Metros (m)",
-      "Kilómetros (km)"
+      "Kilómetros (km)",
+      "Distractor 4"
     ],
     "correctAnswer": "Centímetros (cm)",
     "explain": "Los centímetros son perfectos para medir cosas pequeñitas que caben en tu cartuchera."
@@ -2657,7 +2860,8 @@ h1 {
     "options": [
       "Con metros (m)",
       "Con centímetros (cm)",
-      "Con litros (l)"
+      "Con litros (l)",
+      "Distractor 4"
     ],
     "correctAnswer": "Con metros (m)",
     "explain": "¡Exacto! Las puertas de una casa suelen medir cerca de 2 metros de altura."
@@ -2684,6 +2888,11 @@ h1 {
         "id": "m17_3",
         "left": "Un libro de la escuela",
         "right": "Decímetros (dm)"
+      },
+      {
+        "id": "extra_16_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Usamos metros para cosas grandes, decímetros para medianas y centímetros para pequeñitas."
@@ -2698,7 +2907,8 @@ h1 {
     "options": [
       "Para fabricar juguetes, construir edificios y carreteras con precisión",
       "Para saber a qué hora sale el sol",
-      "Para pintar con colores"
+      "Para pintar con colores",
+      "Distractor 4"
     ],
     "correctAnswer": "Para fabricar juguetes, construir edificios y carreteras con precisión",
     "explain": "¡Correcto! Sin medidas estandarizadas, todas las casas y carreteras quedarían torcidas."
@@ -2714,7 +2924,8 @@ h1 {
     "options": [
       "10 centímetros",
       "100 centímetros",
-      "1 centímetro"
+      "1 centímetro",
+      "Distractor 4"
     ],
     "correctAnswer": "10 centímetros",
     "explain": "¡Muy bien! Un decímetro es un 'bloque' formado por 10 centímetros pegados."
@@ -2729,7 +2940,8 @@ h1 {
     "options": [
       "2 metros",
       "20 metros",
-      "1 metro"
+      "1 metro",
+      "Distractor 4"
     ],
     "correctAnswer": "2 metros",
     "explain": "¡Excelente cálculo! Si 1 metro son 10 decímetros, entonces 2 metros son 20 decímetros."
@@ -2745,7 +2957,8 @@ h1 {
     "options": [
       "El perímetro",
       "El área",
-      "El peso"
+      "El peso",
+      "Distractor 4"
     ],
     "correctAnswer": "El perímetro",
     "explain": "¡Así es! El perímetro es medir todo el bordecito que rodea a una figura."
@@ -2776,7 +2989,8 @@ h1 {
     "options": [
       "12 cm",
       "7 cm",
-      "20 cm"
+      "20 cm",
+      "Distractor 4"
     ],
     "correctAnswer": "12 cm",
     "explain": "¡Super! 3 + 4 + 5 = 12 cm. ¡Sumaste todos los bordes correctamente!"
@@ -2804,6 +3018,11 @@ h1 {
         "id": "m24_3",
         "left": "Rectángulo de 5 cm de largo y 2 cm de ancho",
         "right": "14 cm"
+      },
+      {
+        "id": "extra_23_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Súper matemático! Sumaste perfectamente (2+2+2+2=8), (3+3+3=9) y (5+5+2+2=14)."
@@ -2819,7 +3038,8 @@ h1 {
     "options": [
       "El perímetro de la cartelera",
       "El color de la cartelera",
-      "El peso de la cartelera"
+      "El peso de la cartelera",
+      "Distractor 4"
     ],
     "correctAnswer": "El perímetro de la cartelera",
     "explain": "Como va a pegarlo por el borde, ¡necesita saber el perímetro!"
@@ -2834,7 +3054,8 @@ h1 {
     "options": [
       "A todas las figuras geométricas cerradas que tengan borde",
       "Solo a los triángulos",
-      "A ninguna figura"
+      "A ninguna figura",
+      "Distractor 4"
     ],
     "correctAnswer": "A todas las figuras geométricas cerradas que tengan borde",
     "explain": "¡Correcto! Todas las figuras cerradas tienen un borde o contorno, así que a todas se les puede calcular el perímetro."
@@ -2850,7 +3071,8 @@ h1 {
     "options": [
       "10 centímetros",
       "1 centímetro",
-      "100 centímetros"
+      "100 centímetros",
+      "Distractor 4"
     ],
     "correctAnswer": "10 centímetros",
     "explain": "¡Muy bien! Sumaste el número 1 un total de 10 veces."
@@ -2877,6 +3099,11 @@ h1 {
         "id": "m28_3",
         "left": "Darle la vuelta a la manzana trotando",
         "right": "Estás recorriendo el perímetro del parque"
+      },
+      {
+        "id": "extra_27_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡El perímetro está en todas partes, desde las cercas hasta el deporte!"
@@ -2892,7 +3119,8 @@ h1 {
     "options": [
       "4 metros",
       "1 metro",
-      "10 metros"
+      "10 metros",
+      "Distractor 4"
     ],
     "correctAnswer": "4 metros",
     "explain": "¡Exacto! El cuadrado tiene 4 lados iguales. 1 + 1 + 1 + 1 = 4 metros."
@@ -2908,7 +3136,8 @@ h1 {
     "options": [
       "La regla (para medir los lados y luego sumar)",
       "Un reloj",
-      "Un termómetro"
+      "Un termómetro",
+      "Distractor 4"
     ],
     "correctAnswer": "La regla (para medir los lados y luego sumar)",
     "explain": "¡Correcto! La regla te da la medida de los lados en centímetros, y luego tú solo haces la suma."
@@ -2924,7 +3153,8 @@ h1 {
     "options": [
       "Una tabla de frecuencias",
       "Un termómetro",
-      "Una cinta métrica"
+      "Una cinta métrica",
+      "Distractor 4"
     ],
     "correctAnswer": "Una tabla de frecuencias",
     "explain": "¡Sí! Las tablas nos ayudan a ver la información de manera ordenada y divertida."
@@ -2939,7 +3169,8 @@ h1 {
     "options": [
       "Frecuencia absoluta",
       "Perímetro deportivo",
-      "Medida no convencional"
+      "Medida no convencional",
+      "Distractor 4"
     ],
     "correctAnswer": "Frecuencia absoluta",
     "explain": "La frecuencia absoluta es solo el conteo de votos que obtuvo cada opción."
@@ -2981,6 +3212,11 @@ h1 {
         "id": "m34_3",
         "left": "Diagrama de barras",
         "right": "Dibujar barritas para ver qué ganó"
+      },
+      {
+        "id": "extra_33_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Eres todo un investigador! Preguntas, cuentas y luego dibujas los resultados."
@@ -2996,7 +3232,8 @@ h1 {
     "options": [
       "Que a más personas les gustan los gatos",
       "Que los gatos son más altos",
-      "Que hay un error en el gráfico"
+      "Que hay un error en el gráfico",
+      "Distractor 4"
     ],
     "correctAnswer": "Que a más personas les gustan los gatos",
     "explain": "¡Exacto! En un diagrama de barras, la barra más alta es la que tuvo mayor frecuencia (más votos)."
@@ -3012,7 +3249,8 @@ h1 {
     "options": [
       "Dibujitos de manzanas",
       "Piedras reales",
-      "Números romanos"
+      "Números romanos",
+      "Distractor 4"
     ],
     "correctAnswer": "Dibujitos de manzanas",
     "explain": "Los pictogramas son geniales porque usan imágenes (iconos o dibujos) para representar los votos."
@@ -3027,7 +3265,8 @@ h1 {
     "options": [
       "En Danza (porque 7 es mayor que 6)",
       "En Robótica (porque 6 es mayor que 7)",
-      "En ambas hay la misma cantidad"
+      "En ambas hay la misma cantidad",
+      "Distractor 4"
     ],
     "correctAnswer": "En Danza (porque 7 es mayor que 6)",
     "explain": "¡Correcto! 7 es mayor que 6, por lo tanto la frecuencia más alta la tiene Danza."
@@ -3055,6 +3294,11 @@ h1 {
         "id": "m38_3",
         "left": "¿Quién tiene la barra más alta?",
         "right": "Los Monos"
+      },
+      {
+        "id": "extra_37_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Perfecto! Analizar gráficos es como leer una historia contada con dibujitos."
@@ -3070,7 +3314,8 @@ h1 {
     "options": [
       "El número total de amigos que fueron encuestados",
       "El perímetro del colegio",
-      "El año en el que estamos"
+      "El año en el que estamos",
+      "Distractor 4"
     ],
     "correctAnswer": "El número total de amigos que fueron encuestados",
     "explain": "¡Súper inteligente! Al sumar la 'frecuencia absoluta' de todo, sabes a cuántas personas les preguntaste en total."
@@ -3086,7 +3331,8 @@ h1 {
     "options": [
       "1. Preguntar 2. Hacer tabla 3. Dibujar gráfico",
       "1. Dibujar gráfico 2. Comprar helado",
-      "1. Hacer tabla 2. Preguntar"
+      "1. Hacer tabla 2. Preguntar",
+      "Distractor 4"
     ],
     "correctAnswer": "1. Preguntar 2. Hacer tabla 3. Dibujar gráfico",
     "explain": "¡Excelente! Primero recolectas los datos, luego los ordenas en tu tabla de frecuencias, ¡y al final los dibujas en tu diagrama de barras!"
@@ -3101,7 +3347,8 @@ h1 {
     "options": [
       "Naturales y Culturales",
       "Solo plantas y animales",
-      "Edificios y carros"
+      "Edificios y carros",
+      "Distractor 4"
     ],
     "correctAnswer": "Naturales y Culturales",
     "explain": "El paisaje se compone de elementos creados por la naturaleza (naturales) y elementos creados por las personas (culturales)."
@@ -3123,6 +3370,16 @@ h1 {
         "id": "sp2_2",
         "left": "Casas, carreteras y puentes",
         "right": "Elementos Culturales"
+      },
+      {
+        "id": "extra_1_2",
+        "left": "Elemento Extra 3",
+        "right": "Atributo Extra 3"
+      },
+      {
+        "id": "extra_1_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Los elementos naturales son de la naturaleza, mientras que los culturales son construidos por las personas."
@@ -3137,7 +3394,8 @@ h1 {
     "options": [
       "Donde solo hay elementos de la naturaleza como selvas o montañas",
       "Donde hay muchas ciudades y edificios",
-      "Un lugar lleno de fábricas"
+      "Un lugar lleno de fábricas",
+      "Distractor 4"
     ],
     "correctAnswer": "Donde solo hay elementos de la naturaleza como selvas o montañas",
     "explain": "En un paisaje natural no hay intervención humana, solo elementos de la naturaleza."
@@ -3152,7 +3410,8 @@ h1 {
     "options": [
       "Una elevación natural del terreno de gran altura",
       "Un terreno totalmente plano y bajito",
-      "Un hueco en la tierra lleno de agua"
+      "Un hueco en la tierra lleno de agua",
+      "Distractor 4"
     ],
     "correctAnswer": "Una elevación natural del terreno de gran altura",
     "explain": "Las montañas son grandes elevaciones de tierra. Cuando hay muchas unidas, forman una cordillera."
@@ -3179,6 +3438,11 @@ h1 {
         "id": "sp5_3",
         "left": "Valle",
         "right": "Zona baja y llana entre montañas por donde suele pasar un río"
+      },
+      {
+        "id": "extra_4_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada forma de relieve tiene características únicas de altura y forma."
@@ -3193,7 +3457,8 @@ h1 {
     "options": [
       "Hidrografía",
       "Relieve",
-      "Clima"
+      "Clima",
+      "Distractor 4"
     ],
     "correctAnswer": "Hidrografía",
     "explain": "La hidrografía estudia y agrupa todas las fuentes de agua de nuestro planeta."
@@ -3208,7 +3473,8 @@ h1 {
     "options": [
       "La flora son las plantas y la fauna son los animales",
       "La flora son los animales y la fauna son los ríos",
-      "La flora son las montañas y la fauna las nubes"
+      "La flora son las montañas y la fauna las nubes",
+      "Distractor 4"
     ],
     "correctAnswer": "La flora son las plantas y la fauna son los animales",
     "explain": "Juntas, la flora (plantas, árboles) y la fauna (animales) llenan de vida los paisajes."
@@ -3230,6 +3496,16 @@ h1 {
         "id": "sp8_2",
         "left": "Paisaje de Costa",
         "right": "Cerca del mar, con playas, acantilados y palmeras"
+      },
+      {
+        "id": "extra_7_2",
+        "left": "Elemento Extra 3",
+        "right": "Atributo Extra 3"
+      },
+      {
+        "id": "extra_7_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "La ubicación respecto al mar define gran parte de los elementos de un paisaje."
@@ -3244,7 +3520,8 @@ h1 {
     "options": [
       "En 6 regiones naturales",
       "En 3 regiones naturales",
-      "En 10 regiones naturales"
+      "En 10 regiones naturales",
+      "Distractor 4"
     ],
     "correctAnswer": "En 6 regiones naturales",
     "explain": "Colombia tiene 6 regiones: Andina, Amazonia, Caribe, Insular, Orinoquía y Pacífico."
@@ -3271,6 +3548,11 @@ h1 {
         "id": "sp10_3",
         "left": "Región con selva tropical espesa al sur",
         "right": "Región Amazonia"
+      },
+      {
+        "id": "extra_9_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada región natural de Colombia tiene clima, relieve y vegetación propios."
@@ -3285,7 +3567,8 @@ h1 {
     "options": [
       "Paisaje Cultural o Humanizado",
       "Paisaje Natural",
-      "Paisaje Desierto"
+      "Paisaje Desierto",
+      "Distractor 4"
     ],
     "correctAnswer": "Paisaje Cultural o Humanizado",
     "explain": "Cuando el ser humano interviene construyendo, el paisaje se vuelve cultural o humanizado."
@@ -3300,7 +3583,8 @@ h1 {
     "options": [
       "Para la agricultura y campos de cultivo",
       "Para escalar montañas con cuerdas",
-      "Para construir puertos marítimos"
+      "Para construir puertos marítimos",
+      "Distractor 4"
     ],
     "correctAnswer": "Para la agricultura y campos de cultivo",
     "explain": "Al ser terrenos planos y de suelos fértiles, las llanuras son ideales para sembrar."
@@ -3315,7 +3599,8 @@ h1 {
     "options": [
       "Da vida a plantas y animales, y sirve para consumo humano",
       "Solo sirve para que los barcos naveguen",
-      "Seca la tierra y forma desiertos"
+      "Seca la tierra y forma desiertos",
+      "Distractor 4"
     ],
     "correctAnswer": "Da vida a plantas y animales, y sirve para consumo humano",
     "explain": "El agua es fuente de vida para todos los seres vivos del paisaje."
@@ -3337,6 +3622,16 @@ h1 {
         "id": "sp14_2",
         "left": "Zorros, ciervos y vacas",
         "right": "Paisaje de Interior / Llanura"
+      },
+      {
+        "id": "extra_13_2",
+        "left": "Elemento Extra 3",
+        "right": "Atributo Extra 3"
+      },
+      {
+        "id": "extra_13_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "La fauna se adapta al clima y relieve de su entorno."
@@ -3351,7 +3646,8 @@ h1 {
     "options": [
       "Por sus diferentes características de relieve, clima y su división en 6 regiones naturales",
       "Porque todo el país es plano y del mismo clima",
-      "Porque no hay ríos ni montañas"
+      "Porque no hay ríos ni montañas",
+      "Distractor 4"
     ],
     "correctAnswer": "Por sus diferentes características de relieve, clima y su división en 6 regiones naturales",
     "explain": "La variedad de relieves y climas hace que existan muchos ecosistemas distintos."
@@ -3366,7 +3662,8 @@ h1 {
     "options": [
       "El viento y el agua",
       "El sol y las nubes",
-      "Los animales al caminar"
+      "Los animales al caminar",
+      "Distractor 4"
     ],
     "correctAnswer": "El viento y el agua",
     "explain": "Durante millones de años, la lluvia, los ríos y el viento desgastan las montañas y rocas."
@@ -3393,6 +3690,11 @@ h1 {
         "id": "sp17_3",
         "left": "Región calurosa al norte con el mar Caribe",
         "right": "Región Caribe"
+      },
+      {
+        "id": "extra_16_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "La ubicación geográfica de cada región determina su clima y relieve."
@@ -3407,7 +3709,8 @@ h1 {
     "options": [
       "Acantilados",
       "Valles",
-      "Llanuras"
+      "Llanuras",
+      "Distractor 4"
     ],
     "correctAnswer": "Acantilados",
     "explain": "Los acantilados son paredes de roca altas y empinadas que dan frente al mar."
@@ -3422,7 +3725,8 @@ h1 {
     "options": [
       "Una colina o cerro",
       "Una cordillera nevada",
-      "Una meseta"
+      "Una meseta",
+      "Distractor 4"
     ],
     "correctAnswer": "Una colina o cerro",
     "explain": "Las colinas son elevaciones más pequeñas y de cimas redondeadas comparadas con las montañas."
@@ -3437,7 +3741,8 @@ h1 {
     "options": [
       "Es la suma de todo lo que vemos: tierra, agua, plantas, animales y construcciones humanas",
       "Es solo el conjunto de montañas y ríos",
-      "Es únicamente el clima de un lugar"
+      "Es únicamente el clima de un lugar",
+      "Distractor 4"
     ],
     "correctAnswer": "Es la suma de todo lo que vemos: tierra, agua, plantas, animales y construcciones humanas",
     "explain": "El paisaje es el conjunto integrado de todos los elementos naturales y culturales de un lugar."
@@ -3452,7 +3757,8 @@ h1 {
     "options": [
       "Cosas de la naturaleza que pueden volver a formarse en poco tiempo",
       "Cosas que fabrican las máquinas en las industrias",
-      "Cosas de la naturaleza que una vez gastadas nunca vuelven a aparecer"
+      "Cosas de la naturaleza que una vez gastadas nunca vuelven a aparecer",
+      "Distractor 4"
     ],
     "correctAnswer": "Cosas de la naturaleza que pueden volver a formarse en poco tiempo",
     "explain": "Los renovables se recuperan en poco tiempo si los cuidamos, como el agua o las plantas."
@@ -3474,6 +3780,16 @@ h1 {
         "id": "sr2_2",
         "left": "Recursos renovables que se pueden agotar si no se cuidan",
         "right": "El agua, árboles y plantas"
+      },
+      {
+        "id": "extra_1_2",
+        "left": "Elemento Extra 3",
+        "right": "Atributo Extra 3"
+      },
+      {
+        "id": "extra_1_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "El sol siempre brillará, pero el agua limpia sí se puede agotar si la contaminamos."
@@ -3488,7 +3804,8 @@ h1 {
     "options": [
       "Recursos que cuando se usan no vuelven a aparecer rápidamente porque tardan millones de años en formarse",
       "Recursos que crecen todos los días en el campo",
-      "Recursos que no sirven para nada"
+      "Recursos que no sirven para nada",
+      "Distractor 4"
     ],
     "correctAnswer": "Recursos que cuando se usan no vuelven a aparecer rápidamente porque tardan millones de años en formarse",
     "explain": "Al tardar tanto en formarse, si los gastamos todos, se acaban para siempre en nuestra época."
@@ -3515,6 +3832,11 @@ h1 {
         "id": "sr4_3",
         "left": "Oro, hierro y cobre (minerales)",
         "right": "No renovables"
+      },
+      {
+        "id": "extra_3_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Los metales y combustibles fósiles son no renovables. Las plantas y el agua son renovables."
@@ -3529,7 +3851,8 @@ h1 {
     "options": [
       "Contaminan más el ambiente cuando se usan",
       "Son muy fáciles de sembrar en casa",
-      "Hacen que el aire sea más puro"
+      "Hacen que el aire sea más puro",
+      "Distractor 4"
     ],
     "correctAnswer": "Contaminan más el ambiente cuando se usan",
     "explain": "Quemar carbón y petróleo genera humo y gases que ensucian el aire."
@@ -3544,7 +3867,8 @@ h1 {
     "options": [
       "Cuando arrojamos basura, químicos o desperdicios a ríos, lagos o mares",
       "Cuando sacamos peces para comer",
-      "Cuando el agua de la lluvia cae en el pasto"
+      "Cuando el agua de la lluvia cae en el pasto",
+      "Distractor 4"
     ],
     "correctAnswer": "Cuando arrojamos basura, químicos o desperdicios a ríos, lagos o mares",
     "explain": "La basura y los químicos ensucian el agua, enfermando a los animales y plantas que viven ahí."
@@ -3559,7 +3883,8 @@ h1 {
     "options": [
       "Contaminación del aire",
       "Contaminación del suelo",
-      "Contaminación visual"
+      "Contaminación visual",
+      "Distractor 4"
     ],
     "correctAnswer": "Contaminación del aire",
     "explain": "El humo contamina el aire que todos respiramos, dañando nuestros pulmones y el planeta."
@@ -3586,6 +3911,11 @@ h1 {
         "id": "sr8_3",
         "left": "Humo de los tubos de escape de los carros",
         "right": "Contaminación del aire"
+      },
+      {
+        "id": "extra_7_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Toda nuestra basura afecta un elemento diferente de la naturaleza si no somos responsables."
@@ -3600,7 +3930,8 @@ h1 {
     "options": [
       "Los animales pueden enfermar o morir y puede haber menos agua limpia",
       "Los árboles crecen mucho más rápido y fuertes",
-      "El clima se vuelve perfecto y agradable todos los días"
+      "El clima se vuelve perfecto y agradable todos los días",
+      "Distractor 4"
     ],
     "correctAnswer": "Los animales pueden enfermar o morir y puede haber menos agua limpia",
     "explain": "La contaminación destruye los hogares de los animales y contamina el agua que necesitamos."
@@ -3615,7 +3946,8 @@ h1 {
     "options": [
       "Nos dan energía para la luz, el transporte y sirven para fabricar objetos",
       "Solo sirven de adorno en los paisajes",
-      "Porque con ellos hacemos juguetes de plástico únicamente"
+      "Porque con ellos hacemos juguetes de plástico únicamente",
+      "Distractor 4"
     ],
     "correctAnswer": "Nos dan energía para la luz, el transporte y sirven para fabricar objetos",
     "explain": "Sin los recursos naturales no tendríamos electricidad, ni carros, ni edificios."
@@ -3630,7 +3962,8 @@ h1 {
     "options": [
       "Cerrar la llave mientras te cepillas los dientes",
       "Dejar la llave abierta todo el día",
-      "Tirar aceite de cocina por el desagüe"
+      "Tirar aceite de cocina por el desagüe",
+      "Distractor 4"
     ],
     "correctAnswer": "Cerrar la llave mientras te cepillas los dientes",
     "explain": "Ahorrar agua es fundamental para que este recurso renovable no se agote."
@@ -3657,6 +3990,11 @@ h1 {
         "id": "sr12_3",
         "left": "Cuidar las plantas y animales",
         "right": "Protege la flora y fauna"
+      },
+      {
+        "id": "extra_11_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada pequeña acción positiva suma para tener un planeta más sano."
@@ -3671,7 +4009,8 @@ h1 {
     "options": [
       "A los recursos NO renovables",
       "A los recursos inagotables",
-      "A los recursos renovables"
+      "A los recursos renovables",
+      "Distractor 4"
     ],
     "correctAnswer": "A los recursos NO renovables",
     "explain": "Igual que el petróleo, el gas natural tarda millones de años en formarse bajo la tierra."
@@ -3686,7 +4025,8 @@ h1 {
     "options": [
       "Es un recurso inagotable y contamina poco",
       "Es un recurso no renovable que pronto se acabará",
-      "Genera mucho humo negro al usarse"
+      "Genera mucho humo negro al usarse",
+      "Distractor 4"
     ],
     "correctAnswer": "Es un recurso inagotable y contamina poco",
     "explain": "La energía del viento (eólica) es limpia y el viento nunca se va a terminar."
@@ -3701,7 +4041,8 @@ h1 {
     "options": [
       "Las plantas no pueden crecer bien y los animales del parque podrían enfermar",
       "El parque se ve más bonito con colores de plástico",
-      "El plástico se convierte en abono súper rápido"
+      "El plástico se convierte en abono súper rápido",
+      "Distractor 4"
     ],
     "correctAnswer": "Las plantas no pueden crecer bien y los animales del parque podrían enfermar",
     "explain": "El plástico es basura que contamina el suelo y afecta a la vida silvestre."
@@ -3723,6 +4064,16 @@ h1 {
         "id": "sr16_2",
         "left": "Arrojar químicos de fábricas al río",
         "right": "Acción Negativa (contamina el agua)"
+      },
+      {
+        "id": "extra_15_2",
+        "left": "Elemento Extra 3",
+        "right": "Atributo Extra 3"
+      },
+      {
+        "id": "extra_15_3",
+        "left": "Elemento Extra 4",
+        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Tenemos el poder de elegir cuidar o dañar la naturaleza con nuestros actos diarios."
@@ -3737,7 +4088,8 @@ h1 {
     "options": [
       "No volverá a aparecer rápidamente y tendríamos que buscar otras opciones de energía",
       "Volverá a aparecer mágicamente al día siguiente",
-      "Lloverá petróleo del cielo"
+      "Lloverá petróleo del cielo",
+      "Distractor 4"
     ],
     "correctAnswer": "No volverá a aparecer rápidamente y tendríamos que buscar otras opciones de energía",
     "explain": "Como es no renovable, se agota. Por eso es vital desarrollar energías renovables como el sol."
@@ -3752,7 +4104,8 @@ h1 {
     "options": [
       "Porque siempre estará disponible y su energía no se gasta por más que la usemos",
       "Porque solo alumbra de día",
-      "Porque se apaga y hay que comprarle baterías"
+      "Porque se apaga y hay que comprarle baterías",
+      "Distractor 4"
     ],
     "correctAnswer": "Porque siempre estará disponible y su energía no se gasta por más que la usemos",
     "explain": "La energía solar es perpetua, podemos usar paneles solares siempre sin agotarla."
@@ -3767,7 +4120,8 @@ h1 {
     "options": [
       "Porque aunque son renovables, si cortamos todos de golpe, tardarán años en volver a crecer y los animales perderían su hogar",
       "Porque los árboles son aburridos y es mejor poner cemento",
-      "Porque no sirven para nada en la naturaleza"
+      "Porque no sirven para nada en la naturaleza",
+      "Distractor 4"
     ],
     "correctAnswer": "Porque aunque son renovables, si cortamos todos de golpe, tardarán años en volver a crecer y los animales perderían su hogar",
     "explain": "Los recursos renovables requieren tiempo para recuperarse. Si abusamos de ellos, los podemos agotar."
@@ -3782,7 +4136,8 @@ h1 {
     "options": [
       "Si todos cuidamos la naturaleza y usamos los recursos de forma responsable, podremos vivir en un lugar más limpio, sano y feliz",
       "No importa si ensuciamos porque alguien más limpiará",
-      "Los recursos nunca se van a acabar sin importar lo que hagamos"
+      "Los recursos nunca se van a acabar sin importar lo que hagamos",
+      "Distractor 4"
     ],
     "correctAnswer": "Si todos cuidamos la naturaleza y usamos los recursos de forma responsable, podremos vivir en un lugar más limpio, sano y feliz",
     "explain": "El cuidado del planeta es responsabilidad de todos para garantizar un futuro saludable."
@@ -3902,6 +4257,7 @@ function init() {
     document.getElementById('btn-back-to-subjects').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-back-diploma').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-solution').addEventListener('click', showSolution);
+    document.getElementById('btn-clear-match').addEventListener('click', clearMatchLines);
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
     document.getElementById('btn-to-diploma').addEventListener('click', showDiploma);
     
@@ -4087,39 +4443,13 @@ function renderCurrentQuestion() {
     prompt.textContent = q.prompt;
     container.appendChild(prompt);
     
-    if (q.illustration) {
-        const ill = document.createElement('div');
-        ill.className = 'question-illustration';
-        ill.innerHTML = q.illustration;
-        container.appendChild(ill);
-    }
-    
-    // Delegate rendering
-    const qBody = document.createElement('div');
-    if (q.type === 'true_false' || q.type === 'multiple') {
-        renderMultiple(q, qBody);
-    } else if (q.type === 'match') {
-        renderMatch(q, qBody);
-    } else if (q.type === 'label') {
-        renderLabel(q, qBody);
-    } else if (q.type === 'open') {
-        renderOpen(q, qBody);
-    } else if (q.type === 'order_words') {
-        renderOrderWords(q, qBody);
-    }
-    container.appendChild(qBody);
-}
-
 function enableSolution() {
     if (!currentQuestionState.interacted) {
         currentQuestionState.interacted = true;
-        
-        // Track score
-        if (currentQuestionState.isCorrect && currentQuestionState.errorCount === 0) {
-            firstTryCorrectCount++;
-        }
-        
         document.getElementById('btn-solution').classList.remove('hidden');
+        if (activeQuestions[currentIndex].type === 'match') {
+            document.getElementById('btn-clear-match').classList.remove('hidden');
+        }
     }
 }
 
@@ -4135,8 +4465,8 @@ function renderMultiple(q, container) {
         btn.className = 'option-btn';
         btn.textContent = opt;
         btn.onclick = () => {
-            // Lock interaction
-            currentQuestionState.buttons.forEach(b => b.disabled = true);
+            // Unselect others
+            currentQuestionState.buttons.forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
             currentQuestionState.isCorrect = (opt === q.correctAnswer);
             enableSolution();
@@ -4470,9 +4800,30 @@ function renderOrderWords(q, container) {
     container.appendChild(currentQuestionState.giveUpBtn);
 }
 
+function clearMatchLines() {
+    const svg = document.querySelector('.match-svg-overlay');
+    if (svg) svg.innerHTML = '';
+    
+    document.querySelectorAll('.match-item').forEach(item => {
+        item.classList.remove('selected', 'matched');
+        delete item.dataset.matchedWith;
+        delete item.dataset.isCorrect;
+    });
+    
+    currentQuestionState.selectedLeft = null;
+    currentQuestionState.selectedRight = null;
+    currentQuestionState.errorCount = 0;
+    currentQuestionState.isCorrect = true;
+    currentQuestionState.interacted = false;
+    
+    document.getElementById('btn-solution').classList.add('hidden');
+    document.getElementById('btn-clear-match').classList.add('hidden');
+}
+
 // --- SOLUTION & NEXT ---
 function showSolution() {
     document.getElementById('btn-solution').classList.add('hidden');
+    document.getElementById('btn-clear-match').classList.add('hidden');
     const btnNext = document.getElementById('btn-next');
     btnNext.classList.remove('hidden');
     
@@ -4481,8 +4832,14 @@ function showSolution() {
     area.innerHTML = '';
     area.className = 'solution-area'; // reset
     
+    // Track score on evaluation
+    if (currentQuestionState.isCorrect && currentQuestionState.errorCount === 0) {
+        firstTryCorrectCount++;
+    }
+    
     if (q.type === 'true_false' || q.type === 'multiple') {
         currentQuestionState.buttons.forEach(b => {
+            b.disabled = true; // Lock interaction after evaluation
             if (b.textContent === q.correctAnswer) b.classList.add('correct-reveal');
             else if (b.classList.contains('selected')) b.classList.add('incorrect-reveal');
         });
