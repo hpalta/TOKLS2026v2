@@ -442,8 +442,8 @@ function renderMatch(q, container) {
             
             if (currentQuestionState.matchedCount === q.pairs.length) {
                 currentQuestionState.isCorrect = (currentQuestionState.errorCount === 0);
-                enableSolution();
             }
+            enableSolution();
             currentQuestionState.selectedItem = null;
         }
     };
@@ -709,6 +709,12 @@ function showSolution() {
     area.innerHTML = '';
     area.className = 'solution-area'; // reset
     
+    if (q.type === 'match') {
+        if (currentQuestionState.matchedCount < q.pairs.length) {
+            currentQuestionState.isCorrect = false;
+        }
+    }
+
     // Track score on evaluation
     if (currentQuestionState.isCorrect && currentQuestionState.errorCount === 0) {
         firstTryCorrectCount++;
