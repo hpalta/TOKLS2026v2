@@ -518,12 +518,14 @@ function renderLabel(q, container) {
         el.classList.add('selected');
     };
     
+    currentQuestionState.wordChips = [];
     words.forEach(w => {
         const chip = document.createElement('div');
         chip.className = 'word-chip';
         chip.textContent = w;
         chip.onclick = () => handleWordSelect(chip, w);
         wordBank.appendChild(chip);
+        currentQuestionState.wordChips.push({el: chip, word: w});
     });
     
     q.labels.forEach(lbl => {
@@ -534,26 +536,35 @@ function renderLabel(q, container) {
         dz.dataset.word = lbl.word;
         
         dz.onclick = () => {
-            if(dz.classList.contains('filled')) return; // already correct
-            if(!currentQuestionState.selectedWord) return;
+            if(!currentQuestionState.selectedWord) {
+                return;
+            }
+            
+            if (dz.classList.contains('filled')) {
+                const oldWord = dz.dataset.placedWord;
+                // find the chip for oldWord and un-use it
+                currentQuestionState.wordChips.forEach(chip => {
+                    if (chip.word === oldWord) chip.el.classList.remove('used');
+                });
+                currentQuestionState.placedCount--;
+            }
             
             const selected = currentQuestionState.selectedWord;
-            if (selected.word === lbl.word) {
-                dz.textContent = selected.word;
-                dz.classList.add('filled', 'correct');
-                selected.el.classList.remove('selected');
-                selected.el.classList.add('used');
-                currentQuestionState.selectedWord = null;
-                currentQuestionState.placedCount++;
-                
-                if(currentQuestionState.placedCount === currentQuestionState.totalWords) {
-                    currentQuestionState.isCorrect = true;
-                    enableSolution();
-                }
-            } else {
-                currentQuestionState.errorCount++;
-                dz.classList.add('incorrect');
-                setTimeout(() => dz.classList.remove('incorrect'), 400);
+            dz.textContent = selected.word;
+            dz.classList.add('filled');
+            dz.dataset.placedWord = selected.word;
+            
+            selected.el.classList.remove('selected');
+            selected.el.classList.add('used');
+            currentQuestionState.selectedWord = null;
+            currentQuestionState.placedCount++;
+            
+            if (currentQuestionState.placedCount >= 1) {
+                document.getElementById('btn-clear-match').classList.remove('hidden');
+                currentQuestionState.interacted = true;
+            }
+            if(currentQuestionState.placedCount === currentQuestionState.totalWords) {
+                document.getElementById('btn-solution').classList.remove('hidden');
             }
         };
         currentQuestionState.dropzones.push(dz);
@@ -696,6 +707,15 @@ function clearMatchLines() {
         delete item.dataset.isCorrect;
     });
     
+    document.querySelectorAll('.dropzone').forEach(dz => {
+        dz.classList.remove('filled', 'correct', 'incorrect', 'incorrect-reveal', 'correct-reveal');
+        dz.textContent = '';
+        delete dz.dataset.placedWord;
+    });
+    document.querySelectorAll('.word-chip').forEach(chip => {
+        chip.classList.remove('used', 'selected');
+    });
+    
     currentQuestionState.selectedLeft = null;
     currentQuestionState.selectedRight = null;
     currentQuestionState.errorCount = 0;
@@ -722,6 +742,17 @@ function showSolution() {
     if (q.type === 'match') {
         if (currentQuestionState.matchedCount < q.pairs.length) {
             currentQuestionState.isCorrect = false;
+        }
+    } else if (q.type === 'label') {
+        if (currentQuestionState.placedCount < q.labels.length) {
+            currentQuestionState.isCorrect = false;
+        } else {
+            document.querySelectorAll('.dropzone').forEach(dz => {
+                if (dz.dataset.placedWord !== dz.dataset.word) {
+                    currentQuestionState.errorCount++;
+                }
+            });
+            if (currentQuestionState.errorCount > 0) currentQuestionState.isCorrect = false;
         }
     }
 
@@ -756,6 +787,15 @@ function showSolution() {
                     el.classList.add('incorrect-reveal');
                 }
             });
+        } else if (q.type === 'label') {
+            document.querySelectorAll('.dropzone').forEach(dz => {
+                if (dz.dataset.placedWord === dz.dataset.word) {
+                    dz.classList.add('correct-reveal');
+                } else {
+                    dz.classList.add('incorrect-reveal');
+                    dz.innerHTML = `<del>${dz.dataset.placedWord || ''}</del> <span style="color: green">${dz.dataset.word}</span>`;
+                }
+            });
         }
     }
     
@@ -785,7 +825,9 @@ function showSolution() {
         }
         
         if (q.explain) {
-            html += `<p style="margin-top: 10px;">${q.explain}</p>`;
+            // Check if explain has newline characters to format it better
+            const formattedExplain = q.explain.replace(/\\n/g, '<br>');
+            html += `<p style="margin-top: 10px;">${formattedExplain}</p>`;
         }
         area.innerHTML = html;
     }
@@ -808,7 +850,7 @@ function nextQuestion() {
         } else if (q.type === 'match') {
             correctAnswerText = q.pairs.map(p => `${p.left} = ${p.right}`).join(', ');
         } else if (q.type === 'label') {
-            correctAnswerText = q.labels.map(l => l.word).join(', ');
+            correctAnswerText = q.explain ? q.explain : q.labels.map(l => l.word).join(', ');
         } else if (q.type === 'order_words') {
             correctAnswerText = q.words.join(' ');
         }

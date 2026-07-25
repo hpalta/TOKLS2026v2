@@ -379,6 +379,7 @@ module.exports = [
         "x": 33,
         "y": 91.1
       }
-    ]
+    ],
+    "explain": "a. Los cuerpos opacos no dejan pasar la luz que les llega.\nb. Los cuerpos luminosos son aquellos que desprenden luz o son fuente de luz.\nc. Las velas y las linternas son cuerpos luminosos artificiales.\nd. Los cuerpos no luminosos son aquellos que no desprenden luz, pero reflejan la luz que les llega.\ne. Los cuerpos transparentes dejan pasar toda la luz que les llega."
   }
 ];
