@@ -320,11 +320,21 @@ function renderCurrentQuestion() {
 }
 
 function enableSolution() {
+    const q = activeQuestions[currentIndex];
+    
     if (!currentQuestionState.interacted) {
         currentQuestionState.interacted = true;
-        document.getElementById('btn-solution').classList.remove('hidden');
-        if (activeQuestions[currentIndex].type === 'match') {
+        if (q.type === 'match') {
             document.getElementById('btn-clear-match').classList.remove('hidden');
+        } else {
+            document.getElementById('btn-solution').classList.remove('hidden');
+        }
+    }
+    
+    // For match questions, only show 'Ver solución' when all pairs are connected
+    if (q.type === 'match') {
+        if (currentQuestionState.matchedCount === q.pairs.length) {
+            document.getElementById('btn-solution').classList.remove('hidden');
         }
     }
 }
