@@ -27,16 +27,6 @@ module.exports = [
     explain: "El Sol emite luz natural, mientras que la linterna y la vela son artificiales."
   },
   {
-    id: "luz_4", subject: "science", station: "La Luz", type: "label",
-    context: "Las fuentes de luz pueden emitir luz a su alrededor.",
-    prompt: "Identifica la fuente de luz",
-    svg: "<svg viewBox=\"0 0 100 100\" width=\"100\" height=\"100\"><circle cx=\"50\" cy=\"50\" r=\"20\" fill=\"#FFD700\"/></svg>",
-    labels: [
-      { id: "l4_1", x: 50, y: 50, text: "Fuente Luminosa" }
-    ],
-    explain: "Un objeto que emite su propia luz es una fuente luminosa."
-  },
-  {
     id: "luz_5", subject: "science", station: "La Luz", type: "multiple",
     context: "María quiere comprar una tela para la cortina de su sala y quiere que entre poca luz.",
     prompt: "¿Qué tipo de tela debe seleccionar?",
@@ -70,16 +60,6 @@ module.exports = [
     options: ["Cuerpos no luminosos", "Cuerpos artificiales", "Cuerpos translúcidos"],
     correctAnswer: "Cuerpos no luminosos",
     explain: "Estos objetos necesitan una fuente de luz para poder ser vistos."
-  },
-  {
-    id: "luz_9", subject: "science", station: "La Luz", type: "label",
-    context: "Un objeto opaco bloquea la luz y forma una sombra.",
-    prompt: "Identifica qué ocurre cuando la luz choca con un objeto opaco",
-    svg: "<svg viewBox=\"0 0 100 100\"><rect x=\"40\" y=\"20\" width=\"20\" height=\"60\" fill=\"#8B4513\"/><ellipse cx=\"80\" cy=\"80\" rx=\"20\" ry=\"10\" fill=\"gray\"/></svg>",
-    labels: [
-      { id: "l9_1", x: 80, y: 80, text: "Sombra" }
-    ],
-    explain: "La sombra se produce porque el objeto opaco no deja pasar la luz."
   },
   {
     id: "luz_10", subject: "science", station: "La Luz", type: "multiple",
@@ -123,16 +103,6 @@ module.exports = [
     options: ["Translúcido", "Opaco", "Luminoso natural"],
     correctAnswer: "Translúcido",
     explain: "El celofán deja pasar algo de luz, pero a menudo tiñe o difumina lo que hay detrás."
-  },
-  {
-    id: "luz_15", subject: "science", station: "La Luz", type: "label",
-    context: "La luz puede viajar a través de los lentes de tus gafas.",
-    prompt: "Señala la parte transparente",
-    svg: "<svg viewBox=\"0 0 100 100\"><circle cx=\"30\" cy=\"50\" r=\"20\" fill=\"#ADD8E6\" opacity=\"0.5\"/><circle cx=\"70\" cy=\"50\" r=\"20\" fill=\"#ADD8E6\" opacity=\"0.5\"/></svg>",
-    labels: [
-      { id: "l15_1", x: 30, y: 50, text: "Lente Transparente" }
-    ],
-    explain: "Los lentes deben ser transparentes para dejar pasar la luz a nuestros ojos."
   },
   {
     id: "luz_16", subject: "science", station: "La Luz", type: "match",
