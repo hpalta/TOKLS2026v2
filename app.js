@@ -218,10 +218,6 @@ function loadSubject(subject, station) {
     document.getElementById('btn-back').textContent = t('back');
     document.getElementById('btn-solution').textContent = t('see_solution');
     document.getElementById('btn-next').textContent = t('next');
-    document.getElementById('diploma-title').textContent = t('diploma_title');
-    document.getElementById('diploma-text').textContent = t('diploma_text');
-    document.getElementById('diploma-name-label').textContent = t('name_label');
-    document.getElementById('student-name').placeholder = t('name_placeholder');
     document.getElementById('diploma-subject').textContent = t(subject, true);
     
     // Filter and shuffle, take only 20 questions
