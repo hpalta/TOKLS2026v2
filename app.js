@@ -370,7 +370,7 @@ function renderMatch(q, container) {
     let rightItems = shuffleArray(q.pairs.map(p => ({ text: p.right, matchId: p.id, side: 'right' })));
     
     currentQuestionState.selectedItem = null;
-    let matchedCount = 0;
+    currentQuestionState.matchedCount = 0;
     currentQuestionState.totalMatches = q.pairs.length;
     currentQuestionState.elements = [];
     
@@ -401,7 +401,7 @@ function renderMatch(q, container) {
             prev.el.classList.add('matched');
             el.classList.remove('selected');
             prev.el.classList.remove('selected');
-            matchedCount++;
+            currentQuestionState.matchedCount++;
             
             // Draw SVG line
             const rect1 = el.getBoundingClientRect();
@@ -440,7 +440,7 @@ function renderMatch(q, container) {
             el.dataset.isCorrect = isPairCorrect;
             prev.el.dataset.isCorrect = isPairCorrect;
             
-            if (matchedCount === q.pairs.length) {
+            if (currentQuestionState.matchedCount === q.pairs.length) {
                 currentQuestionState.isCorrect = (currentQuestionState.errorCount === 0);
                 enableSolution();
             }
@@ -689,6 +689,7 @@ function clearMatchLines() {
     currentQuestionState.selectedLeft = null;
     currentQuestionState.selectedRight = null;
     currentQuestionState.errorCount = 0;
+    currentQuestionState.matchedCount = 0;
     currentQuestionState.isCorrect = true;
     currentQuestionState.interacted = false;
     
