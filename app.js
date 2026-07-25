@@ -63,7 +63,6 @@ let currentSubject = null;
 let currentLang = 'es';
 let activeQuestions = [];
 let currentIndex = 0;
-let currentIndex = 0;
 let firstTryCorrectCount = 0;
 let currentQuestionState = null; // Store state for current question interactions
 
