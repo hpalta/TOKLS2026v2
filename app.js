@@ -377,55 +377,59 @@ function renderMatch(q, container) {
                 return;
             }
             
-            // Check match
-            if (prev.item.matchId === item.matchId) {
-                el.classList.add('matched', 'correct-reveal');
-                prev.el.classList.add('matched', 'correct-reveal');
-                el.classList.remove('selected');
-                prev.el.classList.remove('selected');
-                matchedCount++;
-                
-                // Draw SVG line
-                const rect1 = el.getBoundingClientRect();
-                const rect2 = prev.el.getBoundingClientRect();
-                const parentRect = svgOverlay.getBoundingClientRect();
-                
-                let x1, y1, x2, y2;
-                if (item.side === 'right') {
-                    x1 = rect2.right - parentRect.left;
-                    y1 = rect2.top + rect2.height / 2 - parentRect.top;
-                    x2 = rect1.left - parentRect.left;
-                    y2 = rect1.top + rect1.height / 2 - parentRect.top;
-                } else {
-                    x1 = rect1.right - parentRect.left;
-                    y1 = rect1.top + rect1.height / 2 - parentRect.top;
-                    x2 = rect2.left - parentRect.left;
-                    y2 = rect2.top + rect2.height / 2 - parentRect.top;
-                }
-                
-                const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-                line.setAttribute("x1", x1);
-                line.setAttribute("y1", y1);
-                line.setAttribute("x2", x2);
-                line.setAttribute("y2", y2);
-                line.setAttribute("stroke", "var(--correct-color)");
-                line.setAttribute("stroke-width", "4");
-                line.setAttribute("stroke-linecap", "round");
-                svgOverlay.appendChild(line);
-                
-                if (matchedCount === q.pairs.length) {
-                    currentQuestionState.isCorrect = true;
-                    enableSolution();
-                }
-            } else {
+            // Check if it's a correct pair
+            const isPairCorrect = (prev.item.matchId === item.matchId);
+            if (!isPairCorrect) {
                 currentQuestionState.errorCount++;
-                el.classList.add('error');
-                prev.el.classList.add('error');
-                prev.el.classList.remove('selected');
-                setTimeout(() => {
-                    el.classList.remove('error');
-                    prev.el.classList.remove('error');
-                }, 400);
+            }
+            
+            // Allow the connection regardless
+            el.classList.add('matched');
+            prev.el.classList.add('matched');
+            el.classList.remove('selected');
+            prev.el.classList.remove('selected');
+            matchedCount++;
+            
+            // Draw SVG line
+            const rect1 = el.getBoundingClientRect();
+            const rect2 = prev.el.getBoundingClientRect();
+            const parentRect = svgOverlay.getBoundingClientRect();
+            
+            let x1, y1, x2, y2;
+            if (item.side === 'right') {
+                x1 = rect2.right - parentRect.left;
+                y1 = rect2.top + rect2.height / 2 - parentRect.top;
+                x2 = rect1.left - parentRect.left;
+                y2 = rect1.top + rect1.height / 2 - parentRect.top;
+            } else {
+                x1 = rect1.right - parentRect.left;
+                y1 = rect1.top + rect1.height / 2 - parentRect.top;
+                x2 = rect2.left - parentRect.left;
+                y2 = rect2.top + rect2.height / 2 - parentRect.top;
+            }
+            
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttribute("x1", x1);
+            line.setAttribute("y1", y1);
+            line.setAttribute("x2", x2);
+            line.setAttribute("y2", y2);
+            line.setAttribute("stroke", "#999"); // Neutral color while guessing
+            line.setAttribute("stroke-width", "4");
+            line.setAttribute("stroke-linecap", "round");
+            line.dataset.isCorrect = isPairCorrect;
+            // Also store references to the elements to color them later
+            line.dataset.el1 = prev.item.text;
+            line.dataset.el2 = item.text;
+            
+            svgOverlay.appendChild(line);
+            
+            // Store matched elements for solution reveal
+            el.dataset.isCorrect = isPairCorrect;
+            prev.el.dataset.isCorrect = isPairCorrect;
+            
+            if (matchedCount === q.pairs.length) {
+                currentQuestionState.isCorrect = (currentQuestionState.errorCount === 0);
+                enableSolution();
             }
             currentQuestionState.selectedItem = null;
         }
@@ -677,7 +681,25 @@ function showSolution() {
         });
     } else if (q.type === 'match' || q.type === 'label' || q.type === 'order_words') {
         if(currentQuestionState.giveUpBtn) currentQuestionState.giveUpBtn.classList.add('hidden');
-        // Simple reveal text
+        
+        if (q.type === 'match') {
+            const svg = document.querySelector('.match-svg-overlay');
+            if (svg) {
+                const lines = svg.querySelectorAll('line');
+                lines.forEach(l => {
+                    const isCorrect = l.dataset.isCorrect === 'true';
+                    l.setAttribute('stroke', isCorrect ? 'var(--correct-color)' : 'var(--incorrect-color)');
+                });
+            }
+            const items = document.querySelectorAll('.match-item');
+            items.forEach(el => {
+                if (el.dataset.isCorrect === 'true') {
+                    el.classList.add('correct-reveal');
+                } else if (el.classList.contains('matched')) {
+                    el.classList.add('incorrect-reveal');
+                }
+            });
+        }
     }
     
     if (q.type === 'open') {
