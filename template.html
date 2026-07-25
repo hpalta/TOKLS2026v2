@@ -20,6 +20,18 @@
         </main>
     </div>
 
+    <!-- Selector de subcategoría -->
+    <div id="view-subcategories" class="view hidden">
+        <header>
+            <button id="btn-back-to-subjects" class="btn-secondary">← Volver</button>
+            <h1 id="subcategories-title">Materia</h1>
+            <p>¡Elige el tema que quieres repasar!</p>
+        </header>
+        <main class="subjects-grid" id="subcategories-container">
+            <!-- Renderizado dinámicamente -->
+        </main>
+    </div>
+
     <!-- Cuaderno de preguntas -->
     <div id="view-notebook" class="view hidden">
         <header class="notebook-header">
@@ -52,6 +64,10 @@
             <p id="diploma-text">Has completado todas las preguntas de esta materia.</p>
             <div class="diploma-certificate">
                 <h2 id="diploma-subject">Materia</h2>
+                <div class="score-display">
+                    <p id="diploma-score-text">Porcentaje de aciertos: <span id="diploma-score-percent">0%</span></p>
+                    <p id="diploma-score-message" class="score-message">¡Sigue practicando!</p>
+                </div>
                 <div class="input-group">
                     <label id="diploma-name-label" for="student-name">Nombre del explorador/a:</label>
                     <input type="text" id="student-name" placeholder="Escribe tu nombre aquí">

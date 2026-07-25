@@ -613,6 +613,28 @@ h1 {
 }
 
 
+/* Score Display in Diploma */
+.score-display {
+    margin: 20px 0;
+    text-align: center;
+}
+#diploma-score-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+#diploma-score-percent {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.score-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
     </style>
 </head>
 <body>
@@ -623,6 +645,18 @@ h1 {
             <p>¡Elige una aventura para repasar!</p>
         </header>
         <main class="subjects-grid" id="subjects-container">
+            <!-- Renderizado dinámicamente -->
+        </main>
+    </div>
+
+    <!-- Selector de subcategoría -->
+    <div id="view-subcategories" class="view hidden">
+        <header>
+            <button id="btn-back-to-subjects" class="btn-secondary">← Volver</button>
+            <h1 id="subcategories-title">Materia</h1>
+            <p>¡Elige el tema que quieres repasar!</p>
+        </header>
+        <main class="subjects-grid" id="subcategories-container">
             <!-- Renderizado dinámicamente -->
         </main>
     </div>
@@ -659,6 +693,10 @@ h1 {
             <p id="diploma-text">Has completado todas las preguntas de esta materia.</p>
             <div class="diploma-certificate">
                 <h2 id="diploma-subject">Materia</h2>
+                <div class="score-display">
+                    <p id="diploma-score-text">Porcentaje de aciertos: <span id="diploma-score-percent">0%</span></p>
+                    <p id="diploma-score-message" class="score-message">¡Sigue practicando!</p>
+                </div>
                 <div class="input-group">
                     <label id="diploma-name-label" for="student-name">Nombre del explorador/a:</label>
                     <input type="text" id="student-name" placeholder="Escribe tu nombre aquí">
@@ -674,747 +712,1096 @@ h1 {
     <script>
         const QUESTIONS_ALL = [
   {
-    "id": "sci_1",
+    "id": "loc_1",
     "subject": "science",
-    "station": "Huesos",
-    "type": "true_false",
-    "context": "Camilo se cayó de su bicicleta, pero gracias a que usaba casco, protegió su cabeza. Su médico le dijo que dentro de la cabeza hay un conjunto de huesos muy importantes.",
-    "prompt": "El cráneo es la parte del esqueleto que protege el cerebro.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "El cráneo es como una caja dura formada por huesos planos que cuida nuestro cerebro."
-  },
-  {
-    "id": "sci_2",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "El esqueleto de un niño de 7 años es muy blando y no tiene huesos.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "Todos tenemos un esqueleto formado por muchos huesos, ¡incluso desde que nacemos!"
-  },
-  {
-    "id": "sci_3",
-    "subject": "science",
-    "station": "Articulaciones",
+    "station": "Locomoción",
     "type": "multiple",
-    "context": "Laura está bailando ballet. Levanta sus brazos y dobla sus rodillas con mucha facilidad para dar un gran salto.",
-    "prompt": "¿Qué partes del cuerpo le permiten a Laura doblar sus rodillas y codos?",
+    "context": "El cuerpo humano está compuesto por músculos que nos ayudan a realizar funciones vitales.",
+    "prompt": "¿Cuál es la función principal de los músculos?",
     "options": [
-      "Los músculos",
-      "Las articulaciones",
-      "El cráneo"
+      "Permitir el movimiento mediante la contracción",
+      "Digerir los alimentos",
+      "Proteger el cerebro"
     ],
-    "correctAnswer": "Las articulaciones",
-    "explain": "Las articulaciones son las zonas donde se unen los huesos y nos permiten doblar partes del cuerpo."
+    "correctAnswer": "Permitir el movimiento mediante la contracción",
+    "explain": "Los músculos se contraen y relajan para permitirnos mover."
   },
   {
-    "id": "sci_4",
+    "id": "loc_2",
     "subject": "science",
-    "station": "Músculos",
-    "type": "multiple",
-    "context": null,
-    "prompt": "¿Qué son los músculos?",
-    "options": [
-      "Partes duras y rígidas que sostienen el cuerpo",
-      "Órganos blandos y elásticos que se contraen y relajan para mover el cuerpo",
-      "Líquidos que viajan por nuestras venas"
-    ],
-    "correctAnswer": "Órganos blandos y elásticos que se contraen y relajan para mover el cuerpo",
-    "explain": "Los músculos son como bandas elásticas que jalan los huesos para que podamos movernos."
-  },
-  {
-    "id": "sci_5",
-    "subject": "science",
-    "station": "Músculos",
-    "type": "true_false",
-    "context": "Andrés está sonriendo porque es su cumpleaños. Su profesora le dice que está usando muchos músculos al sonreír.",
-    "prompt": "No tenemos músculos en la cara, solo tenemos huesos.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "¡Tenemos muchos músculos en la cara! Nos permiten sonreír, masticar, guiñar un ojo y hacer muecas."
-  },
-  {
-    "id": "sci_6",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "multiple",
-    "context": "Para el desayuno, Sofía toma un gran vaso de leche y come un poco de queso. Su mamá le dice que esto es excelente para crecer.",
-    "prompt": "¿Qué mineral que está en la leche y el queso ayuda a mantener los huesos fuertes y duros?",
-    "options": [
-      "El hierro",
-      "El calcio",
-      "El azúcar"
-    ],
-    "correctAnswer": "El calcio",
-    "explain": "El calcio es un mineral esencial que hace que nuestros huesos sean duros y resistentes."
-  },
-  {
-    "id": "sci_7",
-    "subject": "science",
-    "station": "Articulaciones",
+    "station": "Locomoción",
     "type": "match",
-    "context": null,
-    "prompt": "Relaciona cada tipo de articulación con su movimiento.",
+    "context": "Anita aprendió que todos los músculos son distintos y se clasifican en 3 grupos.",
+    "prompt": "Relaciona el tipo de músculo con su nombre correcto:",
     "pairs": [
       {
-        "id": "p1",
-        "left": "Articulaciones móviles",
-        "right": "Permiten mucho movimiento (hombro, rodilla)"
+        "id": "p2_1",
+        "left": "Músculo que se une a los huesos",
+        "right": "Músculo Esquelético"
       },
       {
-        "id": "p2",
-        "left": "Articulaciones semimóviles",
-        "right": "Permiten poco movimiento (columna vertebral)"
+        "id": "p2_2",
+        "left": "Músculo del corazón",
+        "right": "Músculo Cardíaco"
       },
       {
-        "id": "p3",
-        "left": "Articulaciones fijas",
-        "right": "No permiten ningún movimiento (cráneo)"
+        "id": "p2_3",
+        "left": "Músculo de los intestinos",
+        "right": "Músculo Liso"
       }
     ],
-    "explain": "Hay 3 tipos de articulaciones: las móviles se mueven mucho, las semimóviles un poco, y las fijas nada."
+    "explain": "Cada tipo de músculo se encuentra en lugares específicos del cuerpo."
   },
   {
-    "id": "sci_8",
+    "id": "loc_3",
     "subject": "science",
-    "station": "Huesos",
-    "type": "open",
-    "context": "Imagina que el cuerpo humano no tuviera huesos, ¡como si fueras una lombriz gigante!",
-    "prompt": "¿Qué nos pasaría si no tuviéramos un sistema óseo (esqueleto)?",
-    "explain": "No podríamos sostenernos de pie, no podríamos caminar ni correr, y seríamos como una masa blanda en el suelo. Además, nuestros órganos (como el corazón y cerebro) estarían desprotegidos."
-  },
-  {
-    "id": "sci_9",
-    "subject": "science",
-    "station": "Músculos",
-    "type": "match",
-    "context": null,
-    "prompt": "Une el tipo de movimiento con su definición.",
-    "pairs": [
-      {
-        "id": "m1",
-        "left": "Movimiento voluntario",
-        "right": "Se mueve cuando tú decides hacerlo (ej. patear un balón)"
-      },
-      {
-        "id": "m2",
-        "left": "Movimiento involuntario",
-        "right": "Se mueve solo, sin que tú lo pienses (ej. el corazón latiendo)"
-      }
+    "station": "Locomoción",
+    "type": "multiple",
+    "context": "El corazón es un órgano muy importante que no deja de latir.",
+    "prompt": "¿Qué tipo de músculo forma el corazón?",
+    "options": [
+      "Músculo Cardíaco",
+      "Músculo Liso",
+      "Músculo Esquelético"
     ],
-    "explain": "Controlamos los movimientos voluntarios (como correr), pero nuestro cuerpo controla los involuntarios automáticamente (como la digestión)."
+    "correctAnswer": "Músculo Cardíaco",
+    "explain": "El músculo cardíaco es exclusivo del corazón."
   },
   {
-    "id": "sci_10",
+    "id": "loc_4",
     "subject": "science",
-    "station": "Anatomía",
+    "station": "Locomoción",
     "type": "label",
-    "context": "El profesor de ciencias le dio a Mateo un mapa del esqueleto para estudiar.",
-    "prompt": "Etiqueta las partes importantes del cuerpo.",
-    "svg": "<svg viewBox=\"0 0 200 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"background:#fff; border-radius:10px; max-height:400px; display:block; margin:auto;\">\n      <!-- Skull -->\n      <path d=\"M 100 20 C 70 20, 70 60, 85 70 C 85 85, 115 85, 115 70 C 130 60, 130 20, 100 20 Z\" fill=\"#ecf0f1\" stroke=\"#bdc3c7\" stroke-width=\"3\"/>\n      <!-- Eyes & nose -->\n      <circle cx=\"90\" cy=\"50\" r=\"6\" fill=\"#34495e\"/>\n      <circle cx=\"110\" cy=\"50\" r=\"6\" fill=\"#34495e\"/>\n      <path d=\"M 100 60 L 98 65 L 102 65 Z\" fill=\"#34495e\"/>\n      <!-- Smile -->\n      <path d=\"M 90 75 Q 100 80 110 75\" stroke=\"#34495e\" stroke-width=\"2\" fill=\"none\"/>\n      \n      <!-- Spine -->\n      <line x1=\"100\" y1=\"85\" x2=\"100\" y2=\"160\" stroke=\"#ecf0f1\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n      \n      <!-- Ribs -->\n      <path d=\"M 100 100 C 70 100, 60 115, 60 125 C 60 130, 80 135, 100 130\" stroke=\"#ecf0f1\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n      <path d=\"M 100 100 C 130 100, 140 115, 140 125 C 140 130, 120 135, 100 130\" stroke=\"#ecf0f1\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n      <path d=\"M 100 115 C 75 115, 65 125, 65 135 C 65 140, 80 145, 100 140\" stroke=\"#ecf0f1\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n      <path d=\"M 100 115 C 125 115, 135 125, 135 135 C 135 140, 120 145, 100 140\" stroke=\"#ecf0f1\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n      \n      <!-- Pelvis -->\n      <path d=\"M 85 160 C 70 160, 70 180, 85 180 L 115 180 C 130 180, 130 160, 115 160 Z\" fill=\"#ecf0f1\" stroke=\"#bdc3c7\" stroke-width=\"3\"/>\n      \n      <!-- Left Arm -->\n      <circle cx=\"75\" cy=\"95\" r=\"7\" fill=\"#ecf0f1\"/> \n      <line x1=\"75\" y1=\"95\" x2=\"40\" y2=\"130\" stroke=\"#ecf0f1\" stroke-width=\"6\" stroke-linecap=\"round\"/> \n      <circle cx=\"40\" cy=\"130\" r=\"5\" fill=\"#ecf0f1\"/> \n      <line x1=\"40\" y1=\"130\" x2=\"30\" y2=\"170\" stroke=\"#ecf0f1\" stroke-width=\"5\" stroke-linecap=\"round\"/> \n      <circle cx=\"30\" cy=\"170\" r=\"4\" fill=\"#ecf0f1\"/> \n      <path d=\"M 30 170 L 20 185 M 30 170 L 30 188 M 30 170 L 40 185\" stroke=\"#ecf0f1\" stroke-width=\"3\" stroke-linecap=\"round\"/> \n\n      <!-- Right Arm -->\n      <circle cx=\"125\" cy=\"95\" r=\"7\" fill=\"#ecf0f1\"/>\n      <line x1=\"125\" y1=\"95\" x2=\"160\" y2=\"130\" stroke=\"#ecf0f1\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n      <circle cx=\"160\" cy=\"130\" r=\"5\" fill=\"#ecf0f1\"/>\n      <line x1=\"160\" y1=\"130\" x2=\"170\" y2=\"170\" stroke=\"#ecf0f1\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n      <circle cx=\"170\" cy=\"170\" r=\"4\" fill=\"#ecf0f1\"/>\n      <path d=\"M 170 170 L 160 185 M 170 170 L 170 188 M 170 170 L 180 185\" stroke=\"#ecf0f1\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n      \n      <!-- Left Leg -->\n      <circle cx=\"90\" cy=\"175\" r=\"8\" fill=\"#ecf0f1\"/>\n      <line x1=\"90\" y1=\"175\" x2=\"70\" y2=\"230\" stroke=\"#ecf0f1\" stroke-width=\"8\" stroke-linecap=\"round\"/> \n      <circle cx=\"70\" cy=\"230\" r=\"7\" fill=\"#ecf0f1\"/> \n      <line x1=\"70\" y1=\"230\" x2=\"60\" y2=\"280\" stroke=\"#ecf0f1\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n      <path d=\"M 60 280 L 40 285\" stroke=\"#ecf0f1\" stroke-width=\"8\" stroke-linecap=\"round\"/> \n      \n      <!-- Right Leg -->\n      <circle cx=\"110\" cy=\"175\" r=\"8\" fill=\"#ecf0f1\"/>\n      <line x1=\"110\" y1=\"175\" x2=\"130\" y2=\"230\" stroke=\"#ecf0f1\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n      <circle cx=\"130\" cy=\"230\" r=\"7\" fill=\"#ecf0f1\"/>\n      <line x1=\"130\" y1=\"230\" x2=\"140\" y2=\"280\" stroke=\"#ecf0f1\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n      <path d=\"M 140 280 L 160 285\" stroke=\"#ecf0f1\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n\n      <!-- Pointers -->\n      <circle cx=\"100\" cy=\"35\" r=\"4\" fill=\"#e74c3c\"/>\n      <line x1=\"100\" y1=\"35\" x2=\"50\" y2=\"40\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n      \n      <circle cx=\"55\" cy=\"115\" r=\"4\" fill=\"#e74c3c\"/>\n      <line x1=\"55\" y1=\"115\" x2=\"40\" y2=\"95\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n      \n      <circle cx=\"120\" cy=\"205\" r=\"4\" fill=\"#e74c3c\"/>\n      <line x1=\"120\" y1=\"205\" x2=\"170\" y2=\"205\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n    </svg>",
+    "context": "Los músculos recubren nuestros huesos.",
+    "prompt": "Identifica el músculo esquelético",
+    "svg": "<svg viewBox=\"0 0 100 100\"><path d=\"M20,50 Q50,20 80,50 Q50,80 20,50\" fill=\"#CD5C5C\"/><line x1=\"20\" y1=\"50\" x2=\"10\" y2=\"50\" stroke=\"#F5DEB3\" stroke-width=\"4\"/></svg>",
     "labels": [
       {
-        "word": "Cráneo",
-        "x": 25,
-        "y": 13.3
-      },
-      {
-        "word": "Brazo",
-        "x": 20,
-        "y": 31.6
-      },
-      {
-        "word": "Pierna",
-        "x": 85,
-        "y": 68.3
+        "id": "l4_1",
+        "x": 50,
+        "y": 50,
+        "text": "Músculo Esquelético"
       }
     ],
-    "explain": "El cráneo está en la cabeza, el brazo sale del hombro, y la pierna soporta nuestro peso al caminar."
+    "explain": "Los músculos esqueléticos nos permiten correr, saltar y caminar."
   },
   {
-    "id": "sci_11",
+    "id": "loc_5",
     "subject": "science",
-    "station": "Músculos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Los músculos no necesitan descansar, puedes correr por días sin detenerte.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "¡Falso! Los músculos se cansan y necesitan descanso y buen alimento para recuperarse."
-  },
-  {
-    "id": "sci_12",
-    "subject": "science",
-    "station": "Músculos",
+    "station": "Locomoción",
     "type": "multiple",
-    "context": "Cuando levantas una caja pesada, sientes que tu brazo se pone duro y fuerte.",
-    "prompt": "¿Qué le pasa a tu músculo (el bíceps) cuando doblas el brazo para levantar algo?",
+    "context": "El estómago y los intestinos se mueven solos para digerir la comida.",
+    "prompt": "¿Qué tipo de músculo tienen los órganos internos como el estómago?",
     "options": [
-      "Se rompe",
-      "Se relaja y se alarga",
-      "Se contrae y se hace más corto y grueso"
+      "Músculo Liso",
+      "Músculo Cardíaco",
+      "Músculo Esquelético"
     ],
-    "correctAnswer": "Se contrae y se hace más corto y grueso",
-    "explain": "Para hacer fuerza, el músculo se contrae (se acorta y se infla), jalando el hueso."
+    "correctAnswer": "Músculo Liso",
+    "explain": "El músculo liso recubre nuestros órganos internos y funciona sin que lo pensemos."
   },
   {
-    "id": "sci_13",
+    "id": "loc_6",
     "subject": "science",
-    "station": "Cuidado",
+    "station": "Locomoción",
     "type": "multiple",
-    "context": "Tomás quiere tener huesos y músculos muy fuertes para jugar al fútbol.",
-    "prompt": "¿Cuál de estos hábitos NO ayuda a cuidar sus músculos y huesos?",
+    "context": "Algunos músculos los movemos porque queremos, y otros se mueven solos (independientes).",
+    "prompt": "¿Los músculos lisos y cardíacos funcionan de manera independiente (involuntaria)?",
     "options": [
-      "Hacer ejercicio regularmente",
-      "Dormir pocas horas y comer muchos dulces",
-      "Mantener una buena postura al sentarse"
+      "Sí, funcionan automáticamente para mantenernos vivos",
+      "No, nosotros los controlamos al pensar",
+      "Solo cuando dormimos"
     ],
-    "correctAnswer": "Dormir pocas horas y comer muchos dulces",
-    "explain": "Para cuidarnos, necesitamos dormir bien, comer sano, hacer ejercicio y tener buena postura."
+    "correctAnswer": "Sí, funcionan automáticamente para mantenernos vivos",
+    "explain": "No tenemos que pensar para que el corazón lata o el estómago digiera."
   },
   {
-    "id": "sci_14",
+    "id": "loc_7",
     "subject": "science",
-    "station": "Huesos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "El esqueleto protege órganos delicados como el corazón y los pulmones.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "Las costillas actúan como un escudo protector para el corazón y los pulmones."
-  },
-  {
-    "id": "sci_15",
-    "subject": "science",
-    "station": "Músculos",
-    "type": "true_false",
-    "context": "Diana está respirando mientras duerme pacíficamente en su cama.",
-    "prompt": "La respiración es un movimiento involuntario controlado por músculos que se mueven solos.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "Respirar y el latido del corazón son movimientos involuntarios; suceden sin que lo pienses."
-  },
-  {
-    "id": "sci_16",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "multiple",
-    "context": null,
-    "prompt": "¿Cómo se llama el conjunto de todos los huesos del cuerpo?",
-    "options": [
-      "Sistema Muscular",
-      "El cráneo",
-      "Sistema Óseo o Esqueleto"
-    ],
-    "correctAnswer": "Sistema Óseo o Esqueleto",
-    "explain": "El conjunto de todos los huesos se llama Sistema Óseo."
-  },
-  {
-    "id": "sci_17",
-    "subject": "science",
-    "station": "Articulaciones",
-    "type": "multiple",
-    "context": "María intentó doblar su brazo al revés pero no pudo.",
-    "prompt": "¿Por qué el codo solo se dobla hacia un lado?",
-    "options": [
-      "Porque no tiene huesos",
-      "Porque la articulación del codo es como una bisagra que limita el movimiento",
-      "Porque los músculos están dormidos"
-    ],
-    "correctAnswer": "Porque la articulación del codo es como una bisagra que limita el movimiento",
-    "explain": "Algunas articulaciones, como el codo y la rodilla, funcionan como bisagras que solo abren y cierran en una dirección."
-  },
-  {
-    "id": "sci_18",
-    "subject": "science",
-    "station": "Músculos",
-    "type": "open",
-    "context": "Después de hacer mucho ejercicio en clase de educación física, los niños sintieron dolor en las piernas.",
-    "prompt": "¿Qué deben hacer para que sus músculos se recuperen?",
-    "explain": "Deben descansar, tomar mucha agua, estirar suavemente y comer alimentos nutritivos."
-  },
-  {
-    "id": "sci_19",
-    "subject": "science",
-    "station": "Anatomía",
+    "station": "Locomoción",
     "type": "match",
-    "context": null,
-    "prompt": "Une el hueso con la parte del cuerpo donde se encuentra.",
+    "context": "Une el músculo con su comportamiento.",
+    "prompt": "Relaciona el tipo de músculo con cómo se mueve:",
     "pairs": [
       {
-        "id": "h1",
-        "left": "Cráneo",
-        "right": "Cabeza"
+        "id": "p7_1",
+        "left": "Músculo Esquelético",
+        "right": "Voluntario (tú lo controlas)"
       },
       {
-        "id": "h2",
-        "left": "Costillas",
-        "right": "Pecho/Tórax"
+        "id": "p7_2",
+        "left": "Músculo Cardíaco",
+        "right": "Involuntario (late solo)"
       },
       {
-        "id": "h3",
-        "left": "Fémur",
-        "right": "Pierna"
+        "id": "p7_3",
+        "left": "Músculo Liso",
+        "right": "Involuntario (mueve los órganos solos)"
       }
     ],
-    "explain": "El cráneo está en la cabeza, las costillas en el pecho, y el fémur es el hueso largo de la pierna."
+    "explain": "Solo podemos controlar a voluntad los músculos esqueléticos."
   },
   {
-    "id": "sci_20",
+    "id": "loc_8",
     "subject": "science",
-    "station": "Músculos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Para que un hueso se mueva, un músculo tiene que jalarlo.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Exacto! Los músculos tiran de los huesos para moverlos, pero nunca los empujan."
-  },
-  {
-    "id": "sci_add_1",
-    "subject": "science",
-    "station": "Huesos",
+    "station": "Locomoción",
     "type": "multiple",
-    "context": "El cráneo es como un rompecabezas formado por varios huesos que se unen fuertemente para proteger nuestro cerebro.",
-    "prompt": "¿Cuáles de los siguientes son huesos que forman el cráneo?",
+    "context": "Cuando pateas un balón o levantas la mano para participar en clase.",
+    "prompt": "¿Qué músculo estás utilizando?",
     "options": [
-      "Temporal, occipital, parietal, frontal y esfenoides.",
-      "Fémur, tibia, peroné y húmero.",
-      "Costillas, esternón, vértebras y clavícula."
+      "Músculo Esquelético",
+      "Músculo Cardíaco",
+      "Músculo Liso"
     ],
-    "correctAnswer": "Temporal, occipital, parietal, frontal y esfenoides.",
-    "explain": "¡Muy bien! Estos huesos tienen nombres especiales y juntos forman la resistente bóveda de la cabeza."
+    "correctAnswer": "Músculo Esquelético",
+    "explain": "Los usamos para movimientos voluntarios."
   },
   {
-    "id": "sci_add_2",
+    "id": "loc_9",
     "subject": "science",
-    "station": "Huesos",
-    "type": "multiple",
-    "context": "El cuerpo humano tiene huesos de muchos tamaños. ¡Hay uno que es tan pequeño como un granito de arroz y está súper escondido!",
-    "prompt": "¿Cuál es el hueso más pequeño del cuerpo humano y dónde se encuentra?",
-    "options": [
-      "El estribo, que está dentro del oído.",
-      "La falange, que está en la punta del dedo.",
-      "La rótula, que está en la rodilla."
-    ],
-    "correctAnswer": "El estribo, que está dentro del oído.",
-    "explain": "¡Correcto! El estribo está en el oído medio y ayuda a que podamos escuchar los sonidos. Mide solo unos 3 milímetros."
-  },
-  {
-    "id": "sci_add_3",
-    "subject": "science",
-    "station": "Cartílagos",
-    "type": "multiple",
-    "context": "Tócate la punta de la nariz o la parte de arriba de tu oreja. Verás que son flexibles y se pueden doblar un poco, no son tan duros como el hueso de tu brazo.",
-    "prompt": "¿Qué nombre recibe este material flexible del que están hechas la nariz y las orejas?",
-    "options": [
-      "Cartílago",
-      "Hueso blando",
-      "Músculo elástico"
-    ],
-    "correctAnswer": "Cartílago",
-    "explain": "El cartílago es un tejido muy resistente pero flexible. También está en nuestras articulaciones para que los huesos no raspen entre sí."
-  },
-  {
-    "id": "sci_add_4",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "true_false",
-    "context": "Cuando nacemos somos muy pequeñitos, pero tenemos muchísimos huesos (cerca de 300).",
-    "prompt": "A medida que crecemos para ser adultos, algunos huesos se unen, por lo que un adulto termina teniendo menos huesos (solo 206).",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Los bebés tienen muchos huesitos separados por cartílago que luego se fusionan (se pegan) mientras crecemos."
-  },
-  {
-    "id": "sci_add_5",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "multiple",
-    "context": "En nuestra pierna, debajo de la rodilla, tenemos dos huesos largos que trabajan en equipo.",
-    "prompt": "¿Cómo se llaman estos dos huesos y cómo están ubicados?",
-    "options": [
-      "La tibia es el hueso interno (la canilla) y el peroné es el externo.",
-      "El fémur es el hueso interno y el radio es el externo.",
-      "El húmero es el hueso interno y la costilla es el externo."
-    ],
-    "correctAnswer": "La tibia es el hueso interno (la canilla) y el peroné es el externo.",
-    "explain": "¡Muy bien! La tibia es el hueso más grueso que puedes sentir en la parte de adelante de tu pierna (canilla)."
-  },
-  {
-    "id": "sci_add_6",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "multiple",
-    "context": "En nuestro antebrazo, entre el codo y la muñeca, también tenemos dos huesos que nos permiten girar la mano.",
-    "prompt": "¿Cómo podemos saber cuál es el radio y cuál es el cúbito (o ulna)?",
-    "options": [
-      "El radio está del lado del dedo pulgar y el cúbito está del lado del dedo meñique.",
-      "El radio está cerca del hombro y el cúbito está en la espalda.",
-      "El radio es el hueso más pequeño del pie y el cúbito es el más grande."
-    ],
-    "correctAnswer": "El radio está del lado del dedo pulgar y el cúbito está del lado del dedo meñique.",
-    "explain": "¡Exacto! Un truco muy divertido para recordarlo es imaginar que tu dedo pulgar es la 'antena' de un radio."
-  },
-  {
-    "id": "sci_21",
-    "subject": "science",
-    "station": "Músculos",
+    "station": "Locomoción",
     "type": "label",
-    "context": "El entrenador de atletismo le mostró a Susana un dibujo para explicarle qué músculos usa al correr.",
-    "prompt": "Etiqueta los músculos en el dibujo.",
-    "svg": "<svg viewBox=\"0 0 200 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"background:#fff; border-radius:10px; max-height:400px; display:block; margin:auto;\">\n      <!-- Runner Profile -->\n      <!-- Head -->\n      <circle cx=\"120\" cy=\"40\" r=\"20\" fill=\"#f5cba7\"/>\n      <path d=\"M 110 20 C 130 10, 150 30, 130 50 Z\" fill=\"#2c3e50\"/>\n\n      <!-- Torso (Showing abs area) -->\n      <path d=\"M 110 60 C 130 60, 140 100, 130 130 C 100 130, 90 100, 100 60 Z\" fill=\"#f5cba7\"/>\n      <!-- Abs details -->\n      <rect x=\"110\" y=\"80\" width=\"12\" height=\"8\" rx=\"2\" fill=\"#e67e22\" opacity=\"0.5\"/>\n      <rect x=\"110\" y=\"90\" width=\"12\" height=\"8\" rx=\"2\" fill=\"#e67e22\" opacity=\"0.5\"/>\n      <rect x=\"110\" y=\"100\" width=\"12\" height=\"8\" rx=\"2\" fill=\"#e67e22\" opacity=\"0.5\"/>\n      <rect x=\"110\" y=\"110\" width=\"12\" height=\"8\" rx=\"2\" fill=\"#e67e22\" opacity=\"0.5\"/>\n\n      <!-- Left Arm (Front) showing biceps -->\n      <path d=\"M 105 65 C 100 90, 80 110, 80 110 L 65 95 C 80 80, 85 70, 105 65\" fill=\"#e67e22\"/>\n      <!-- Biceps highlight -->\n      <path d=\"M 85 75 C 95 85, 100 100, 90 105 Z\" fill=\"#d35400\"/>\n      <!-- Lower arm -->\n      <line x1=\"72\" y1=\"102\" x2=\"60\" y2=\"70\" stroke=\"#f5cba7\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n      <circle cx=\"58\" cy=\"65\" r=\"8\" fill=\"#f5cba7\"/>\n      \n      <!-- Right Arm (Back) -->\n      <line x1=\"125\" y1=\"65\" x2=\"150\" y2=\"100\" stroke=\"#e67e22\" stroke-width=\"14\" stroke-linecap=\"round\"/>\n      <line x1=\"150\" y1=\"100\" x2=\"160\" y2=\"130\" stroke=\"#f5cba7\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n      \n      <!-- Shorts -->\n      <path d=\"M 100 120 C 130 120, 140 140, 130 160 L 95 160 Z\" fill=\"#34495e\"/>\n      \n      <!-- Right Leg (Back) -->\n      <line x1=\"110\" y1=\"150\" x2=\"80\" y2=\"200\" stroke=\"#e67e22\" stroke-width=\"16\" stroke-linecap=\"round\"/>\n      <line x1=\"80\" y1=\"200\" x2=\"110\" y2=\"240\" stroke=\"#f5cba7\" stroke-width=\"14\" stroke-linecap=\"round\"/>\n      \n      <!-- Left Leg (Front) showing calf (gemelo) -->\n      <line x1=\"120\" y1=\"150\" x2=\"145\" y2=\"200\" stroke=\"#e67e22\" stroke-width=\"18\" stroke-linecap=\"round\"/>\n      <path d=\"M 135 200 C 120 220, 120 250, 135 270 L 150 270 C 160 250, 160 220, 150 200 Z\" fill=\"#f5cba7\"/>\n      <path d=\"M 140 210 C 130 230, 130 240, 145 250 Z\" fill=\"#d35400\"/>\n      <path d=\"M 135 270 L 160 270 L 165 285 L 130 285 Z\" fill=\"#e74c3c\"/>\n\n      <!-- Pointers -->\n      <!-- Bíceps -->\n      <circle cx=\"90\" cy=\"90\" r=\"4\" fill=\"#e74c3c\"/>\n      <line x1=\"90\" y1=\"90\" x2=\"40\" y2=\"90\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n      \n      <!-- Abdominal -->\n      <circle cx=\"115\" cy=\"100\" r=\"4\" fill=\"#e74c3c\"/>\n      <line x1=\"115\" y1=\"100\" x2=\"175\" y2=\"100\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n      \n      <!-- Gemelo -->\n      <circle cx=\"135\" cy=\"230\" r=\"4\" fill=\"#e74c3c\"/>\n      <line x1=\"135\" y1=\"230\" x2=\"70\" y2=\"230\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n    </svg>",
+    "context": "Este órgano late muchas veces por minuto.",
+    "prompt": "Identifica el órgano hecho de músculo cardíaco",
+    "svg": "<svg viewBox=\"0 0 100 100\"><path d=\"M50,30 A20,20 0 0,0 10,50 C10,70 50,90 50,90 C50,90 90,70 90,50 A20,20 0 0,0 50,30 Z\" fill=\"red\"/></svg>",
     "labels": [
       {
-        "word": "Bíceps",
-        "x": 20,
-        "y": 30
-      },
-      {
-        "word": "Abdominal",
-        "x": 87.5,
-        "y": 33.3
-      },
-      {
-        "word": "Gemelo",
-        "x": 35,
-        "y": 76.6
+        "id": "l9_1",
+        "x": 50,
+        "y": 60,
+        "text": "Corazón"
       }
     ],
-    "explain": "El bíceps está en el brazo, los abdominales en el vientre y los gemelos en la parte baja de la pierna."
+    "explain": "El corazón es de puro músculo cardíaco."
   },
   {
-    "id": "sci_22",
+    "id": "loc_10",
     "subject": "science",
-    "station": "Articulaciones",
-    "type": "true_false",
-    "context": null,
-    "prompt": "La rodilla es una articulación fija que no se puede mover.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "La rodilla es una articulación móvil muy importante para caminar y saltar."
-  },
-  {
-    "id": "sci_23",
-    "subject": "science",
-    "station": "Huesos",
+    "station": "Locomoción",
     "type": "multiple",
-    "context": "El doctor le tomó una radiografía a Lucas porque se lastimó jugando.",
-    "prompt": "¿De qué color se ven los huesos en una radiografía?",
+    "context": "Un grupo de científicos en Bogotá estudia los músculos.",
+    "prompt": "El cuerpo humano realiza funciones vitales y se mueve, ¿a través de qué acción muscular?",
     "options": [
-      "Negros",
-      "Blancos",
-      "Rojos"
+      "La contracción",
+      "La evaporación",
+      "La respiración"
     ],
-    "correctAnswer": "Blancos",
-    "explain": "En las radiografías, los materiales densos como los huesos bloquean los rayos y se ven de color blanco."
+    "correctAnswer": "La contracción",
+    "explain": "Los músculos se contraen y se relajan para tirar de los huesos y generar movimiento."
   },
   {
-    "id": "sci_24",
+    "id": "loc_11",
     "subject": "science",
-    "station": "Músculos",
+    "station": "Locomoción",
+    "type": "multiple",
+    "context": "Si queremos escribir con un lápiz, usamos nuestras manos.",
+    "prompt": "¿Qué músculos se encuentran en los brazos y las manos?",
+    "options": [
+      "Esqueléticos",
+      "Lisos",
+      "Cardíacos"
+    ],
+    "correctAnswer": "Esqueléticos",
+    "explain": "Recubren los huesos de nuestro esqueleto."
+  },
+  {
+    "id": "loc_12",
+    "subject": "science",
+    "station": "Locomoción",
     "type": "match",
-    "context": null,
-    "prompt": "Relaciona el músculo con su ubicación.",
+    "context": "Relaciona para qué nos sirven estos músculos.",
+    "prompt": "Une el músculo con su función:",
     "pairs": [
       {
-        "id": "m3",
-        "left": "Pectorales",
-        "right": "Pecho"
+        "id": "p12_1",
+        "left": "Músculo cardíaco",
+        "right": "Bombear la sangre por el cuerpo"
       },
       {
-        "id": "m4",
-        "left": "Glúteos",
-        "right": "Parte trasera / Cola"
+        "id": "p12_2",
+        "left": "Músculo esquelético",
+        "right": "Permitir caminar, saltar y correr"
       },
       {
-        "id": "m5",
-        "left": "Bíceps",
-        "right": "Brazo"
+        "id": "p12_3",
+        "left": "Músculo liso",
+        "right": "Mover los alimentos en el estómago"
       }
     ],
-    "explain": "Los pectorales están en el pecho, los glúteos atrás, y los bíceps en los brazos."
+    "explain": "Todos son vitales, pero hacen trabajos distintos."
   },
   {
-    "id": "sci_25",
+    "id": "loc_13",
     "subject": "science",
-    "station": "Huesos",
-    "type": "open",
-    "context": "Un bebé recién nacido parece muy blandito.",
-    "prompt": "¿Crees que los bebés tienen más o menos huesos que los adultos? ¿Por qué?",
-    "explain": "Los bebés tienen más piezas óseas (alrededor de 300) que se van fusionando a medida que crecen, hasta llegar a 206 en un adulto."
-  },
-  {
-    "id": "sci_26",
-    "subject": "science",
-    "station": "Anatomía",
-    "type": "true_false",
-    "context": null,
-    "prompt": "El calcio hace que nuestros huesos sean débiles y se rompan fácil.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "Al contrario, el calcio es el mineral que hace a los huesos duros y resistentes."
-  },
-  {
-    "id": "sci_27",
-    "subject": "science",
-    "station": "Músculos",
+    "station": "Locomoción",
     "type": "multiple",
-    "context": "Cuando hacemos ejercicio sudamos y nuestro corazón late rápido.",
-    "prompt": "¿El corazón es un hueso o un músculo?",
+    "context": "Sin los músculos, nuestro cuerpo no podría moverse, aunque tuviéramos huesos.",
+    "prompt": "¿Qué sistema forma el conjunto de todos nuestros músculos?",
     "options": [
-      "Es un hueso",
-      "Es un músculo",
-      "Es una articulación"
-    ],
-    "correctAnswer": "Es un músculo",
-    "explain": "El corazón es un músculo muy especial que late sin parar para bombear sangre."
-  },
-  {
-    "id": "sci_28",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "multiple",
-    "context": null,
-    "prompt": "¿Qué parte del esqueleto protege la médula espinal (los nervios de la espalda)?",
-    "options": [
-      "El cráneo",
-      "La columna vertebral",
-      "Las costillas"
-    ],
-    "correctAnswer": "La columna vertebral",
-    "explain": "La columna vertebral es una torre de huesitos que protege la médula espinal y nos permite mantenernos derechos."
-  },
-  {
-    "id": "sci_29",
-    "subject": "science",
-    "station": "Cuidado",
-    "type": "true_false",
-    "context": "Juan se sienta encorvado frente a la computadora todo el día.",
-    "prompt": "Tener una mala postura al sentarse puede lastimar la columna vertebral.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "Es importante sentarse derecho para que nuestra columna no se deforme ni nos duela la espalda."
-  },
-  {
-    "id": "sci_30",
-    "subject": "science",
-    "station": "Articulaciones",
-    "type": "match",
-    "context": null,
-    "prompt": "Une cada parte del cuerpo con el tipo de articulación que tiene.",
-    "pairs": [
-      {
-        "id": "a1",
-        "left": "Hombro",
-        "right": "Móvil (mucho movimiento)"
-      },
-      {
-        "id": "a2",
-        "left": "Cráneo",
-        "right": "Fija (ningún movimiento)"
-      },
-      {
-        "id": "a3",
-        "left": "Columna",
-        "right": "Semimóvil (poco movimiento)"
-      }
-    ],
-    "explain": "El hombro puede girar mucho, la columna se dobla un poco, y el cráneo no se mueve."
-  },
-  {
-    "id": "sci_31",
-    "subject": "science",
-    "station": "Músculos",
-    "type": "open",
-    "context": "Si cierras los ojos muy fuerte y luego sonríes...",
-    "prompt": "¿Qué órganos estás usando en tu cara para hacer estas expresiones?",
-    "explain": "Estás usando los músculos de la cara (músculos faciales), que nos permiten hacer toda clase de gestos."
-  },
-  {
-    "id": "sci_32",
-    "subject": "science",
-    "station": "Huesos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Los huesos están vivos, crecen y pueden sanar si se rompen.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "Aunque parecen piedras muertas, los huesos están vivos: reciben sangre, crecen y pueden soldarse si se fracturan."
-  },
-  {
-    "id": "sci_33",
-    "subject": "science",
-    "station": "Anatomía",
-    "type": "multiple",
-    "context": "Para saltar la cuerda, usamos casi todo nuestro cuerpo.",
-    "prompt": "¿Qué sistema trabaja en equipo con los huesos y articulaciones para poder saltar?",
-    "options": [
-      "El sistema digestivo",
       "El sistema muscular",
-      "El sistema respiratorio"
+      "El sistema digestivo",
+      "El sistema nervioso"
     ],
     "correctAnswer": "El sistema muscular",
-    "explain": "El sistema muscular y el sistema óseo (huesos y articulaciones) trabajan juntos como el sistema locomotor."
+    "explain": "El sistema muscular, junto con el esqueleto, forma nuestro sistema locomotor."
   },
   {
-    "id": "sci_34",
+    "id": "loc_14",
     "subject": "science",
-    "station": "Músculos",
-    "type": "true_false",
-    "context": "El estómago se mueve para mezclar la comida que tragamos.",
-    "prompt": "El estómago hace movimientos voluntarios que nosotros controlamos.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "Los movimientos del estómago son involuntarios, nuestro cerebro los controla sin que nos demos cuenta."
-  },
-  {
-    "id": "sci_35",
-    "subject": "science",
-    "station": "Huesos",
+    "station": "Locomoción",
     "type": "multiple",
-    "context": null,
-    "prompt": "¿Cuál es el hueso más largo del cuerpo humano?",
+    "context": "Cuando sonreímos usamos músculos en nuestra cara.",
+    "prompt": "¿Estos músculos de la cara son voluntarios o involuntarios?",
     "options": [
-      "El húmero (brazo)",
-      "El fémur (pierna)",
-      "La clavícula (hombro)"
+      "Voluntarios (esqueléticos)",
+      "Involuntarios (lisos)",
+      "Involuntarios (cardíacos)"
     ],
-    "correctAnswer": "El fémur (pierna)",
-    "explain": "El fémur es el hueso del muslo y es el más largo y fuerte de todo el cuerpo."
+    "correctAnswer": "Voluntarios (esqueléticos)",
+    "explain": "Podemos decidir cuándo sonreír."
   },
   {
-    "id": "sci_36",
+    "id": "loc_15",
     "subject": "science",
-    "station": "Articulaciones",
+    "station": "Locomoción",
     "type": "label",
-    "context": "Dibuja un círculo imaginario con tu brazo.",
-    "prompt": "Etiqueta las articulaciones en el brazo.",
-    "svg": "<svg viewBox=\"0 0 200 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"background:#fff; border-radius:10px; max-height:400px; display:block; margin:auto;\">\n      <!-- Shoulder base -->\n      <circle cx=\"50\" cy=\"50\" r=\"25\" fill=\"#f5cba7\" />\n      \n      <!-- Upper arm -->\n      <path d=\"M 35 65 L 110 160 C 130 180, 150 160, 140 140 L 70 40 Z\" fill=\"#f5cba7\"/>\n      \n      <!-- Lower arm -->\n      <path d=\"M 115 145 L 60 260 C 50 270, 30 260, 40 240 L 135 135 Z\" fill=\"#f5cba7\"/>\n      \n      <!-- Hand -->\n      <path d=\"M 45 250 L 30 280 Q 20 290 35 295 Q 50 290 55 260 Z\" fill=\"#f5cba7\"/>\n      \n      <!-- Joint Highlights -->\n      <circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"#e74c3c\"/>\n      <circle cx=\"125\" cy=\"150\" r=\"10\" fill=\"#e74c3c\"/>\n      <circle cx=\"48\" cy=\"250\" r=\"8\" fill=\"#e74c3c\"/>\n\n      <!-- Pointers -->\n      <!-- Hombro -->\n      <line x1=\"50\" y1=\"50\" x2=\"120\" y2=\"40\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n      <!-- Codo -->\n      <line x1=\"125\" y1=\"150\" x2=\"175\" y2=\"150\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n      <!-- Muñeca -->\n      <line x1=\"48\" y1=\"250\" x2=\"130\" y2=\"250\" stroke=\"#e74c3c\" stroke-width=\"2\" stroke-dasharray=\"4\"/>\n    </svg>",
+    "context": "Los órganos del sistema digestivo.",
+    "prompt": "Identifica el lugar donde se halla el músculo liso",
+    "svg": "<svg viewBox=\"0 0 100 100\"><path d=\"M30,30 Q60,10 70,50 Q80,80 40,70\" fill=\"#FFA07A\" stroke=\"#FF8C00\"/></svg>",
     "labels": [
       {
-        "word": "Hombro",
-        "x": 60,
-        "y": 13.3
-      },
-      {
-        "word": "Codo",
-        "x": 87.5,
-        "y": 50
-      },
-      {
-        "word": "Muñeca",
-        "x": 65,
-        "y": 83.3
+        "id": "l15_1",
+        "x": 55,
+        "y": 50,
+        "text": "Estómago/Intestinos"
       }
     ],
-    "explain": "El hombro une el brazo al cuerpo, el codo está en medio, y la muñeca une la mano."
+    "explain": "Estos órganos internos tienen músculo liso."
   },
   {
-    "id": "sci_37",
+    "id": "loc_16",
     "subject": "science",
-    "station": "Músculos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "El cuerpo humano tiene más de 600 músculos.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Sí! Tenemos muchísimos músculos, desde los grandes en las piernas hasta los pequeñitos en los ojos."
-  },
-  {
-    "id": "sci_38",
-    "subject": "science",
-    "station": "Cuidado",
-    "type": "multiple",
-    "context": "Para evitar lastimar tus huesos al andar en bicicleta o patines...",
-    "prompt": "¿Qué elemento de protección debes usar siempre?",
-    "options": [
-      "Una bufanda",
-      "Un casco y rodilleras",
-      "Gafas de sol"
-    ],
-    "correctAnswer": "Un casco y rodilleras",
-    "explain": "El casco protege los huesos del cráneo, y las rodilleras protegen las articulaciones de las rodillas."
-  },
-  {
-    "id": "sci_39",
-    "subject": "science",
-    "station": "Músculos",
-    "type": "open",
-    "context": "Cuando te ríes mucho, a veces te duele el estómago.",
-    "prompt": "¿Por qué crees que te duele el estómago de tanto reír?",
-    "explain": "Porque al reír usas fuertemente los músculos abdominales. Si te ríes mucho, esos músculos hacen mucho ejercicio y se cansan."
-  },
-  {
-    "id": "sci_40",
-    "subject": "science",
-    "station": "Huesos",
+    "station": "Locomoción",
     "type": "match",
-    "context": null,
-    "prompt": "Une cada acción con el sistema que más la realiza.",
+    "context": "Identifica qué puedes controlar y qué no.",
+    "prompt": "Une la acción con el tipo de control muscular:",
     "pairs": [
       {
-        "id": "s1",
-        "left": "Proteger el cerebro",
-        "right": "Sistema Óseo (Cráneo)"
+        "id": "p16_1",
+        "left": "Latido del corazón",
+        "right": "No lo controlo"
       },
       {
-        "id": "s2",
-        "left": "Masticar comida",
-        "right": "Sistema Muscular (Músculos de la cara)"
+        "id": "p16_2",
+        "left": "Correr en el parque",
+        "right": "Sí lo controlo"
       },
       {
-        "id": "s3",
-        "left": "Doblar la pierna",
-        "right": "Articulaciones (Rodilla)"
+        "id": "p16_3",
+        "left": "Digerir el almuerzo",
+        "right": "No lo controlo"
       }
     ],
-    "explain": "Huesos para proteger, músculos para mover, articulaciones para doblar."
+    "explain": "Esquelético es controlado, cardíaco y liso son independientes."
+  },
+  {
+    "id": "loc_17",
+    "subject": "science",
+    "station": "Locomoción",
+    "type": "multiple",
+    "context": "Los músculos esqueléticos se unen a algo para poder mover nuestro cuerpo.",
+    "prompt": "¿A qué se unen los músculos esqueléticos?",
+    "options": [
+      "A los huesos",
+      "Al corazón",
+      "Al estómago"
+    ],
+    "correctAnswer": "A los huesos",
+    "explain": "Se unen a los huesos mediante tendones."
+  },
+  {
+    "id": "loc_18",
+    "subject": "science",
+    "station": "Locomoción",
+    "type": "multiple",
+    "context": "Si los músculos no existieran en nuestro cuerpo...",
+    "prompt": "¿Podríamos estar de pie?",
+    "options": [
+      "No, seríamos como gelatina sobre los huesos",
+      "Sí, los huesos se mueven solos",
+      "Sí, la piel nos sostendría"
+    ],
+    "correctAnswer": "No, seríamos como gelatina sobre los huesos",
+    "explain": "Los músculos y huesos trabajan juntos para darnos soporte y movimiento."
+  },
+  {
+    "id": "loc_19",
+    "subject": "science",
+    "station": "Locomoción",
+    "type": "match",
+    "context": "Anita organizó sus apuntes de los músculos.",
+    "prompt": "Ayuda a Anita emparejando la palabra clave con su definición:",
+    "pairs": [
+      {
+        "id": "p19_1",
+        "left": "Músculo",
+        "right": "Órgano que se contrae para generar movimiento"
+      },
+      {
+        "id": "p19_2",
+        "left": "Contracción",
+        "right": "Acción de apretarse o acortarse de un músculo"
+      },
+      {
+        "id": "p19_3",
+        "left": "Esqueleto",
+        "right": "Conjunto de huesos al que se unen los músculos"
+      }
+    ],
+    "explain": "Los músculos, al contraerse, mueven nuestro esqueleto."
+  },
+  {
+    "id": "loc_20",
+    "subject": "science",
+    "station": "Locomoción",
+    "type": "multiple",
+    "context": "¿Cuál es una excelente forma de mantener nuestros músculos sanos?",
+    "prompt": "Selecciona la mejor opción:",
+    "options": [
+      "Hacer ejercicio y comer saludable",
+      "Estar sentado todo el día viendo TV",
+      "Comer solo dulces"
+    ],
+    "correctAnswer": "Hacer ejercicio y comer saludable",
+    "explain": "El ejercicio fortalece nuestros músculos."
+  },
+  {
+    "id": "luz_1",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "La luz es una manifestación de la energía que nos permite observar los objetos.",
+    "prompt": "¿Qué nos permite diferenciar la luz en los objetos?",
+    "options": [
+      "Su tamaño, color, apariencia y forma",
+      "Su olor y sabor",
+      "Su peso y textura"
+    ],
+    "correctAnswer": "Su tamaño, color, apariencia y forma",
+    "explain": "La luz nos permite ver todas estas características visuales."
+  },
+  {
+    "id": "luz_2",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "match",
+    "context": "Los objetos interactúan de diferentes maneras con la luz.",
+    "prompt": "Relaciona el tipo de cuerpo con cómo deja pasar la luz:",
+    "pairs": [
+      {
+        "id": "p2_1",
+        "left": "Cuerpos transparentes",
+        "right": "Dejan pasar toda la luz que les llega."
+      },
+      {
+        "id": "p2_2",
+        "left": "Cuerpos opacos",
+        "right": "No dejan pasar la luz que les llega."
+      },
+      {
+        "id": "p2_3",
+        "left": "Cuerpos luminosos",
+        "right": "Desprenden luz o son fuente de luz."
+      }
+    ],
+    "explain": "Dependiendo del material, los objetos pueden ser transparentes, translúcidos, opacos o luminosos."
+  },
+  {
+    "id": "luz_3",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "Existen diferentes fuentes de luz, algunas son naturales y otras creadas por el hombre.",
+    "prompt": "¿Cuál de los siguientes es un ejemplo de un cuerpo luminoso natural?",
+    "options": [
+      "El Sol",
+      "Una linterna",
+      "Una vela encendida"
+    ],
+    "correctAnswer": "El Sol",
+    "explain": "El Sol emite luz natural, mientras que la linterna y la vela son artificiales."
+  },
+  {
+    "id": "luz_4",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "label",
+    "context": "Las fuentes de luz pueden emitir luz a su alrededor.",
+    "prompt": "Identifica la fuente de luz",
+    "svg": "<svg viewBox=\"0 0 100 100\" width=\"100\" height=\"100\"><circle cx=\"50\" cy=\"50\" r=\"20\" fill=\"#FFD700\"/></svg>",
+    "labels": [
+      {
+        "id": "l4_1",
+        "x": 50,
+        "y": 50,
+        "text": "Fuente Luminosa"
+      }
+    ],
+    "explain": "Un objeto que emite su propia luz es una fuente luminosa."
+  },
+  {
+    "id": "luz_5",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "María quiere comprar una tela para la cortina de su sala y quiere que entre poca luz.",
+    "prompt": "¿Qué tipo de tela debe seleccionar?",
+    "options": [
+      "Tela translúcida",
+      "Tela transparente",
+      "Tela invisible"
+    ],
+    "correctAnswer": "Tela translúcida",
+    "explain": "La tela translúcida permite el paso de poca luz, lo ideal para su necesidad."
+  },
+  {
+    "id": "luz_6",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "María luego decidió comprar una cortina transparente para su cuarto, deseando que entre poca luz.",
+    "prompt": "¿Fue acertada la elección de María?",
+    "options": [
+      "No, porque una cortina transparente deja pasar toda la luz",
+      "Sí, porque es bonita",
+      "No, porque la cortina opaca deja pasar toda la luz"
+    ],
+    "correctAnswer": "No, porque una cortina transparente deja pasar toda la luz",
+    "explain": "Si quería poca luz, la tela transparente fue una mala elección."
+  },
+  {
+    "id": "luz_7",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "match",
+    "context": "Clasifica los siguientes objetos según su interacción con la luz.",
+    "prompt": "Relaciona el objeto con su característica:",
+    "pairs": [
+      {
+        "id": "p7_1",
+        "left": "Linterna",
+        "right": "Cuerpo luminoso"
+      },
+      {
+        "id": "p7_2",
+        "left": "Madera",
+        "right": "Cuerpo opaco"
+      },
+      {
+        "id": "p7_3",
+        "left": "Vidrio limpio",
+        "right": "Cuerpo transparente"
+      }
+    ],
+    "explain": "Cada objeto interactúa diferente con la luz dependiendo de qué esté hecho."
+  },
+  {
+    "id": "luz_8",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "Algunos objetos no desprenden luz propia pero pueden reflejarla.",
+    "prompt": "¿Qué tipo de cuerpos son aquellos que no desprenden luz, pero reflejan la luz que les llega?",
+    "options": [
+      "Cuerpos no luminosos",
+      "Cuerpos artificiales",
+      "Cuerpos translúcidos"
+    ],
+    "correctAnswer": "Cuerpos no luminosos",
+    "explain": "Estos objetos necesitan una fuente de luz para poder ser vistos."
+  },
+  {
+    "id": "luz_9",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "label",
+    "context": "Un objeto opaco bloquea la luz y forma una sombra.",
+    "prompt": "Identifica qué ocurre cuando la luz choca con un objeto opaco",
+    "svg": "<svg viewBox=\"0 0 100 100\"><rect x=\"40\" y=\"20\" width=\"20\" height=\"60\" fill=\"#8B4513\"/><ellipse cx=\"80\" cy=\"80\" rx=\"20\" ry=\"10\" fill=\"gray\"/></svg>",
+    "labels": [
+      {
+        "id": "l9_1",
+        "x": 80,
+        "y": 80,
+        "text": "Sombra"
+      }
+    ],
+    "explain": "La sombra se produce porque el objeto opaco no deja pasar la luz."
+  },
+  {
+    "id": "luz_10",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "Las velas y las linternas son útiles cuando se va la energía eléctrica.",
+    "prompt": "¿Qué tipo de cuerpos son las velas y linternas?",
+    "options": [
+      "Cuerpos luminosos artificiales",
+      "Cuerpos luminosos naturales",
+      "Cuerpos transparentes"
+    ],
+    "correctAnswer": "Cuerpos luminosos artificiales",
+    "explain": "Son creados por el ser humano para emitir luz."
+  },
+  {
+    "id": "luz_11",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "En la noche, podemos ver la luna brillando en el cielo.",
+    "prompt": "¿La luna emite luz propia o refleja la del sol?",
+    "options": [
+      "Refleja la luz del Sol (no luminosa)",
+      "Emite su propia luz (luminosa)",
+      "Es transparente"
+    ],
+    "correctAnswer": "Refleja la luz del Sol (no luminosa)",
+    "explain": "La luna es un cuerpo no luminoso que refleja la luz que le llega del Sol."
+  },
+  {
+    "id": "luz_12",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "match",
+    "context": "Recuerda las propiedades de la luz y los cuerpos.",
+    "prompt": "Une el concepto con su efecto:",
+    "pairs": [
+      {
+        "id": "p12_1",
+        "left": "Cuerpo Opaco",
+        "right": "Crea una sombra oscura"
+      },
+      {
+        "id": "p12_2",
+        "left": "Cuerpo Transparente",
+        "right": "Permite ver claramente a través de él"
+      },
+      {
+        "id": "p12_3",
+        "left": "Cuerpo Translúcido",
+        "right": "Permite ver borroso a través de él"
+      }
+    ],
+    "explain": "Esta es la forma en que los materiales interactúan con la luz."
+  },
+  {
+    "id": "luz_13",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "Mateo quiere leer un libro en su cuarto oscuro.",
+    "prompt": "¿Qué necesita Mateo para poder ver las letras del libro?",
+    "options": [
+      "Una fuente de energía luminosa",
+      "Una fuente de energía sonora",
+      "Un cuerpo opaco"
+    ],
+    "correctAnswer": "Una fuente de energía luminosa",
+    "explain": "La luz nos permite observar los objetos y sus detalles."
+  },
+  {
+    "id": "luz_14",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "Estás haciendo un experimento con papel celofán de colores.",
+    "prompt": "¿Qué tipo de material es el papel celofán?",
+    "options": [
+      "Translúcido",
+      "Opaco",
+      "Luminoso natural"
+    ],
+    "correctAnswer": "Translúcido",
+    "explain": "El celofán deja pasar algo de luz, pero a menudo tiñe o difumina lo que hay detrás."
+  },
+  {
+    "id": "luz_15",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "label",
+    "context": "La luz puede viajar a través de los lentes de tus gafas.",
+    "prompt": "Señala la parte transparente",
+    "svg": "<svg viewBox=\"0 0 100 100\"><circle cx=\"30\" cy=\"50\" r=\"20\" fill=\"#ADD8E6\" opacity=\"0.5\"/><circle cx=\"70\" cy=\"50\" r=\"20\" fill=\"#ADD8E6\" opacity=\"0.5\"/></svg>",
+    "labels": [
+      {
+        "id": "l15_1",
+        "x": 30,
+        "y": 50,
+        "text": "Lente Transparente"
+      }
+    ],
+    "explain": "Los lentes deben ser transparentes para dejar pasar la luz a nuestros ojos."
+  },
+  {
+    "id": "luz_16",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "match",
+    "context": "Asocia cada fuente de luz.",
+    "prompt": "Relaciona la fuente de luz con su tipo:",
+    "pairs": [
+      {
+        "id": "p16_1",
+        "left": "Fuego / Fogata",
+        "right": "Luminoso"
+      },
+      {
+        "id": "p16_2",
+        "left": "Sol",
+        "right": "Luminoso Natural"
+      },
+      {
+        "id": "p16_3",
+        "left": "Bombillo",
+        "right": "Luminoso Artificial"
+      }
+    ],
+    "explain": "El fuego y el sol son ejemplos naturales (o creados químicamente), el bombillo es artificial."
+  },
+  {
+    "id": "luz_17",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "Si te pones frente a un espejo, puedes ver tu reflejo.",
+    "prompt": "¿Qué hace el espejo con la luz?",
+    "options": [
+      "La refleja",
+      "La absorbe toda",
+      "Produce su propia luz"
+    ],
+    "correctAnswer": "La refleja",
+    "explain": "El espejo es un cuerpo no luminoso que refleja casi toda la luz que le llega."
+  },
+  {
+    "id": "luz_18",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "En un día nublado, las nubes tapan el sol pero aún hay claridad.",
+    "prompt": "¿Qué tipo de cuerpo actúan las nubes en este caso?",
+    "options": [
+      "Cuerpos translúcidos",
+      "Cuerpos transparentes",
+      "Cuerpos luminosos"
+    ],
+    "correctAnswer": "Cuerpos translúcidos",
+    "explain": "Las nubes dejan pasar parte de la luz del Sol, por lo que son translúcidas."
+  },
+  {
+    "id": "luz_19",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "match",
+    "context": "Repaso final de materiales.",
+    "prompt": "Relaciona el material con su comportamiento con la luz:",
+    "pairs": [
+      {
+        "id": "p19_1",
+        "left": "Agua limpia",
+        "right": "Transparente"
+      },
+      {
+        "id": "p19_2",
+        "left": "Pared de ladrillo",
+        "right": "Opaco"
+      },
+      {
+        "id": "p19_3",
+        "left": "Papel mantequilla",
+        "right": "Translúcido"
+      }
+    ],
+    "explain": "Diferentes materiales, diferentes interacciones con la luz."
+  },
+  {
+    "id": "luz_20",
+    "subject": "science",
+    "station": "La Luz",
+    "type": "multiple",
+    "context": "La luz es vital para nosotros.",
+    "prompt": "La luz es una manifestación de la...",
+    "options": [
+      "Energía",
+      "Materia",
+      "Fuerza magnética"
+    ],
+    "correctAnswer": "Energía",
+    "explain": "La luz es una manifestación de la energía que nos permite observar."
+  },
+  {
+    "id": "sis_1",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "El cuerpo humano está conformado por un conjunto de sistemas que permiten llevar a cabo funciones vitales.",
+    "prompt": "¿Qué conforman las células especializadas que se agrupan?",
+    "options": [
+      "Los tejidos",
+      "Los huesos",
+      "La piel únicamente"
+    ],
+    "correctAnswer": "Los tejidos",
+    "explain": "Las células iguales se juntan para formar los tejidos."
+  },
+  {
+    "id": "sis_2",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "match",
+    "context": "Existen niveles de organización en el cuerpo humano.",
+    "prompt": "Relaciona el nivel de organización del más pequeño al más grande:",
+    "pairs": [
+      {
+        "id": "p2_1",
+        "left": "Nivel 1 (Más pequeño)",
+        "right": "Célula"
+      },
+      {
+        "id": "p2_2",
+        "left": "Nivel 3",
+        "right": "Órgano"
+      },
+      {
+        "id": "p2_3",
+        "left": "Nivel 4",
+        "right": "Sistema"
+      }
+    ],
+    "explain": "Célula -> Tejido -> Órgano -> Sistema."
+  },
+  {
+    "id": "sis_3",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Varios órganos trabajando juntos forman un nivel superior.",
+    "prompt": "¿Qué se forma cuando varios órganos trabajan juntos para una función común?",
+    "options": [
+      "Un Sistema",
+      "Una Célula",
+      "Un Tejido"
+    ],
+    "correctAnswer": "Un Sistema",
+    "explain": "Por ejemplo, el estómago y los intestinos forman el Sistema Digestivo."
+  },
+  {
+    "id": "sis_4",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "label",
+    "context": "El corazón es un órgano muy importante.",
+    "prompt": "Identifica si es un órgano o un sistema",
+    "svg": "<svg viewBox=\"0 0 100 100\"><path d=\"M50,30 A20,20 0 0,0 10,50 C10,70 50,90 50,90 C50,90 90,70 90,50 A20,20 0 0,0 50,30 Z\" fill=\"red\"/></svg>",
+    "labels": [
+      {
+        "id": "l4_1",
+        "x": 50,
+        "y": 60,
+        "text": "Órgano"
+      }
+    ],
+    "explain": "El corazón es un órgano del sistema circulatorio."
+  },
+  {
+    "id": "sis_5",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Respiramos aire para obtener oxígeno.",
+    "prompt": "¿A qué sistema pertenecen los pulmones?",
+    "options": [
+      "Sistema Respiratorio",
+      "Sistema Digestivo",
+      "Sistema Óseo"
+    ],
+    "correctAnswer": "Sistema Respiratorio",
+    "explain": "Los pulmones son los órganos principales del sistema respiratorio."
+  },
+  {
+    "id": "sis_6",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "El sistema digestivo transforma los alimentos que comemos.",
+    "prompt": "¿Cuál de estos órganos pertenece al sistema digestivo?",
+    "options": [
+      "El estómago",
+      "Los pulmones",
+      "El cerebro"
+    ],
+    "correctAnswer": "El estómago",
+    "explain": "El estómago digiere los alimentos que consumimos."
+  },
+  {
+    "id": "sis_7",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "match",
+    "context": "Une cada órgano con el sistema al que pertenece.",
+    "prompt": "Relaciona el órgano con su sistema:",
+    "pairs": [
+      {
+        "id": "p7_1",
+        "left": "Pulmones",
+        "right": "Sistema Respiratorio"
+      },
+      {
+        "id": "p7_2",
+        "left": "Estómago",
+        "right": "Sistema Digestivo"
+      },
+      {
+        "id": "p7_3",
+        "left": "Esqueleto humano",
+        "right": "Sistema Óseo"
+      }
+    ],
+    "explain": "Cada órgano es parte de un sistema mayor."
+  },
+  {
+    "id": "sis_8",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Al masticar una manzana, empieza un proceso en nuestro cuerpo.",
+    "prompt": "¿Qué función cumple el sistema digestivo?",
+    "options": [
+      "Procesar los alimentos para obtener nutrientes",
+      "Tomar el oxígeno del aire",
+      "Bombear sangre"
+    ],
+    "correctAnswer": "Procesar los alimentos para obtener nutrientes",
+    "explain": "Tritura y deshace los alimentos para que el cuerpo los aproveche."
+  },
+  {
+    "id": "sis_9",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "label",
+    "context": "Cuando tomamos aire, este entra a nuestro cuerpo.",
+    "prompt": "Identifica los órganos principales de la respiración",
+    "svg": "<svg viewBox=\"0 0 100 100\"><ellipse cx=\"35\" cy=\"50\" rx=\"15\" ry=\"25\" fill=\"pink\"/><ellipse cx=\"65\" cy=\"50\" rx=\"15\" ry=\"25\" fill=\"pink\"/></svg>",
+    "labels": [
+      {
+        "id": "l9_1",
+        "x": 50,
+        "y": 50,
+        "text": "Pulmones"
+      }
+    ],
+    "explain": "Los pulmones se llenan de aire cuando respiras."
+  },
+  {
+    "id": "sis_10",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Un hueso como el fémur de tu pierna.",
+    "prompt": "¿Es un órgano o un sistema?",
+    "options": [
+      "Es un órgano",
+      "Es un sistema",
+      "Es una célula"
+    ],
+    "correctAnswer": "Es un órgano",
+    "explain": "Un solo hueso es un órgano, todos juntos forman el sistema óseo."
+  },
+  {
+    "id": "sis_11",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Diferencia entre órganos y sistemas.",
+    "prompt": "¿Cuál es la característica principal de un sistema del cuerpo?",
+    "options": [
+      "Está formado por varios órganos trabajando juntos",
+      "Es la parte más pequeña del cuerpo",
+      "Solo tiene una célula"
+    ],
+    "correctAnswer": "Está formado por varios órganos trabajando juntos",
+    "explain": "El trabajo en equipo de los órganos forma los sistemas."
+  },
+  {
+    "id": "sis_12",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "match",
+    "context": "Conecta la acción con el sistema correspondiente.",
+    "prompt": "Une lo que haces con el sistema que usas:",
+    "pairs": [
+      {
+        "id": "p12_1",
+        "left": "Comer un pan",
+        "right": "Sistema Digestivo"
+      },
+      {
+        "id": "p12_2",
+        "left": "Inhalar aire profundamente",
+        "right": "Sistema Respiratorio"
+      },
+      {
+        "id": "p12_3",
+        "left": "Correr usando músculos y huesos",
+        "right": "Sistema Locomotor"
+      }
+    ],
+    "explain": "Usamos diferentes sistemas para diferentes actividades."
+  },
+  {
+    "id": "sis_13",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Después de tragar la comida, llega al estómago.",
+    "prompt": "¿A dónde va la comida después de salir del estómago para seguir digiriéndose?",
+    "options": [
+      "A los intestinos",
+      "A los pulmones",
+      "Al corazón"
+    ],
+    "correctAnswer": "A los intestinos",
+    "explain": "Los intestinos absorben los nutrientes de la comida."
+  },
+  {
+    "id": "sis_14",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "El cuerpo necesita deshacerse de lo que no sirve del aire que respiramos.",
+    "prompt": "¿Qué gas expulsamos al exhalar (botar el aire)?",
+    "options": [
+      "Dióxido de carbono",
+      "Oxígeno puro",
+      "Agua potable"
+    ],
+    "correctAnswer": "Dióxido de carbono",
+    "explain": "Exhalamos dióxido de carbono como desecho."
+  },
+  {
+    "id": "sis_15",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "label",
+    "context": "Este es el tubo por el que pasa la comida hasta el estómago.",
+    "prompt": "Identifica este órgano digestivo",
+    "svg": "<svg viewBox=\"0 0 100 100\"><rect x=\"45\" y=\"10\" width=\"10\" height=\"40\" fill=\"#CD853F\"/><ellipse cx=\"50\" cy=\"60\" rx=\"20\" ry=\"15\" fill=\"#FFA07A\"/></svg>",
+    "labels": [
+      {
+        "id": "l15_1",
+        "x": 50,
+        "y": 30,
+        "text": "Esófago"
+      }
+    ],
+    "explain": "El esófago conecta la boca con el estómago."
+  },
+  {
+    "id": "sis_16",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "match",
+    "context": "Ayuda a repasar los niveles de organización.",
+    "prompt": "Relaciona el ejemplo con su nivel:",
+    "pairs": [
+      {
+        "id": "p16_1",
+        "left": "Sistema Nervioso Completo",
+        "right": "Sistema"
+      },
+      {
+        "id": "p16_2",
+        "left": "El Cerebro",
+        "right": "Órgano"
+      },
+      {
+        "id": "p16_3",
+        "left": "Célula de la piel",
+        "right": "Célula"
+      }
+    ],
+    "explain": "Entender los niveles nos ayuda a comprender cómo estamos construidos."
+  },
+  {
+    "id": "sis_17",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "El aire entra por la nariz.",
+    "prompt": "¿Por qué tubo baja el aire hacia los pulmones?",
+    "options": [
+      "La tráquea",
+      "El esófago",
+      "Las venas"
+    ],
+    "correctAnswer": "La tráquea",
+    "explain": "La tráquea es el conducto del sistema respiratorio."
+  },
+  {
+    "id": "sis_18",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Todos los sistemas del cuerpo humano se comunican.",
+    "prompt": "¿Podría un sistema vivir sin los demás?",
+    "options": [
+      "No, todos trabajan en equipo para mantenernos vivos",
+      "Sí, cada uno es independiente",
+      "Solo el digestivo puede"
+    ],
+    "correctAnswer": "No, todos trabajan en equipo para mantenernos vivos",
+    "explain": "Nuestros sistemas están interconectados y dependen unos de otros."
+  },
+  {
+    "id": "sis_19",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "match",
+    "context": "Último repaso de órganos importantes.",
+    "prompt": "Relaciona cada órgano con su característica:",
+    "pairs": [
+      {
+        "id": "p19_1",
+        "left": "Pulmones",
+        "right": "Se inflan como globos"
+      },
+      {
+        "id": "p19_2",
+        "left": "Estómago",
+        "right": "Bolsa que mezcla la comida"
+      },
+      {
+        "id": "p19_3",
+        "left": "Intestinos",
+        "right": "Tubos largos que absorben nutrientes"
+      }
+    ],
+    "explain": "Cada órgano tiene una forma perfecta para su función."
+  },
+  {
+    "id": "sis_20",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "type": "multiple",
+    "context": "Para finalizar, recordemos.",
+    "prompt": "¿Cuál es el nivel más pequeño de organización del que estamos hechos?",
+    "options": [
+      "Las células",
+      "Los sistemas",
+      "La sangre"
+    ],
+    "correctAnswer": "Las células",
+    "explain": "Somos millones y millones de células organizadas."
   },
   {
     "id": "eng_1",
@@ -2839,682 +3226,700 @@ h1 {
     "explain": "¡Excelente! Primero recolectas los datos, luego los ordenas en tu tabla de frecuencias, ¡y al final los dibujas en tu diagrama de barras!"
   },
   {
-    "id": "soc_1",
+    "id": "soc_p_1",
     "subject": "sociales",
-    "station": "Recursos Naturales",
+    "station": "Paisaje",
     "type": "multiple",
-    "context": "La naturaleza nos da muchas cosas que usamos todos los días. Algunas de ellas pueden volver a formarse en poco tiempo si las cuidamos.",
-    "prompt": "¿Cómo se llaman los recursos que la naturaleza puede volver a producir rápidamente?",
+    "context": "El paisaje está formado por todo lo que vemos a nuestro alrededor.",
+    "prompt": "¿Cuáles son los dos tipos principales de elementos que encontramos en un paisaje?",
     "options": [
-      "Recursos renovables",
-      "Recursos no renovables",
-      "Recursos minerales"
+      "Naturales y Culturales",
+      "Solo plantas y animales",
+      "Edificios y carros"
     ],
-    "correctAnswer": "Recursos renovables",
-    "explain": "¡Exacto! Los recursos renovables pueden volver a aparecer en poco tiempo, como los árboles o las plantas."
+    "correctAnswer": "Naturales y Culturales",
+    "explain": "El paisaje se compone de elementos creados por la naturaleza (naturales) y elementos creados por las personas (culturales)."
   },
   {
-    "id": "soc_2",
+    "id": "soc_p_2",
     "subject": "sociales",
-    "station": "Recursos Naturales",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Los recursos inagotables (o perpetuos) nunca se acaban, aunque los usemos muchísimo.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Siempre están disponibles en la naturaleza, como la luz del sol o el viento."
-  },
-  {
-    "id": "soc_3",
-    "subject": "sociales",
-    "station": "Recursos Naturales",
-    "type": "multiple",
-    "context": "Imagina un día muy soleado y ventoso en la playa.",
-    "prompt": "¿Cuál de estos es un ejemplo de recurso inagotable?",
-    "options": [
-      "La luz del sol",
-      "El petróleo",
-      "El carbón"
-    ],
-    "correctAnswer": "La luz del sol",
-    "explain": "¡Muy bien! La luz del sol es inagotable porque brilla todos los días y no se acaba."
-  },
-  {
-    "id": "soc_4",
-    "subject": "sociales",
-    "station": "Recursos Naturales",
+    "station": "Paisaje",
     "type": "match",
-    "context": "Une el tipo de recurso con su ejemplo.",
-    "prompt": "Relaciona correctamente:",
+    "context": "Podemos clasificar las cosas que vemos en naturales o creadas por el humano.",
+    "prompt": "Relaciona cada elemento con su tipo:",
     "pairs": [
       {
-        "id": "s4_1",
-        "left": "Inagotable",
-        "right": "El viento"
+        "id": "sp2_1",
+        "left": "Montañas, ríos y árboles",
+        "right": "Elementos Naturales"
       },
       {
-        "id": "s4_2",
-        "left": "Renovable",
-        "right": "Las plantas"
-      },
-      {
-        "id": "s4_3",
-        "left": "Renovable",
-        "right": "El agua limpia"
+        "id": "sp2_2",
+        "left": "Casas, carreteras y puentes",
+        "right": "Elementos Culturales"
       }
     ],
-    "explain": "El viento es inagotable, mientras que las plantas y el agua son renovables (¡si las cuidamos!)."
+    "explain": "Los elementos naturales son de la naturaleza, mientras que los culturales son construidos por las personas."
   },
   {
-    "id": "soc_5",
+    "id": "soc_p_3",
     "subject": "sociales",
-    "station": "Recursos Naturales",
+    "station": "Paisaje",
     "type": "multiple",
-    "context": "Aunque el agua es un recurso renovable, debemos usarla con responsabilidad.",
-    "prompt": "¿Qué pasaría si usamos mal el agua y los árboles sin cuidarlos?",
+    "context": "Los paisajes pueden ser muy distintos dependiendo de qué elementos tengan más.",
+    "prompt": "¿Qué es un Paisaje Natural?",
     "options": [
-      "Se pueden agotar o dañar",
-      "Aparecerán mágicamente",
-      "No pasa nada"
+      "Donde solo hay elementos de la naturaleza como selvas o montañas",
+      "Donde hay muchas ciudades y edificios",
+      "Un lugar lleno de fábricas"
     ],
-    "correctAnswer": "Se pueden agotar o dañar",
-    "explain": "¡Correcto! Los recursos renovables pueden acabarse si no los protegemos y usamos con cuidado."
+    "correctAnswer": "Donde solo hay elementos de la naturaleza como selvas o montañas",
+    "explain": "En un paisaje natural no hay intervención humana, solo elementos de la naturaleza."
   },
   {
-    "id": "soc_6",
+    "id": "soc_p_4",
     "subject": "sociales",
-    "station": "Recursos Naturales",
+    "station": "Paisaje",
     "type": "multiple",
-    "context": null,
-    "prompt": "¿Por qué son importantes los recursos naturales renovables?",
+    "context": "El relieve es como el esqueleto del paisaje.",
+    "prompt": "¿Qué es una montaña?",
     "options": [
-      "Porque ayudan a tener energía limpia y protegen a plantas y animales",
-      "Porque ensucian el planeta",
-      "Porque nos dan plástico"
+      "Una elevación natural del terreno de gran altura",
+      "Un terreno totalmente plano y bajito",
+      "Un hueco en la tierra lleno de agua"
     ],
-    "correctAnswer": "Porque ayudan a tener energía limpia y protegen a plantas y animales",
-    "explain": "Los recursos renovables cuidan la naturaleza y nos ayudan a vivir mejor."
+    "correctAnswer": "Una elevación natural del terreno de gran altura",
+    "explain": "Las montañas son grandes elevaciones de tierra. Cuando hay muchas unidas, forman una cordillera."
   },
   {
-    "id": "soc_7",
+    "id": "soc_p_5",
     "subject": "sociales",
-    "station": "Recursos Naturales",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Los animales y los árboles son ejemplos de recursos renovables.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Sí! La naturaleza puede volver a producirlos con el tiempo si los cuidamos."
-  },
-  {
-    "id": "soc_8",
-    "subject": "sociales",
-    "station": "Recursos Naturales",
-    "type": "multiple",
-    "context": "Las olas del mar se mueven todos los días sin parar.",
-    "prompt": "El movimiento del mar es un recurso...",
-    "options": [
-      "Inagotable (perpetuo)",
-      "No renovable",
-      "Dañino para el planeta"
-    ],
-    "correctAnswer": "Inagotable (perpetuo)",
-    "explain": "El movimiento del mar nunca se detiene, ¡es inagotable!"
-  },
-  {
-    "id": "soc_9",
-    "subject": "sociales",
-    "station": "Recursos Naturales",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Los recursos renovables contaminan muchísimo el planeta.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "¡Al revés! Los recursos renovables contaminan muy poco y ayudan al planeta."
-  },
-  {
-    "id": "soc_10",
-    "subject": "sociales",
-    "station": "Recursos Naturales",
+    "station": "Paisaje",
     "type": "match",
-    "context": null,
-    "prompt": "Clasifica estos recursos de la naturaleza:",
+    "context": "Existen diferentes formas de relieve en nuestro planeta.",
+    "prompt": "Une cada forma de relieve con su descripción:",
     "pairs": [
       {
-        "id": "s10_1",
-        "left": "Luz del Sol",
-        "right": "Nunca se acaba"
+        "id": "sp5_1",
+        "left": "Meseta",
+        "right": "Elevación del terreno plana en la cima"
       },
       {
-        "id": "s10_2",
-        "left": "Árboles",
-        "right": "Hay que plantarlos y cuidarlos"
+        "id": "sp5_2",
+        "left": "Llanura",
+        "right": "Gran extensión de terreno plano o con ondulaciones suaves"
       },
       {
-        "id": "s10_3",
-        "left": "Viento",
-        "right": "Mueve los molinos para dar energía"
+        "id": "sp5_3",
+        "left": "Valle",
+        "right": "Zona baja y llana entre montañas por donde suele pasar un río"
       }
     ],
-    "explain": "El Sol y el viento nos dan energía limpia inagotable, y a los árboles debemos sembrarlos para que no falten."
+    "explain": "Cada forma de relieve tiene características únicas de altura y forma."
   },
   {
-    "id": "soc_11",
+    "id": "soc_p_6",
     "subject": "sociales",
-    "station": "No Renovables",
+    "station": "Paisaje",
     "type": "multiple",
-    "context": "Algunas cosas que nos da la naturaleza tardan millones de años en formarse, como en la época de los dinosaurios.",
-    "prompt": "¿Cómo se llaman estos recursos que pueden acabarse?",
+    "context": "El agua también es una parte fundamental del paisaje.",
+    "prompt": "¿Cómo se llama al conjunto de aguas que hay en la Tierra (ríos, lagos, mares)?",
     "options": [
-      "Recursos No Renovables",
-      "Recursos Inagotables",
-      "Recursos Infinitos"
+      "Hidrografía",
+      "Relieve",
+      "Clima"
     ],
-    "correctAnswer": "Recursos No Renovables",
-    "explain": "¡Muy bien! Son limitados y si los gastamos todos, tardarán muchísimo tiempo en volver a aparecer."
+    "correctAnswer": "Hidrografía",
+    "explain": "La hidrografía estudia y agrupa todas las fuentes de agua de nuestro planeta."
   },
   {
-    "id": "soc_12",
+    "id": "soc_p_7",
     "subject": "sociales",
-    "station": "No Renovables",
+    "station": "Paisaje",
     "type": "multiple",
-    "context": null,
-    "prompt": "¿Cuál de estos es un ejemplo de recurso NO renovable?",
+    "context": "En los paisajes vemos muchos seres vivos.",
+    "prompt": "¿Qué conforman la flora y la fauna?",
     "options": [
-      "El petróleo",
-      "El viento",
-      "Las plantas"
+      "La flora son las plantas y la fauna son los animales",
+      "La flora son los animales y la fauna son los ríos",
+      "La flora son las montañas y la fauna las nubes"
     ],
-    "correctAnswer": "El petróleo",
-    "explain": "¡Correcto! El petróleo tarda millones de años en formarse bajo la tierra."
+    "correctAnswer": "La flora son las plantas y la fauna son los animales",
+    "explain": "Juntas, la flora (plantas, árboles) y la fauna (animales) llenan de vida los paisajes."
   },
   {
-    "id": "soc_13",
+    "id": "soc_p_8",
     "subject": "sociales",
-    "station": "No Renovables",
-    "type": "true_false",
-    "context": null,
-    "prompt": "El carbón y el gas natural son recursos que vuelven a aparecer rápidamente si los usamos.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "¡Falso! El carbón y el gas son NO renovables, si los usamos todos, ¡se acaban!"
-  },
-  {
-    "id": "soc_14",
-    "subject": "sociales",
-    "station": "No Renovables",
+    "station": "Paisaje",
     "type": "match",
-    "context": "Muchos metales son recursos no renovables y los sacamos de las minas.",
-    "prompt": "Une el nombre del recurso con su grupo:",
+    "context": "Dependiendo de su cercanía al mar, los paisajes cambian.",
+    "prompt": "Relaciona el tipo de paisaje con sus características:",
     "pairs": [
       {
-        "id": "s14_1",
-        "left": "Oro",
-        "right": "Mineral no renovable"
+        "id": "sp8_1",
+        "left": "Paisaje de Interior",
+        "right": "Lejos del mar, con montañas, valles y bosques"
       },
       {
-        "id": "s14_2",
-        "left": "Hierro",
-        "right": "Mineral para hacer autos"
-      },
-      {
-        "id": "s14_3",
-        "left": "Petróleo",
-        "right": "Combustible no renovable"
+        "id": "sp8_2",
+        "left": "Paisaje de Costa",
+        "right": "Cerca del mar, con playas, acantilados y palmeras"
       }
     ],
-    "explain": "El oro, el hierro, el cobre y el petróleo son recursos limitados que extraemos de la tierra."
+    "explain": "La ubicación respecto al mar define gran parte de los elementos de un paisaje."
   },
   {
-    "id": "soc_15",
+    "id": "soc_p_9",
     "subject": "sociales",
-    "station": "No Renovables",
+    "station": "Paisaje",
     "type": "multiple",
-    "context": "Cuando usamos recursos no renovables, a veces generamos humo y cosas que ensucian el planeta.",
-    "prompt": "¿Qué característica tienen los recursos no renovables?",
+    "context": "Colombia es un país con una gran diversidad de paisajes.",
+    "prompt": "¿En cuántas regiones naturales se divide Colombia?",
     "options": [
-      "Contaminan más cuando se usan",
-      "Son muy limpios y sanos",
-      "No sirven para nada"
+      "En 6 regiones naturales",
+      "En 3 regiones naturales",
+      "En 10 regiones naturales"
     ],
-    "correctAnswer": "Contaminan más cuando se usan",
-    "explain": "Por ejemplo, al quemar gasolina (petróleo) en los carros, sale humo que contamina el aire."
+    "correctAnswer": "En 6 regiones naturales",
+    "explain": "Colombia tiene 6 regiones: Andina, Amazonia, Caribe, Insular, Orinoquía y Pacífico."
   },
   {
-    "id": "soc_16",
+    "id": "soc_p_10",
     "subject": "sociales",
-    "station": "No Renovables",
-    "type": "multiple",
-    "context": null,
-    "prompt": "¿Por qué son importantes recursos como el petróleo o los minerales a pesar de ser no renovables?",
-    "options": [
-      "Porque nos dan energía, transporte y sirven para fabricar celulares o edificios",
-      "Porque los comemos en el desayuno",
-      "Porque hacen que llueva"
-    ],
-    "correctAnswer": "Porque nos dan energía, transporte y sirven para fabricar celulares o edificios",
-    "explain": "Son muy importantes para la industria humana, ¡pero por eso debemos usarlos con muchísimo cuidado!"
-  },
-  {
-    "id": "soc_17",
-    "subject": "sociales",
-    "station": "No Renovables",
-    "type": "true_false",
-    "context": "Como los recursos no renovables se pueden acabar...",
-    "prompt": "Debemos usarlos con cuidado y buscar otras opciones que no dañen el planeta.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Es muy importante buscar energías limpias (como el Sol) para cuidar nuestro hogar."
-  },
-  {
-    "id": "soc_18",
-    "subject": "sociales",
-    "station": "No Renovables",
-    "type": "multiple",
-    "context": "Hay minerales muy útiles en el suelo, como el cobre.",
-    "prompt": "¿Qué tipo de recurso es el cobre?",
-    "options": [
-      "Mineral (No Renovable)",
-      "Planta (Renovable)",
-      "Gas (Inagotable)"
-    ],
-    "correctAnswer": "Mineral (No Renovable)",
-    "explain": "¡Exacto! El cobre, al igual que el hierro y el oro, es un mineral no renovable."
-  },
-  {
-    "id": "soc_19",
-    "subject": "sociales",
-    "station": "No Renovables",
+    "station": "Paisaje",
     "type": "match",
-    "context": "Compara los dos tipos de recursos.",
-    "prompt": "Relaciona correctamente:",
+    "context": "Vamos a recordar las regiones naturales de Colombia.",
+    "prompt": "Une el nombre con la región:",
     "pairs": [
       {
-        "id": "s19_1",
-        "left": "Tardan millones de años en formarse",
+        "id": "sp10_1",
+        "left": "Región con islas y arrecifes",
+        "right": "Región Insular"
+      },
+      {
+        "id": "sp10_2",
+        "left": "Región con llanuras orientales",
+        "right": "Región Orinoquía"
+      },
+      {
+        "id": "sp10_3",
+        "left": "Región con selva tropical espesa al sur",
+        "right": "Región Amazonia"
+      }
+    ],
+    "explain": "Cada región natural de Colombia tiene clima, relieve y vegetación propios."
+  },
+  {
+    "id": "soc_p_11",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "Las personas han transformado muchos lugares para poder vivir.",
+    "prompt": "¿Cómo llamamos al lugar donde las personas han cambiado el paisaje construyendo ciudades o pueblos?",
+    "options": [
+      "Paisaje Cultural o Humanizado",
+      "Paisaje Natural",
+      "Paisaje Desierto"
+    ],
+    "correctAnswer": "Paisaje Cultural o Humanizado",
+    "explain": "Cuando el ser humano interviene construyendo, el paisaje se vuelve cultural o humanizado."
+  },
+  {
+    "id": "soc_p_12",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "Dentro del paisaje de llanura, los terrenos son horizontales y muy extensos.",
+    "prompt": "¿Para qué actividad humana se usa mucho el relieve de llanura?",
+    "options": [
+      "Para la agricultura y campos de cultivo",
+      "Para escalar montañas con cuerdas",
+      "Para construir puertos marítimos"
+    ],
+    "correctAnswer": "Para la agricultura y campos de cultivo",
+    "explain": "Al ser terrenos planos y de suelos fértiles, las llanuras son ideales para sembrar."
+  },
+  {
+    "id": "soc_p_13",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "El agua de los ríos y mares es esencial en los paisajes.",
+    "prompt": "¿Qué función principal cumple la hidrografía en los paisajes naturales?",
+    "options": [
+      "Da vida a plantas y animales, y sirve para consumo humano",
+      "Solo sirve para que los barcos naveguen",
+      "Seca la tierra y forma desiertos"
+    ],
+    "correctAnswer": "Da vida a plantas y animales, y sirve para consumo humano",
+    "explain": "El agua es fuente de vida para todos los seres vivos del paisaje."
+  },
+  {
+    "id": "soc_p_14",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "match",
+    "context": "Los animales (fauna) cambian según el paisaje.",
+    "prompt": "Relaciona el animal con el paisaje donde suele vivir:",
+    "pairs": [
+      {
+        "id": "sp14_1",
+        "left": "Cangrejos, gaviotas y peces marinos",
+        "right": "Paisaje de Costa"
+      },
+      {
+        "id": "sp14_2",
+        "left": "Zorros, ciervos y vacas",
+        "right": "Paisaje de Interior / Llanura"
+      }
+    ],
+    "explain": "La fauna se adapta al clima y relieve de su entorno."
+  },
+  {
+    "id": "soc_p_15",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "Colombia es un país muy diverso.",
+    "prompt": "¿Por qué Colombia tiene tanta riqueza ecológica y paisajes tan diferentes?",
+    "options": [
+      "Por sus diferentes características de relieve, clima y su división en 6 regiones naturales",
+      "Porque todo el país es plano y del mismo clima",
+      "Porque no hay ríos ni montañas"
+    ],
+    "correctAnswer": "Por sus diferentes características de relieve, clima y su división en 6 regiones naturales",
+    "explain": "La variedad de relieves y climas hace que existan muchos ecosistemas distintos."
+  },
+  {
+    "id": "soc_p_16",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "El relieve no es estático, cambia aunque muy lentamente.",
+    "prompt": "¿Qué elementos de la naturaleza pueden desgastar y cambiar las formas del relieve con el tiempo?",
+    "options": [
+      "El viento y el agua",
+      "El sol y las nubes",
+      "Los animales al caminar"
+    ],
+    "correctAnswer": "El viento y el agua",
+    "explain": "Durante millones de años, la lluvia, los ríos y el viento desgastan las montañas y rocas."
+  },
+  {
+    "id": "soc_p_17",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "match",
+    "context": "Tipos de regiones naturales de Colombia y su ubicación.",
+    "prompt": "Relaciona la característica con su región:",
+    "pairs": [
+      {
+        "id": "sp17_1",
+        "left": "Región con costas en el océano Pacífico, muy lluviosa",
+        "right": "Región Pacífica"
+      },
+      {
+        "id": "sp17_2",
+        "left": "Región montañosa donde está el clima templado y frío",
+        "right": "Región Andina"
+      },
+      {
+        "id": "sp17_3",
+        "left": "Región calurosa al norte con el mar Caribe",
+        "right": "Región Caribe"
+      }
+    ],
+    "explain": "La ubicación geográfica de cada región determina su clima y relieve."
+  },
+  {
+    "id": "soc_p_18",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "En los paisajes de costa el mar es el protagonista.",
+    "prompt": "¿Qué forma de relieve rocoso que cae directo al mar encontramos en las costas?",
+    "options": [
+      "Acantilados",
+      "Valles",
+      "Llanuras"
+    ],
+    "correctAnswer": "Acantilados",
+    "explain": "Los acantilados son paredes de roca altas y empinadas que dan frente al mar."
+  },
+  {
+    "id": "soc_p_19",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "Si vas de paseo y ves que el terreno tiene subidas pequeñitas y redondeadas, no muy altas...",
+    "prompt": "¿Qué forma de relieve estás viendo?",
+    "options": [
+      "Una colina o cerro",
+      "Una cordillera nevada",
+      "Una meseta"
+    ],
+    "correctAnswer": "Una colina o cerro",
+    "explain": "Las colinas son elevaciones más pequeñas y de cimas redondeadas comparadas con las montañas."
+  },
+  {
+    "id": "soc_p_20",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "type": "multiple",
+    "context": "El paisaje está vivo y todas sus partes interactúan.",
+    "prompt": "¿Qué afirmación resume mejor qué es el paisaje?",
+    "options": [
+      "Es la suma de todo lo que vemos: tierra, agua, plantas, animales y construcciones humanas",
+      "Es solo el conjunto de montañas y ríos",
+      "Es únicamente el clima de un lugar"
+    ],
+    "correctAnswer": "Es la suma de todo lo que vemos: tierra, agua, plantas, animales y construcciones humanas",
+    "explain": "El paisaje es el conjunto integrado de todos los elementos naturales y culturales de un lugar."
+  },
+  {
+    "id": "soc_r_1",
+    "subject": "sociales",
+    "station": "Recursos Naturales y Contaminación",
+    "type": "multiple",
+    "context": "La naturaleza nos brinda muchas cosas que utilizamos para vivir.",
+    "prompt": "¿Qué son los recursos naturales renovables?",
+    "options": [
+      "Cosas de la naturaleza que pueden volver a formarse en poco tiempo",
+      "Cosas que fabrican las máquinas en las industrias",
+      "Cosas de la naturaleza que una vez gastadas nunca vuelven a aparecer"
+    ],
+    "correctAnswer": "Cosas de la naturaleza que pueden volver a formarse en poco tiempo",
+    "explain": "Los renovables se recuperan en poco tiempo si los cuidamos, como el agua o las plantas."
+  },
+  {
+    "id": "soc_r_2",
+    "subject": "sociales",
+    "station": "Recursos Naturales y Contaminación",
+    "type": "match",
+    "context": "Dentro de los renovables, algunos nunca se acaban.",
+    "prompt": "Relaciona el tipo de recurso renovable con su ejemplo:",
+    "pairs": [
+      {
+        "id": "sr2_1",
+        "left": "Recursos inagotables (perpetuos)",
+        "right": "Luz del sol y el viento"
+      },
+      {
+        "id": "sr2_2",
+        "left": "Recursos renovables que se pueden agotar si no se cuidan",
+        "right": "El agua, árboles y plantas"
+      }
+    ],
+    "explain": "El sol siempre brillará, pero el agua limpia sí se puede agotar si la contaminamos."
+  },
+  {
+    "id": "soc_r_3",
+    "subject": "sociales",
+    "station": "Recursos Naturales y Contaminación",
+    "type": "multiple",
+    "context": "Existen recursos que tardan millones de años en crearse en la Tierra.",
+    "prompt": "¿Qué son los recursos naturales NO renovables?",
+    "options": [
+      "Recursos que cuando se usan no vuelven a aparecer rápidamente porque tardan millones de años en formarse",
+      "Recursos que crecen todos los días en el campo",
+      "Recursos que no sirven para nada"
+    ],
+    "correctAnswer": "Recursos que cuando se usan no vuelven a aparecer rápidamente porque tardan millones de años en formarse",
+    "explain": "Al tardar tanto en formarse, si los gastamos todos, se acaban para siempre en nuestra época."
+  },
+  {
+    "id": "soc_r_4",
+    "subject": "sociales",
+    "station": "Recursos Naturales y Contaminación",
+    "type": "match",
+    "context": "Identifica si el recurso es renovable o no renovable.",
+    "prompt": "Une el recurso con su tipo:",
+    "pairs": [
+      {
+        "id": "sr4_1",
+        "left": "Petróleo y Carbón",
         "right": "No renovables"
       },
       {
-        "id": "s19_2",
-        "left": "Vuelven a formarse en poco tiempo",
+        "id": "sr4_2",
+        "left": "Madera (árboles) y Agua",
         "right": "Renovables"
       },
       {
-        "id": "s19_3",
-        "left": "Nunca se acaban",
-        "right": "Inagotables"
+        "id": "sr4_3",
+        "left": "Oro, hierro y cobre (minerales)",
+        "right": "No renovables"
       }
     ],
-    "explain": "Cada recurso tiene su propio ritmo: los no renovables son muy lentos, los renovables rápidos y los inagotables infinitos."
+    "explain": "Los metales y combustibles fósiles son no renovables. Las plantas y el agua son renovables."
   },
   {
-    "id": "soc_20",
+    "id": "soc_r_5",
     "subject": "sociales",
-    "station": "No Renovables",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "El papá de Camilo le puso gasolina al carro para ir a la escuela.",
-    "prompt": "¿De dónde viene la gasolina?",
+    "context": "Los recursos no renovables, como el petróleo y el carbón, tienen una característica negativa cuando los usamos en las fábricas o carros.",
+    "prompt": "¿Cuál es una desventaja de usar muchos recursos NO renovables?",
     "options": [
-      "Del petróleo",
-      "Del agua del río",
-      "De los árboles"
+      "Contaminan más el ambiente cuando se usan",
+      "Son muy fáciles de sembrar en casa",
+      "Hacen que el aire sea más puro"
     ],
-    "correctAnswer": "Del petróleo",
-    "explain": "¡Así es! La gasolina se fabrica a partir del petróleo, un recurso no renovable."
+    "correctAnswer": "Contaminan más el ambiente cuando se usan",
+    "explain": "Quemar carbón y petróleo genera humo y gases que ensucian el aire."
   },
   {
-    "id": "soc_21",
+    "id": "soc_r_6",
     "subject": "sociales",
-    "station": "Contaminación",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "A veces, las acciones de las personas dañan el lugar donde vivimos (nuestro entorno).",
-    "prompt": "¿Cómo se llama cuando ensuciamos y dañamos la naturaleza?",
+    "context": "A veces, las acciones humanas dañan el entorno donde vivimos.",
+    "prompt": "¿Qué es la contaminación del agua?",
     "options": [
-      "Contaminación",
-      "Reciclaje",
-      "Cuidado del entorno"
+      "Cuando arrojamos basura, químicos o desperdicios a ríos, lagos o mares",
+      "Cuando sacamos peces para comer",
+      "Cuando el agua de la lluvia cae en el pasto"
     ],
-    "correctAnswer": "Contaminación",
-    "explain": "La contaminación es el impacto negativo de arrojar basura, humo o químicos al medio ambiente."
+    "correctAnswer": "Cuando arrojamos basura, químicos o desperdicios a ríos, lagos o mares",
+    "explain": "La basura y los químicos ensucian el agua, enfermando a los animales y plantas que viven ahí."
   },
   {
-    "id": "soc_22",
+    "id": "soc_r_7",
     "subject": "sociales",
-    "station": "Contaminación",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "Cuando arrojamos basura, desperdicios o químicos a los ríos, lagos o mares...",
-    "prompt": "¿Qué tipo de contaminación estamos causando?",
+    "context": "Cuando caminas por la ciudad, ves humo saliendo de los carros y las fábricas.",
+    "prompt": "¿Qué tipo de contaminación se produce por el humo y los gases?",
     "options": [
-      "Contaminación del agua",
       "Contaminación del aire",
-      "Contaminación del espacio"
+      "Contaminación del suelo",
+      "Contaminación visual"
     ],
-    "correctAnswer": "Contaminación del agua",
-    "explain": "¡Correcto! Ensuciar los ríos y el mar enferma a los peces y daña el agua que necesitamos."
+    "correctAnswer": "Contaminación del aire",
+    "explain": "El humo contamina el aire que todos respiramos, dañando nuestros pulmones y el planeta."
   },
   {
-    "id": "soc_23",
+    "id": "soc_r_8",
     "subject": "sociales",
-    "station": "Contaminación",
-    "type": "true_false",
-    "context": null,
-    "prompt": "El humo de los carros y de las fábricas ensucia el cielo, causando contaminación del aire.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Los gases y el humo impiden que respiremos aire puro y sano."
-  },
-  {
-    "id": "soc_24",
-    "subject": "sociales",
-    "station": "Contaminación",
+    "station": "Recursos Naturales y Contaminación",
     "type": "match",
-    "context": "Identifica los tipos de contaminación.",
-    "prompt": "Relaciona la acción con el tipo de contaminación:",
+    "context": "Hay distintas formas en las que afectamos la naturaleza.",
+    "prompt": "Relaciona la acción con el tipo de contaminación que causa:",
     "pairs": [
       {
-        "id": "s24_1",
-        "left": "Tirar plásticos en el parque",
+        "id": "sr8_1",
+        "left": "Tirar plásticos y basura en parques o calles",
         "right": "Contaminación del suelo"
       },
       {
-        "id": "s24_2",
-        "left": "Humo negro de una fábrica",
-        "right": "Contaminación del aire"
-      },
-      {
-        "id": "s24_3",
-        "left": "Químicos derramados en el río",
+        "id": "sr8_2",
+        "left": "Desechar aguas con químicos al río",
         "right": "Contaminación del agua"
+      },
+      {
+        "id": "sr8_3",
+        "left": "Humo de los tubos de escape de los carros",
+        "right": "Contaminación del aire"
       }
     ],
-    "explain": "Nuestras acciones pueden dañar el aire que respiramos, la tierra donde jugamos y el agua que tomamos."
+    "explain": "Toda nuestra basura afecta un elemento diferente de la naturaleza si no somos responsables."
   },
   {
-    "id": "soc_25",
+    "id": "soc_r_9",
     "subject": "sociales",
-    "station": "Contaminación",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "La contaminación trae consecuencias muy tristes para nuestro planeta.",
-    "prompt": "¿Qué le puede pasar a los animales si su entorno está muy contaminado?",
+    "context": "La contaminación tiene efectos muy tristes en nuestro planeta.",
+    "prompt": "¿Cuál de estas es una consecuencia de la contaminación?",
     "options": [
-      "Se pueden enfermar o morir",
-      "Se vuelven más fuertes",
-      "Nada, ellos no se enferman"
+      "Los animales pueden enfermar o morir y puede haber menos agua limpia",
+      "Los árboles crecen mucho más rápido y fuertes",
+      "El clima se vuelve perfecto y agradable todos los días"
     ],
-    "correctAnswer": "Se pueden enfermar o morir",
-    "explain": "¡Tristemente es así! La basura y los químicos dañan el hogar de los animalitos."
+    "correctAnswer": "Los animales pueden enfermar o morir y puede haber menos agua limpia",
+    "explain": "La contaminación destruye los hogares de los animales y contamina el agua que necesitamos."
   },
   {
-    "id": "soc_26",
+    "id": "soc_r_10",
     "subject": "sociales",
-    "station": "Contaminación",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": null,
-    "prompt": "¿Qué ocurre con las plantas cuando el suelo está lleno de plásticos y basura?",
+    "context": "Los seres humanos usamos mucha energía para que funcionen las ciudades.",
+    "prompt": "¿Por qué son tan importantes los recursos naturales para nosotros?",
     "options": [
-      "No crecen bien",
-      "Crecen más bonitas",
-      "Se vuelven árboles gigantes"
+      "Nos dan energía para la luz, el transporte y sirven para fabricar objetos",
+      "Solo sirven de adorno en los paisajes",
+      "Porque con ellos hacemos juguetes de plástico únicamente"
     ],
-    "correctAnswer": "No crecen bien",
-    "explain": "Las plantas necesitan tierra limpia para absorber nutrientes y crecer sanas."
+    "correctAnswer": "Nos dan energía para la luz, el transporte y sirven para fabricar objetos",
+    "explain": "Sin los recursos naturales no tendríamos electricidad, ni carros, ni edificios."
   },
   {
-    "id": "soc_27",
+    "id": "soc_r_11",
     "subject": "sociales",
-    "station": "Contaminación",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Si contaminamos mucho, las personas también nos podemos enfermar por tomar agua sucia o respirar aire malo.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Nosotros también somos parte de la naturaleza y necesitamos agua y aire limpios."
-  },
-  {
-    "id": "soc_28",
-    "subject": "sociales",
-    "station": "Contaminación",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "En el parque, alguien dejó tiradas muchas botellas y bolsas plásticas.",
-    "prompt": "Esta acción es un ejemplo claro de...",
+    "context": "Todos podemos ayudar a cuidar nuestro entorno con pequeñas acciones.",
+    "prompt": "¿Qué puedes hacer tú en tu casa para cuidar el agua (recurso renovable)?",
     "options": [
-      "Contaminación del suelo",
-      "Cuidado ambiental",
-      "Energía renovable"
+      "Cerrar la llave mientras te cepillas los dientes",
+      "Dejar la llave abierta todo el día",
+      "Tirar aceite de cocina por el desagüe"
     ],
-    "correctAnswer": "Contaminación del suelo",
-    "explain": "¡Exacto! Tirar basura en la calle o en los parques daña el suelo."
+    "correctAnswer": "Cerrar la llave mientras te cepillas los dientes",
+    "explain": "Ahorrar agua es fundamental para que este recurso renovable no se agote."
   },
   {
-    "id": "soc_29",
+    "id": "soc_r_12",
     "subject": "sociales",
-    "station": "Contaminación",
+    "station": "Recursos Naturales y Contaminación",
     "type": "match",
-    "context": "Consecuencias de la contaminación.",
-    "prompt": "Une el problema con quién lo sufre:",
+    "context": "Acciones para cuidar el entorno.",
+    "prompt": "Relaciona la buena acción con lo que ayuda a proteger:",
     "pairs": [
       {
-        "id": "s29_1",
-        "left": "Falta de agua limpia para tomar",
-        "right": "Personas y animales"
+        "id": "sr12_1",
+        "left": "Apagar las luces cuando no las usamos",
+        "right": "Ahorra energía"
       },
       {
-        "id": "s29_2",
-        "left": "No pueden crecer fuertes y sanas",
-        "right": "Plantas y árboles"
+        "id": "sr12_2",
+        "left": "Separar y reciclar los residuos en canecas correctas",
+        "right": "Reduce la basura en el suelo"
       },
       {
-        "id": "s29_3",
-        "left": "Queda sucio y lleno de humo",
-        "right": "Aire (el cielo)"
+        "id": "sr12_3",
+        "left": "Cuidar las plantas y animales",
+        "right": "Protege la flora y fauna"
       }
     ],
-    "explain": "Todo en la naturaleza está conectado. ¡Si ensuciamos el planeta, todos nos afectamos!"
+    "explain": "Cada pequeña acción positiva suma para tener un planeta más sano."
   },
   {
-    "id": "soc_30",
+    "id": "soc_r_13",
     "subject": "sociales",
-    "station": "Contaminación",
-    "type": "true_false",
-    "context": null,
-    "prompt": "La contaminación es algo bueno porque nos da más recursos naturales.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "¡Súper Falso! La contaminación daña los recursos naturales que necesitamos para vivir."
-  },
-  {
-    "id": "soc_31",
-    "subject": "sociales",
-    "station": "Cuidado",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "Todos podemos ayudar a cuidar nuestro hermoso planeta con acciones sencillas.",
-    "prompt": "¿Qué debes hacer si tienes una botella vacía y estás en la calle?",
+    "context": "El gas natural con el que cocinamos en casa es un recurso muy útil.",
+    "prompt": "¿A qué grupo pertenece el gas natural?",
     "options": [
-      "Guardarla hasta encontrar una caneca para botarla",
-      "Tirarla a la calle",
-      "Tirarla a un río"
+      "A los recursos NO renovables",
+      "A los recursos inagotables",
+      "A los recursos renovables"
     ],
-    "correctAnswer": "Guardarla hasta encontrar una caneca para botarla",
-    "explain": "¡Muy bien! Nunca debemos botar basura en la calle ni en los ríos."
+    "correctAnswer": "A los recursos NO renovables",
+    "explain": "Igual que el petróleo, el gas natural tarda millones de años en formarse bajo la tierra."
   },
   {
-    "id": "soc_32",
+    "id": "soc_r_14",
     "subject": "sociales",
-    "station": "Cuidado",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "Al cepillarte los dientes, el agua sigue corriendo por la llave.",
-    "prompt": "¿Cuál es la acción correcta para cuidar el entorno?",
+    "context": "El viento mueve grandes aspas que generan electricidad limpia.",
+    "prompt": "¿Qué ventaja tiene usar el viento como recurso natural?",
     "options": [
-      "Ahorrar agua cerrando la llave mientras te cepillas",
-      "Dejar la llave abierta",
-      "Poner más jabón"
+      "Es un recurso inagotable y contamina poco",
+      "Es un recurso no renovable que pronto se acabará",
+      "Genera mucho humo negro al usarse"
     ],
-    "correctAnswer": "Ahorrar agua cerrando la llave mientras te cepillas",
-    "explain": "¡Excelente! Ahorrar agua (cerrar la llave) es fundamental para cuidar nuestro planeta."
+    "correctAnswer": "Es un recurso inagotable y contamina poco",
+    "explain": "La energía del viento (eólica) es limpia y el viento nunca se va a terminar."
   },
   {
-    "id": "soc_33",
+    "id": "soc_r_15",
     "subject": "sociales",
-    "station": "Cuidado",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Separar y reciclar los residuos (como plástico y cartón) ayuda a cuidar el medio ambiente.",
+    "station": "Recursos Naturales y Contaminación",
+    "type": "multiple",
+    "context": "Imagina que en un parque hay muchas botellas de plástico tiradas en el pasto.",
+    "prompt": "¿Qué consecuencia directa tiene esto sobre el entorno?",
     "options": [
-      "Verdadero",
-      "Falso"
+      "Las plantas no pueden crecer bien y los animales del parque podrían enfermar",
+      "El parque se ve más bonito con colores de plástico",
+      "El plástico se convierte en abono súper rápido"
     ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Reciclar le da una segunda vida a las cosas y disminuye la basura."
+    "correctAnswer": "Las plantas no pueden crecer bien y los animales del parque podrían enfermar",
+    "explain": "El plástico es basura que contamina el suelo y afecta a la vida silvestre."
   },
   {
-    "id": "soc_34",
+    "id": "soc_r_16",
     "subject": "sociales",
-    "station": "Cuidado",
+    "station": "Recursos Naturales y Contaminación",
     "type": "match",
-    "context": "Acciones para salvar el mundo.",
-    "prompt": "Une cada acción con lo que estás cuidando:",
+    "context": "El impacto humano puede ser positivo o negativo.",
+    "prompt": "Clasifica las acciones humanas:",
     "pairs": [
       {
-        "id": "s34_1",
-        "left": "Apagar las luces al salir del cuarto",
-        "right": "Ahorrar energía"
+        "id": "sr16_1",
+        "left": "Reciclar y usar bolsas de tela",
+        "right": "Acción Positiva (cuida el entorno)"
       },
       {
-        "id": "s34_2",
-        "left": "Cerrar la llave del lavamanos",
-        "right": "Ahorrar agua"
-      },
-      {
-        "id": "s34_3",
-        "left": "Poner el papel en la caneca azul",
-        "right": "Reciclar"
+        "id": "sr16_2",
+        "left": "Arrojar químicos de fábricas al río",
+        "right": "Acción Negativa (contamina el agua)"
       }
     ],
-    "explain": "¡Eres un superhéroe del planeta! Con pequeñas acciones ahorramos energía, agua y ayudamos a reciclar."
+    "explain": "Tenemos el poder de elegir cuidar o dañar la naturaleza con nuestros actos diarios."
   },
   {
-    "id": "soc_35",
+    "id": "soc_r_17",
     "subject": "sociales",
-    "station": "Cuidado",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "Camilo siempre deja la luz de su cuarto encendida cuando se va al colegio.",
-    "prompt": "¿Qué le aconsejarías a Camilo para cuidar el planeta?",
+    "context": "Los recursos no renovables existen en cantidades limitadas.",
+    "prompt": "¿Qué pasaría si la humanidad gasta todo el petróleo del mundo?",
     "options": [
-      "Que apague las luces cuando no las use",
-      "Que compre más focos",
-      "Que prenda también el televisor"
+      "No volverá a aparecer rápidamente y tendríamos que buscar otras opciones de energía",
+      "Volverá a aparecer mágicamente al día siguiente",
+      "Lloverá petróleo del cielo"
     ],
-    "correctAnswer": "Que apague las luces cuando no las use",
-    "explain": "¡Exacto! Apagar las luces ahorra energía y protege nuestros recursos naturales."
+    "correctAnswer": "No volverá a aparecer rápidamente y tendríamos que buscar otras opciones de energía",
+    "explain": "Como es no renovable, se agota. Por eso es vital desarrollar energías renovables como el sol."
   },
   {
-    "id": "soc_36",
+    "id": "soc_r_18",
     "subject": "sociales",
-    "station": "Cuidado",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "Vas caminando por un parque y ves unas hermosas flores y unos pajaritos.",
-    "prompt": "¿Cuál de estas es una buena acción por el entorno?",
+    "context": "La luz del sol es esencial para la vida.",
+    "prompt": "¿Por qué el Sol es considerado un recurso natural inagotable?",
     "options": [
-      "Cuidar y respetar las plantas y los animales",
-      "Arrancar todas las flores",
-      "Asustar a los pajaritos"
+      "Porque siempre estará disponible y su energía no se gasta por más que la usemos",
+      "Porque solo alumbra de día",
+      "Porque se apaga y hay que comprarle baterías"
     ],
-    "correctAnswer": "Cuidar y respetar las plantas y los animales",
-    "explain": "¡Muy bien! Las plantas y los animales merecen nuestro respeto y cuidado."
+    "correctAnswer": "Porque siempre estará disponible y su energía no se gasta por más que la usemos",
+    "explain": "La energía solar es perpetua, podemos usar paneles solares siempre sin agotarla."
   },
   {
-    "id": "soc_37",
+    "id": "soc_r_19",
     "subject": "sociales",
-    "station": "Cuidado",
-    "type": "true_false",
-    "context": "Si todos cuidamos la naturaleza...",
-    "prompt": "Podremos vivir en un lugar mucho más limpio, sano y feliz.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Completamente Verdadero! El planeta es nuestra casa, si lo cuidamos todos seremos más felices."
-  },
-  {
-    "id": "soc_38",
-    "subject": "sociales",
-    "station": "Cuidado",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "En la casa hay tres canecas de diferentes colores para botar la basura.",
-    "prompt": "¿Para qué sirve tener varias canecas?",
+    "context": "Hay recursos que debemos usar con responsabilidad para que no se agoten.",
+    "prompt": "¿Por qué debemos cuidar los bosques y evitar talar demasiados árboles?",
     "options": [
-      "Para separar y reciclar los residuos",
-      "Para jugar basquetbol",
-      "Para que huela feo"
+      "Porque aunque son renovables, si cortamos todos de golpe, tardarán años en volver a crecer y los animales perderían su hogar",
+      "Porque los árboles son aburridos y es mejor poner cemento",
+      "Porque no sirven para nada en la naturaleza"
     ],
-    "correctAnswer": "Para separar y reciclar los residuos",
-    "explain": "¡Exacto! Separar la basura (reciclar) es clave para mantener limpio el entorno."
+    "correctAnswer": "Porque aunque son renovables, si cortamos todos de golpe, tardarán años en volver a crecer y los animales perderían su hogar",
+    "explain": "Los recursos renovables requieren tiempo para recuperarse. Si abusamos de ellos, los podemos agotar."
   },
   {
-    "id": "soc_39",
+    "id": "soc_r_20",
     "subject": "sociales",
-    "station": "Cuidado",
-    "type": "match",
-    "context": "Resumen de lo aprendido.",
-    "prompt": "Relaciona correctamente:",
-    "pairs": [
-      {
-        "id": "s39_1",
-        "left": "Petróleo y Carbón",
-        "right": "Recursos No Renovables"
-      },
-      {
-        "id": "s39_2",
-        "left": "Agua y Árboles",
-        "right": "Recursos Renovables"
-      },
-      {
-        "id": "s39_3",
-        "left": "Humo de carros",
-        "right": "Contaminación del Aire"
-      }
-    ],
-    "explain": "¡Excelente memoria! Ya eres todo un experto en ciencias sociales."
-  },
-  {
-    "id": "soc_40",
-    "subject": "sociales",
-    "station": "Cuidado",
+    "station": "Recursos Naturales y Contaminación",
     "type": "multiple",
-    "context": "Imagina que el planeta Tierra pudiera hablar.",
-    "prompt": "¿Qué nos pediría que hagamos?",
+    "context": "El resumen final sobre nuestro planeta.",
+    "prompt": "¿Cuál es la conclusión más importante sobre los recursos naturales y la contaminación?",
     "options": [
-      "Que lo cuidemos, reciclemos y ahorremos agua",
-      "Que tiremos mucha basura",
-      "Que cortemos todos sus árboles"
+      "Si todos cuidamos la naturaleza y usamos los recursos de forma responsable, podremos vivir en un lugar más limpio, sano y feliz",
+      "No importa si ensuciamos porque alguien más limpiará",
+      "Los recursos nunca se van a acabar sin importar lo que hagamos"
     ],
-    "correctAnswer": "Que lo cuidemos, reciclemos y ahorremos agua",
-    "explain": "¡Así es! Si todos aportamos un granito de arena, la Tierra será un lugar maravilloso por siempre."
+    "correctAnswer": "Si todos cuidamos la naturaleza y usamos los recursos de forma responsable, podremos vivir en un lugar más limpio, sano y feliz",
+    "explain": "El cuidado del planeta es responsabilidad de todos para garantizar un futuro saludable."
   }
 ];
 
@@ -3583,7 +3988,8 @@ let currentSubject = null;
 let currentLang = 'es';
 let activeQuestions = [];
 let currentIndex = 0;
-let answeredCount = 0;
+let currentIndex = 0;
+let firstTryCorrectCount = 0;
 let currentQuestionState = null; // Store state for current question interactions
 
 function t(key, isSubject = false, isDesc = false) {
@@ -3606,6 +4012,7 @@ function shuffleArray(array) {
 // --- NAVIGATION ---
 const views = {
     selector: document.getElementById('view-selector'),
+    subcategories: document.getElementById('view-subcategories'),
     notebook: document.getElementById('view-notebook'),
     diploma: document.getElementById('view-diploma')
 };
@@ -3621,7 +4028,8 @@ function showView(viewName) {
 // --- INITIALIZATION ---
 function init() {
     renderSubjects();
-    document.getElementById('btn-back').addEventListener('click', () => showView('selector'));
+    document.getElementById('btn-back').addEventListener('click', () => showView('subcategories'));
+    document.getElementById('btn-back-to-subjects').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-back-diploma').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-solution').addEventListener('click', showSolution);
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
@@ -3657,12 +4065,52 @@ function renderSubjects() {
             <p>${STR.es.desc[sub]}</p>
             <span class="q-count">${count} preguntas</span>
         `;
-        card.addEventListener('click', () => loadSubject(sub));
+        card.addEventListener('click', () => showSubcategories(sub));
         container.appendChild(card);
     }
 }
 
-function loadSubject(subject) {
+function showSubcategories(subject) {
+    currentSubject = subject;
+    const container = document.getElementById('subcategories-container');
+    container.innerHTML = '';
+    
+    document.getElementById('subcategories-title').textContent = t(subject, true);
+    
+    // Get unique stations
+    const subjectQuestions = QUESTIONS_ALL.filter(q => q.subject === subject);
+    const stationsCount = {};
+    subjectQuestions.forEach(q => {
+        stationsCount[q.station] = (stationsCount[q.station] || 0) + 1;
+    });
+    
+    for (const [station, count] of Object.entries(stationsCount)) {
+        const card = document.createElement('div');
+        card.className = `subject-card ${subject}`;
+        card.innerHTML = `
+            <h2>${station}</h2>
+            <span class="q-count">${count} preguntas</span>
+        `;
+        card.addEventListener('click', () => loadSubject(subject, station));
+        container.appendChild(card);
+    }
+    
+    // "Mezclar Todo" card
+    if (Object.keys(stationsCount).length > 1) {
+        const mixCard = document.createElement('div');
+        mixCard.className = `subject-card ${subject}`;
+        mixCard.innerHTML = `
+            <h2>¡Mezclar Todo!</h2>
+            <span class="q-count">${subjectQuestions.length} preguntas</span>
+        `;
+        mixCard.addEventListener('click', () => loadSubject(subject, null));
+        container.appendChild(mixCard);
+    }
+    
+    showView('subcategories');
+}
+
+function loadSubject(subject, station) {
     currentSubject = subject;
     // English subject means English UI, otherwise Spanish
     currentLang = (subject === 'english') ? 'en' : 'es';
@@ -3677,10 +4125,13 @@ function loadSubject(subject) {
     document.getElementById('diploma-subject').textContent = t(subject, true);
     
     // Filter and shuffle, take only 20 questions
-    const subjectQuestions = QUESTIONS_ALL.filter(q => q.subject === subject);
+    let subjectQuestions = QUESTIONS_ALL.filter(q => q.subject === subject);
+    if (station) {
+        subjectQuestions = subjectQuestions.filter(q => q.station === station);
+    }
     activeQuestions = shuffleArray(subjectQuestions).slice(0, 20);
     currentIndex = 0;
-    answeredCount = 0;
+    firstTryCorrectCount = 0;
     
     updateProgress();
     showView('notebook');
@@ -3720,7 +4171,7 @@ function renderCurrentQuestion() {
     }
     
     const q = activeQuestions[currentIndex];
-    currentQuestionState = { interacted: false, isCorrect: false, type: q.type };
+    currentQuestionState = { interacted: false, isCorrect: false, errorCount: 0, type: q.type };
     
     // Badges
     const badges = document.createElement('div');
@@ -3781,6 +4232,12 @@ function renderCurrentQuestion() {
 function enableSolution() {
     if (!currentQuestionState.interacted) {
         currentQuestionState.interacted = true;
+        
+        // Track score
+        if (currentQuestionState.isCorrect && currentQuestionState.errorCount === 0) {
+            firstTryCorrectCount++;
+        }
+        
         document.getElementById('btn-solution').classList.remove('hidden');
     }
 }
@@ -3887,6 +4344,7 @@ function renderMatch(q, container) {
                     enableSolution();
                 }
             } else {
+                currentQuestionState.errorCount++;
                 el.classList.add('error');
                 prev.el.classList.add('error');
                 prev.el.classList.remove('selected');
@@ -3992,6 +4450,7 @@ function renderLabel(q, container) {
                     enableSolution();
                 }
             } else {
+                currentQuestionState.errorCount++;
                 dz.classList.add('incorrect');
                 setTimeout(() => dz.classList.remove('incorrect'), 400);
             }
@@ -4080,6 +4539,7 @@ function renderOrderWords(q, container) {
             for(let i=0; i<words.length; i++){
                 if(currentQuestionState.currentOrder[i].word !== words[i]) correct = false;
             }
+            if (!correct) currentQuestionState.errorCount++;
             currentQuestionState.isCorrect = correct;
             enableSolution();
         }
@@ -4198,6 +4658,31 @@ function prevQuestion() {
 // --- DIPLOMA ---
 function showDiploma() {
     showView('diploma');
+    
+    // Calculate score
+    const total = activeQuestions.length;
+    let percent = 0;
+    if (total > 0) {
+        percent = Math.round((firstTryCorrectCount / total) * 100);
+    }
+    
+    document.getElementById('diploma-score-percent').textContent = `${percent}%`;
+    const scoreMessage = document.getElementById('diploma-score-message');
+    
+    if (percent === 100) {
+        scoreMessage.textContent = "¡Excelente! Eres un genio perfecto. 🏆";
+        scoreMessage.style.color = "#FFD700"; // Gold
+    } else if (percent >= 80) {
+        scoreMessage.textContent = "¡Muy bien hecho! Casi perfecto. 🌟";
+        scoreMessage.style.color = "#32CD32"; // Green
+    } else if (percent >= 60) {
+        scoreMessage.textContent = "¡Buen trabajo! Pero podemos mejorar un poco. 👍";
+        scoreMessage.style.color = "#FFA500"; // Orange
+    } else {
+        scoreMessage.textContent = "¡Sigue practicando! La próxima vez te irá mejor. 💪";
+        scoreMessage.style.color = "#FF4500"; // Red
+    }
+    
     if (window.confettiEnabled) {
         shootConfetti();
     }

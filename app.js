@@ -63,7 +63,8 @@ let currentSubject = null;
 let currentLang = 'es';
 let activeQuestions = [];
 let currentIndex = 0;
-let answeredCount = 0;
+let currentIndex = 0;
+let firstTryCorrectCount = 0;
 let currentQuestionState = null; // Store state for current question interactions
 
 function t(key, isSubject = false, isDesc = false) {
@@ -86,6 +87,7 @@ function shuffleArray(array) {
 // --- NAVIGATION ---
 const views = {
     selector: document.getElementById('view-selector'),
+    subcategories: document.getElementById('view-subcategories'),
     notebook: document.getElementById('view-notebook'),
     diploma: document.getElementById('view-diploma')
 };
@@ -101,7 +103,8 @@ function showView(viewName) {
 // --- INITIALIZATION ---
 function init() {
     renderSubjects();
-    document.getElementById('btn-back').addEventListener('click', () => showView('selector'));
+    document.getElementById('btn-back').addEventListener('click', () => showView('subcategories'));
+    document.getElementById('btn-back-to-subjects').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-back-diploma').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-solution').addEventListener('click', showSolution);
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
@@ -137,12 +140,52 @@ function renderSubjects() {
             <p>${STR.es.desc[sub]}</p>
             <span class="q-count">${count} preguntas</span>
         `;
-        card.addEventListener('click', () => loadSubject(sub));
+        card.addEventListener('click', () => showSubcategories(sub));
         container.appendChild(card);
     }
 }
 
-function loadSubject(subject) {
+function showSubcategories(subject) {
+    currentSubject = subject;
+    const container = document.getElementById('subcategories-container');
+    container.innerHTML = '';
+    
+    document.getElementById('subcategories-title').textContent = t(subject, true);
+    
+    // Get unique stations
+    const subjectQuestions = QUESTIONS_ALL.filter(q => q.subject === subject);
+    const stationsCount = {};
+    subjectQuestions.forEach(q => {
+        stationsCount[q.station] = (stationsCount[q.station] || 0) + 1;
+    });
+    
+    for (const [station, count] of Object.entries(stationsCount)) {
+        const card = document.createElement('div');
+        card.className = `subject-card ${subject}`;
+        card.innerHTML = `
+            <h2>${station}</h2>
+            <span class="q-count">${count} preguntas</span>
+        `;
+        card.addEventListener('click', () => loadSubject(subject, station));
+        container.appendChild(card);
+    }
+    
+    // "Mezclar Todo" card
+    if (Object.keys(stationsCount).length > 1) {
+        const mixCard = document.createElement('div');
+        mixCard.className = `subject-card ${subject}`;
+        mixCard.innerHTML = `
+            <h2>¡Mezclar Todo!</h2>
+            <span class="q-count">${subjectQuestions.length} preguntas</span>
+        `;
+        mixCard.addEventListener('click', () => loadSubject(subject, null));
+        container.appendChild(mixCard);
+    }
+    
+    showView('subcategories');
+}
+
+function loadSubject(subject, station) {
     currentSubject = subject;
     // English subject means English UI, otherwise Spanish
     currentLang = (subject === 'english') ? 'en' : 'es';
@@ -157,10 +200,13 @@ function loadSubject(subject) {
     document.getElementById('diploma-subject').textContent = t(subject, true);
     
     // Filter and shuffle, take only 20 questions
-    const subjectQuestions = QUESTIONS_ALL.filter(q => q.subject === subject);
+    let subjectQuestions = QUESTIONS_ALL.filter(q => q.subject === subject);
+    if (station) {
+        subjectQuestions = subjectQuestions.filter(q => q.station === station);
+    }
     activeQuestions = shuffleArray(subjectQuestions).slice(0, 20);
     currentIndex = 0;
-    answeredCount = 0;
+    firstTryCorrectCount = 0;
     
     updateProgress();
     showView('notebook');
@@ -200,7 +246,7 @@ function renderCurrentQuestion() {
     }
     
     const q = activeQuestions[currentIndex];
-    currentQuestionState = { interacted: false, isCorrect: false, type: q.type };
+    currentQuestionState = { interacted: false, isCorrect: false, errorCount: 0, type: q.type };
     
     // Badges
     const badges = document.createElement('div');
@@ -261,6 +307,12 @@ function renderCurrentQuestion() {
 function enableSolution() {
     if (!currentQuestionState.interacted) {
         currentQuestionState.interacted = true;
+        
+        // Track score
+        if (currentQuestionState.isCorrect && currentQuestionState.errorCount === 0) {
+            firstTryCorrectCount++;
+        }
+        
         document.getElementById('btn-solution').classList.remove('hidden');
     }
 }
@@ -367,6 +419,7 @@ function renderMatch(q, container) {
                     enableSolution();
                 }
             } else {
+                currentQuestionState.errorCount++;
                 el.classList.add('error');
                 prev.el.classList.add('error');
                 prev.el.classList.remove('selected');
@@ -472,6 +525,7 @@ function renderLabel(q, container) {
                     enableSolution();
                 }
             } else {
+                currentQuestionState.errorCount++;
                 dz.classList.add('incorrect');
                 setTimeout(() => dz.classList.remove('incorrect'), 400);
             }
@@ -560,6 +614,7 @@ function renderOrderWords(q, container) {
             for(let i=0; i<words.length; i++){
                 if(currentQuestionState.currentOrder[i].word !== words[i]) correct = false;
             }
+            if (!correct) currentQuestionState.errorCount++;
             currentQuestionState.isCorrect = correct;
             enableSolution();
         }
@@ -678,6 +733,31 @@ function prevQuestion() {
 // --- DIPLOMA ---
 function showDiploma() {
     showView('diploma');
+    
+    // Calculate score
+    const total = activeQuestions.length;
+    let percent = 0;
+    if (total > 0) {
+        percent = Math.round((firstTryCorrectCount / total) * 100);
+    }
+    
+    document.getElementById('diploma-score-percent').textContent = `${percent}%`;
+    const scoreMessage = document.getElementById('diploma-score-message');
+    
+    if (percent === 100) {
+        scoreMessage.textContent = "¡Excelente! Eres un genio perfecto. 🏆";
+        scoreMessage.style.color = "#FFD700"; // Gold
+    } else if (percent >= 80) {
+        scoreMessage.textContent = "¡Muy bien hecho! Casi perfecto. 🌟";
+        scoreMessage.style.color = "#32CD32"; // Green
+    } else if (percent >= 60) {
+        scoreMessage.textContent = "¡Buen trabajo! Pero podemos mejorar un poco. 👍";
+        scoreMessage.style.color = "#FFA500"; // Orange
+    } else {
+        scoreMessage.textContent = "¡Sigue practicando! La próxima vez te irá mejor. 💪";
+        scoreMessage.style.color = "#FF4500"; // Red
+    }
+    
     if (window.confettiEnabled) {
         shootConfetti();
     }
