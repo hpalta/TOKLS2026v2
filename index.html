@@ -4442,7 +4442,29 @@ function renderCurrentQuestion() {
     prompt.className = 'question-prompt';
     prompt.textContent = q.prompt;
     container.appendChild(prompt);
+    if (q.illustration) {
+        const ill = document.createElement('div');
+        ill.className = 'question-illustration';
+        ill.innerHTML = q.illustration;
+        container.appendChild(ill);
+    }
     
+    // Delegate rendering
+    const qBody = document.createElement('div');
+    if (q.type === 'true_false' || q.type === 'multiple') {
+        renderMultiple(q, qBody);
+    } else if (q.type === 'match') {
+        renderMatch(q, qBody);
+    } else if (q.type === 'label') {
+        renderLabel(q, qBody);
+    } else if (q.type === 'open') {
+        renderOpen(q, qBody);
+    } else if (q.type === 'order_words') {
+        renderOrderWords(q, qBody);
+    }
+    container.appendChild(qBody);
+}
+
 function enableSolution() {
     if (!currentQuestionState.interacted) {
         currentQuestionState.interacted = true;
