@@ -800,7 +800,7 @@ h1 {
     <div id="view-diploma" class="view hidden">
         <canvas id="confetti-canvas"></canvas>
         <div class="diploma-card">
-            <h1 id="diploma-title">¡Misión Cumplida!</h1>
+            <h1 id="diploma-title">¡Misión Cumplida, <span id="diploma-student-name"></span>!</h1>
             <p id="diploma-text">Has completado todas las preguntas de esta materia.</p>
             <div class="diploma-certificate">
                 <h2 id="diploma-subject">Materia</h2>
@@ -808,10 +808,8 @@ h1 {
                     <p id="diploma-score-text">Porcentaje de aciertos: <span id="diploma-score-percent">0%</span></p>
                     <p id="diploma-score-message" class="score-message">¡Sigue practicando!</p>
                 </div>
-                <div class="input-group">
-                    <label id="diploma-name-label" for="student-name">Nombre del explorador/a:</label>
-                    <input type="text" id="student-name" placeholder="Escribe tu nombre aquí">
                 </div>
+
                 <div class="stamp">
                     <span>TOK</span>
                 </div>
@@ -4627,7 +4625,7 @@ function showDiploma() {
     document.getElementById('diploma-subject').textContent = selectedSubToStart || t(currentSubject, true); 
     
     const titleEl = document.getElementById('diploma-title');
-    titleEl.textContent = `¡Misión Cumplida!`;
+    titleEl.textContent = `¡Misión Cumplida, ${studentName}!`;
     
     document.getElementById('diploma-score-percent').textContent = `${score}%`;
     const scoreMessage = document.getElementById('diploma-score-message');

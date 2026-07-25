@@ -834,7 +834,7 @@ function showDiploma() {
     document.getElementById('diploma-subject').textContent = selectedSubToStart || t(currentSubject, true); 
     
     const titleEl = document.getElementById('diploma-title');
-    titleEl.textContent = `¡Misión Cumplida!`;
+    titleEl.textContent = `¡Misión Cumplida, ${studentName}!`;
     
     document.getElementById('diploma-score-percent').textContent = `${score}%`;
     const scoreMessage = document.getElementById('diploma-score-message');
