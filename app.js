@@ -64,6 +64,7 @@ let currentLang = 'es';
 let activeQuestions = [];
 let currentIndex = 0;
 let firstTryCorrectCount = 0;
+let questionResults = [];
 let currentQuestionState = null; // Store state for current question interactions
 
 function t(key, isSubject = false, isDesc = false) {
@@ -88,6 +89,7 @@ const views = {
     selector: document.getElementById('view-selector'),
     subcategories: document.getElementById('view-subcategories'),
     notebook: document.getElementById('view-notebook'),
+    summary: document.getElementById('view-summary'),
     diploma: document.getElementById('view-diploma')
 };
 
@@ -107,7 +109,7 @@ function init() {
     document.getElementById('btn-back-diploma').addEventListener('click', () => showView('selector'));
     document.getElementById('btn-solution').addEventListener('click', showSolution);
     document.getElementById('btn-next').addEventListener('click', nextQuestion);
-    document.getElementById('btn-prev').addEventListener('click', prevQuestion);
+    document.getElementById('btn-to-diploma').addEventListener('click', showDiploma);
     
     // Confetti logic respects prefers-reduced-motion
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -206,6 +208,7 @@ function loadSubject(subject, station) {
     activeQuestions = shuffleArray(subjectQuestions).slice(0, 20);
     currentIndex = 0;
     firstTryCorrectCount = 0;
+    questionResults = [];
     
     updateProgress();
     showView('notebook');
@@ -225,7 +228,6 @@ function renderCurrentQuestion() {
     const footer = document.getElementById('question-footer');
     const btnSolution = document.getElementById('btn-solution');
     const btnNext = document.getElementById('btn-next');
-    const btnPrev = document.getElementById('btn-prev');
     const solutionArea = document.getElementById('solution-area');
     
     container.innerHTML = '';
@@ -233,14 +235,8 @@ function renderCurrentQuestion() {
     btnSolution.classList.add('hidden');
     btnNext.classList.add('hidden');
     
-    if (currentIndex > 0) {
-        btnPrev.classList.remove('hidden');
-    } else {
-        btnPrev.classList.add('hidden');
-    }
-    
     if (currentIndex >= activeQuestions.length) {
-        showDiploma();
+        showSummary();
         return;
     }
     
@@ -733,9 +729,32 @@ function showSolution() {
 }
 
 function nextQuestion() {
+    // Record result before moving
+    if (currentQuestionState) {
+        const isCorrectOnFirstTry = currentQuestionState.isCorrect && currentQuestionState.errorCount === 0;
+        let correctAnswerText = '';
+        const q = activeQuestions[currentIndex];
+        
+        if (q.type === 'multiple' || q.type === 'true_false') {
+            correctAnswerText = q.correctAnswer;
+        } else if (q.type === 'match') {
+            correctAnswerText = q.pairs.map(p => `${p.left} = ${p.right}`).join(', ');
+        } else if (q.type === 'label') {
+            correctAnswerText = q.labels.map(l => l.word).join(', ');
+        } else if (q.type === 'order_words') {
+            correctAnswerText = q.words.join(' ');
+        }
+        
+        questionResults.push({
+            prompt: q.prompt,
+            isCorrect: isCorrectOnFirstTry,
+            correctAnswer: correctAnswerText
+        });
+    }
+
     currentIndex++;
     if (currentIndex >= activeQuestions.length) {
-        showDiploma();
+        showSummary();
     } else {
         updateProgress();
         renderCurrentQuestion();
@@ -743,13 +762,37 @@ function nextQuestion() {
     }
 }
 
-function prevQuestion() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateProgress();
-        renderCurrentQuestion();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+function showSummary() {
+    showView('summary');
+    const container = document.getElementById('summary-container');
+    container.innerHTML = '';
+    
+    questionResults.forEach((res, index) => {
+        const item = document.createElement('div');
+        item.className = 'summary-item';
+        
+        const icon = document.createElement('div');
+        icon.className = 'summary-icon';
+        icon.textContent = res.isCorrect ? '✅' : '❌';
+        
+        const details = document.createElement('div');
+        details.className = 'summary-details';
+        
+        const qText = document.createElement('div');
+        qText.className = 'summary-question';
+        qText.textContent = `${index + 1}. ${res.prompt}`;
+        
+        const ansText = document.createElement('div');
+        ansText.className = res.isCorrect ? 'summary-answer' : 'summary-answer wrong-answer';
+        ansText.innerHTML = `<strong>Respuesta correcta:</strong> ${res.correctAnswer}`;
+        
+        details.appendChild(qText);
+        details.appendChild(ansText);
+        
+        item.appendChild(icon);
+        item.appendChild(details);
+        container.appendChild(item);
+    });
 }
 // --- DIPLOMA ---
 function showDiploma() {
