@@ -4721,7 +4721,14 @@ function showSolution() {
         
         if (q.correctAnswer && (q.type === 'true_false' || q.type === 'multiple')) {
             html += `<p><strong>${q.correctAnswer}</strong></p>`;
+        } else if (q.type === 'match') {
+            html += `<div style="margin: 15px 0; text-align: left; display: inline-block;">`;
+            q.pairs.forEach(p => {
+                html += `<p style="margin-bottom: 5px;"><strong>${p.left}</strong> → ${p.right}</p>`;
+            });
+            html += `</div>`;
         }
+        
         if (q.explain) {
             html += `<p style="margin-top: 10px;">${q.explain}</p>`;
         }
