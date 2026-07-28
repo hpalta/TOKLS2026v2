@@ -47,20 +47,6 @@ module.exports = [
     "explain": "We use 'some' for affirmative sentences and 'any' for negative sentences."
   },
   {
-    "id": "eng_24",
-    "subject": "english",
-    "station": "Time",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'What time do you eat lunch?' can be answered with 'Yes, I do.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "Questions starting with 'What time...' must be answered with a time, like 'At one o'clock', not Yes/No."
-  },
-  {
     "id": "eng_25",
     "subject": "english",
     "station": "Suggestions",
@@ -91,20 +77,6 @@ module.exports = [
     ],
     "correctAnswer": "Cheese",
     "explain": "Cows give us milk, and we use milk to make cheese!"
-  },
-  {
-    "id": "eng_27",
-    "subject": "english",
-    "station": "Routine",
-    "type": "true_false",
-    "context": "After you get up, you stay in your pajamas all day.",
-    "prompt": "Is this correct? 'I get dressed.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "You 'get dressed' when you take off your pajamas and put on your clothes."
   },
   {
     "id": "eng_28",
@@ -202,20 +174,6 @@ module.exports = [
     "explain": "Doing assignments from school is called 'doing homework'."
   },
   {
-    "id": "eng_33",
-    "subject": "english",
-    "station": "Time",
-    "type": "true_false",
-    "context": null,
-    "prompt": "We use 'At' to talk about the time we do something (e.g., 'At nine o'clock').",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "Yes! 'What time do you get up?' -> 'AT seven o'clock.'"
-  },
-  {
     "id": "eng_34",
     "subject": "english",
     "station": "Food",
@@ -231,20 +189,6 @@ module.exports = [
       "juice."
     ],
     "explain": "I have some chicken and juice."
-  },
-  {
-    "id": "eng_35",
-    "subject": "english",
-    "station": "Grammar",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'I don't have some milk' is correct.",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "It's wrong! It should be 'I don't have ANY milk'."
   },
   {
     "id": "eng_36",
@@ -294,20 +238,6 @@ module.exports = [
     "explain": "A pear is a green fruit with a bell shape."
   },
   {
-    "id": "eng_38",
-    "subject": "english",
-    "station": "Suggestions",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'Do you want to play?' and 'Let's play!' mean exactly the same.",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "They are similar, but 'Do you want to...?' is a question, and 'Let's...' is a suggestion."
-  },
-  {
     "id": "eng_39",
     "subject": "english",
     "station": "Time",
@@ -353,5 +283,41 @@ module.exports = [
       }
     ],
     "explain": "Affirmative = some. Negative = any."
+  },
+  {
+    "id": "eng2_label_1",
+    "type": "label",
+    "subject": "english",
+    "station": "Routine",
+    "prompt": "Complete the daily routine (Tap a word, then the blank).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Complete the daily routine verbs:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Early in the morning, I wake</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Then, I use a toothbrush to brush my</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Next, I sit at the table to eat</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. After that, I take my bag and go to</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Finally, at night I go to</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Up",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Teeth",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Breakfast",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "School",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Sleep",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Common verbs and nouns for daily routines."
   }
 ];

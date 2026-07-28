@@ -49,21 +49,6 @@ module.exports = [
     "explain": "Cada parte del cuerpo servía para medir algo diferente: terrenos (pasos) o mesas (palmos)."
   },
   {
-    "id": "mat_3",
-    "subject": "matematica",
-    "station": "Medidas Antiguas",
-    "type": "true_false",
-    "context": "Si mides el ancho de tu cuarto con pasos, y luego lo mide tu papá con sus pasos...",
-    "prompt": "¿El cuarto medirá exactamente la misma cantidad de pasos para los dos?",
-    "illustration": "<svg viewBox=\"0 0 200 100\" width=\"200\" height=\"100\">\n      <text x=\"50\" y=\"60\" font-size=\"40\">👨</text>\n      <text x=\"130\" y=\"60\" font-size=\"30\">👦</text>\n      <path d=\"M40,80 L70,80\" stroke=\"#000\" stroke-width=\"4\"/>\n      <path d=\"M120,80 L140,80\" stroke=\"#000\" stroke-width=\"4\"/>\n      <text x=\"100\" y=\"20\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\">Pasos grandes vs Pasos chicos</text>\n    </svg>",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "¡Falso! Como los pies de tu papá son más grandes, a él le saldrán menos pasos que a ti."
-  },
-  {
     "id": "mat_4",
     "subject": "matematica",
     "station": "Medidas Antiguas",
@@ -262,21 +247,6 @@ module.exports = [
     "explain": "¡Muy bien! 1 metro son 10 decímetros, y 1 decímetro son 10 centímetros. ¡Todo va de 10 en 10!"
   },
   {
-    "id": "mat_14",
-    "subject": "matematica",
-    "station": "El Metro",
-    "type": "true_false",
-    "context": "Tomaste la regla de tu escuela y mediste una línea muy larga.",
-    "prompt": "Si logras contar 100 centímetros, significa que tienes exactamente 1 metro completo.",
-    "illustration": "<svg viewBox=\"0 0 200 80\" width=\"200\" height=\"80\">\n      <text x=\"100\" y=\"40\" font-family=\"Arial\" font-size=\"18\" text-anchor=\"middle\" font-weight=\"bold\">100 cm = 1 m</text>\n    </svg>",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! 100 centímetros (cm) son exactamente 1 metro (m)."
-  },
-  {
     "id": "mat_15",
     "subject": "matematica",
     "station": "El Metro",
@@ -406,21 +376,6 @@ module.exports = [
     ],
     "correctAnswer": "El perímetro",
     "explain": "¡Así es! El perímetro es medir todo el bordecito que rodea a una figura."
-  },
-  {
-    "id": "mat_22",
-    "subject": "matematica",
-    "station": "Perímetro",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Para calcular el perímetro de un cuadrado, solo debes sumar la medida de todos sus lados.",
-    "illustration": "<svg viewBox=\"0 0 150 100\" width=\"150\" height=\"100\">\n      <rect x=\"50\" y=\"25\" width=\"50\" height=\"50\" fill=\"none\" stroke=\"#000\" stroke-width=\"2\"/>\n      <text x=\"75\" y=\"15\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\">Lado + Lado + Lado + Lado</text>\n    </svg>",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Sumando el largo de todos los bordes, obtienes el perímetro total."
   },
   {
     "id": "mat_23",
@@ -620,20 +575,6 @@ module.exports = [
     "explain": "La frecuencia absoluta es solo el conteo de votos que obtuvo cada opción."
   },
   {
-    "id": "mat_33",
-    "subject": "matematica",
-    "station": "Tablas y Gráficos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Los diagramas de barras o los pictogramas usan imágenes y colores para mostrar los datos como si fuera un dibujo.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Los gráficos transforman los aburridos números en dibujos visuales y fáciles de leer."
-  },
-  {
     "id": "mat_34",
     "subject": "matematica",
     "station": "Tablas y Gráficos",
@@ -780,5 +721,41 @@ module.exports = [
     ],
     "correctAnswer": "1. Preguntar 2. Hacer tabla 3. Dibujar gráfico",
     "explain": "¡Excelente! Primero recolectas los datos, luego los ordenas en tu tabla de frecuencias, ¡y al final los dibujas en tu diagrama de barras!"
+  },
+  {
+    "id": "mat_label_1",
+    "type": "label",
+    "subject": "matematica",
+    "station": "Medidas Antiguas",
+    "prompt": "Completa con las partes del cuerpo (Toca una palabra y el espacio).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Partes del cuerpo usadas para medir:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Para medir distancias usaban pasos con el</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Para longitudes cortas usaban la</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Desde el codo hasta los dedos es un</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Abrir ambos brazos extendidos formaba una</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Del pulgar al meñique estirados es una</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Pie",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Mano",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Codo",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Braza",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Cuarta",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "En la antigüedad se usaban las partes del cuerpo como unidades de medida."
   }
 ];

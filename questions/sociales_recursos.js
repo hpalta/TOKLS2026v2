@@ -73,22 +73,22 @@ module.exports = [
       {
         "id": "sr4_1",
         "left": "Petróleo y Carbón",
-        "right": "No renovables"
+        "right": "No renovables (Combustibles)"
       },
       {
         "id": "sr4_2",
-        "left": "Madera (árboles) y Agua",
-        "right": "Renovables"
+        "left": "Madera y Agua",
+        "right": "Renovables (Naturaleza)"
       },
       {
         "id": "sr4_3",
-        "left": "Oro, hierro y cobre (minerales)",
-        "right": "No renovables"
+        "left": "Oro, hierro y cobre",
+        "right": "No renovables (Minerales)"
       },
       {
         "id": "extra_3_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
+        "left": "Sol y Viento",
+        "right": "Inagotables (Energía)"
       }
     ],
     "explain": "Los metales y combustibles fósiles son no renovables. Las plantas y el agua son renovables."
@@ -393,5 +393,41 @@ module.exports = [
     ],
     "correctAnswer": "Si todos cuidamos la naturaleza y usamos los recursos de forma responsable, podremos vivir en un lugar más limpio, sano y feliz",
     "explain": "El cuidado del planeta es responsabilidad de todos para garantizar un futuro saludable."
+  },
+  {
+    "id": "soc_r_label_1",
+    "type": "label",
+    "subject": "sociales",
+    "station": "Recursos Naturales y Contaminación",
+    "prompt": "Completa sobre los recursos y el medio ambiente.",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa sobre los recursos naturales:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Los recursos que se recuperan rápido son</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Los recursos que pueden agotarse son no</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. El agua dulce es un recurso muy</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. El humo y la basura causan</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Es nuestra responsabilidad cuidar el medio</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Renovables",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Renovables",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Importante",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Contaminación",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Ambiente",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Debemos ser conscientes del uso de los recursos para no contaminar."
   }
 ];

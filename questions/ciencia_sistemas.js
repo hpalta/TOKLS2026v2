@@ -345,5 +345,41 @@ module.exports = [
     ],
     "correctAnswer": "Las células",
     "explain": "Somos millones y millones de células organizadas."
+  },
+  {
+    "id": "sis_label_1",
+    "type": "label",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "prompt": "Completa el recorrido de los alimentos (Toca una palabra y el espacio).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa sobre el sistema digestivo:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. La digestión de los alimentos comienza en la</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. El bolo alimenticio baja a través del</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Allí se mezcla con los jugos en el</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Los nutrientes se absorben en el intestino</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Los desechos sólidos van al intestino</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Boca",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Esófago",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Estómago",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Delgado",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Grueso",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "El sistema digestivo procesa los alimentos paso a paso."
   }
 ];

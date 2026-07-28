@@ -400,8 +400,10 @@ function renderMatch(q, container) {
                 return;
             }
             
-            // Check if it's a correct pair
-            const isPairCorrect = (prev.item.matchId === item.matchId);
+            // Check if it's a correct pair by comparing the text values instead of strict IDs
+            const leftItem = prev.item.side === 'left' ? prev.item : item;
+            const rightItem = prev.item.side === 'right' ? prev.item : item;
+            const isPairCorrect = q.pairs.some(p => p.left === leftItem.text && p.right === rightItem.text);
             if (!isPairCorrect) {
                 currentQuestionState.errorCount++;
             }
@@ -752,7 +754,11 @@ function showSolution() {
                     currentQuestionState.errorCount++;
                 }
             });
-            if (currentQuestionState.errorCount > 0) currentQuestionState.isCorrect = false;
+            if (currentQuestionState.errorCount > 0) {
+                currentQuestionState.isCorrect = false;
+            } else {
+                currentQuestionState.isCorrect = true;
+            }
         }
     }
 

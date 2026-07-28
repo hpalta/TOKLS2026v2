@@ -47,20 +47,6 @@ module.exports = [
     "explain": "Cheese is yellow, grapes are small fruits, and chicken is a type of meat."
   },
   {
-    "id": "eng_4",
-    "subject": "english",
-    "station": "Grammar",
-    "type": "true_false",
-    "context": "Laura opens her lunchbox. She has sandwiches but no fruit.",
-    "prompt": "Is this sentence correct? 'I don't have some grapes.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "For negative sentences (with 'don't'), we use 'any'. It should be: 'I don't have any grapes.'"
-  },
-  {
     "id": "eng_5",
     "subject": "english",
     "station": "Food",
@@ -91,20 +77,6 @@ module.exports = [
     ],
     "correctAnswer": "Sure, that sounds like fun!",
     "explain": "When someone suggests a good idea with 'Let's...', we can answer 'Sure, that sounds like fun!'"
-  },
-  {
-    "id": "eng_8",
-    "subject": "english",
-    "station": "Grammar",
-    "type": "true_false",
-    "context": null,
-    "prompt": "We use 'some' for affirmative sentences.",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "Yes! We say 'I have some apples' (affirmative) and 'I don't have any apples' (negative)."
   },
   {
     "id": "eng_9",
@@ -171,20 +143,6 @@ module.exports = [
     "explain": "To ask the current time, we say: 'What time is it?'"
   },
   {
-    "id": "eng_12",
-    "subject": "english",
-    "station": "Routine",
-    "type": "true_false",
-    "context": "It is 8:00 at night. You are very tired.",
-    "prompt": "Is this sentence correct? 'It's time to get up.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "At night, when you are tired, it's time to 'go to bed', not 'get up'."
-  },
-  {
     "id": "eng_13",
     "subject": "english",
     "station": "Grammar",
@@ -199,20 +157,6 @@ module.exports = [
     ],
     "correctAnswer": "any",
     "explain": "Because the sentence is negative ('don't have'), we must use 'any'."
-  },
-  {
-    "id": "eng_14",
-    "subject": "english",
-    "station": "Suggestions",
-    "type": "true_false",
-    "context": "Your brother asks: 'Do you want to eat broccoli?' but you hate broccoli.",
-    "prompt": "You can answer: 'Not really.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "Yes, 'Not really' is a polite way to say no to a suggestion."
   },
   {
     "id": "eng_15",
@@ -324,17 +268,39 @@ module.exports = [
     "explain": "Breakfast is the first meal, lunch is in the middle of the day, and you sleep at night."
   },
   {
-    "id": "eng_20",
+    "id": "eng1_label_1",
+    "type": "label",
     "subject": "english",
-    "station": "Suggestions",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'Let's take a bath!' is a suggestion.",
-    "options": [
-      "True",
-      "False"
+    "station": "Time",
+    "prompt": "Complete the sentences (Tap a word, then the blank space).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Complete the sentences about parts of the day:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. I wake up and eat breakfast in the</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. We have lunch exactly at</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. I do my homework in the</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. We eat dinner together in the</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. I go to sleep late at</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Morning",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Noon",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Afternoon",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Evening",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Night",
+        "x": 65,
+        "y": 84.4
+      }
     ],
-    "correctAnswer": "True",
-    "explain": "Yes! Sentences starting with 'Let's...' (Let us) are used to make suggestions."
+    "explain": "These are the different parts of the day."
   }
 ];

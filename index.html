@@ -1069,22 +1069,22 @@ h1 {
       {
         "id": "p16_1",
         "left": "Latido del corazón",
-        "right": "No lo controlo"
+        "right": "Movimiento Involuntario (Corazón)"
       },
       {
         "id": "p16_2",
         "left": "Correr en el parque",
-        "right": "Sí lo controlo"
+        "right": "Movimiento Voluntario (Piernas)"
       },
       {
         "id": "p16_3",
         "left": "Digerir el almuerzo",
-        "right": "No lo controlo"
+        "right": "Movimiento Involuntario (Estómago)"
       },
       {
         "id": "p16_4",
         "left": "Mover los ojos",
-        "right": "Sí lo controlo"
+        "right": "Movimiento Voluntario (Ojos)"
       }
     ],
     "explain": "Esquelético es controlado, cardíaco y liso son independientes."
@@ -1167,6 +1167,42 @@ h1 {
     ],
     "correctAnswer": "Hacer ejercicio y comer saludable",
     "explain": "El ejercicio fortalece nuestros músculos."
+  },
+  {
+    "id": "loc_label_1",
+    "type": "label",
+    "subject": "science",
+    "station": "Locomoción",
+    "prompt": "Completa las afirmaciones (Toca una palabra y luego el espacio en blanco).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa las afirmaciones sobre los músculos:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. El corazón está formado por el músculo</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. A los huesos se une el músculo</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Los órganos internos tienen músculo</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. La contracción muscular permite el</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Los músculos del estómago se mueven de forma</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Cardíaco",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Esquelético",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Liso",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Movimiento",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Involuntaria",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Diferentes tipos de músculos tienen diferentes funciones y ubicaciones en el cuerpo."
   },
   {
     "id": "luz_1",
@@ -1416,7 +1452,7 @@ h1 {
       {
         "id": "p16_1",
         "left": "Fuego / Fogata",
-        "right": "Luminoso"
+        "right": "Luminoso por combustión"
       },
       {
         "id": "p16_2",
@@ -1426,12 +1462,12 @@ h1 {
       {
         "id": "p16_3",
         "left": "Bombillo",
-        "right": "Luminoso Artificial"
+        "right": "Luminoso Artificial Eléctrico"
       },
       {
         "id": "p16_4",
         "left": "Láser",
-        "right": "Luminoso Artificial"
+        "right": "Luminoso Artificial Concentrado"
       }
     ],
     "explain": "El fuego y el sol son ejemplos naturales (o creados químicamente), el bombillo es artificial."
@@ -1567,15 +1603,6 @@ h1 {
     "explain": "El sonido es una forma de energía que es captada por nuestros oídos y se comunica al cerebro a través de señales."
   },
   {
-    "id": "sonido_2",
-    "type": "true_false",
-    "subject": "science",
-    "station": "La Luz y el sonido",
-    "prompt": "El sonido puede viajar y propagarse en el vacío absoluto.",
-    "correctAnswer": "Falso",
-    "explain": "A diferencia de la luz, el sonido necesita un medio material (gas, líquido o sólido) para propagarse y no viaja en el vacío."
-  },
-  {
     "id": "sonido_3",
     "type": "multiple",
     "subject": "science",
@@ -1589,15 +1616,6 @@ h1 {
     ],
     "correctAnswer": "Gases, líquidos y sólidos",
     "explain": "El sonido puede transmitirse por distintos medios materiales como el aire (gas), el agua (líquido) o las paredes (sólidos)."
-  },
-  {
-    "id": "sonido_4",
-    "type": "true_false",
-    "subject": "science",
-    "station": "La Luz y el sonido",
-    "prompt": "El sonido se transmite en forma de vibraciones, que son movimientos de partículas en torno a una posición fija.",
-    "correctAnswer": "Verdadero",
-    "explain": "Las partículas vibran produciendo ondas que transportan la energía sonora."
   },
   {
     "id": "sonido_5",
@@ -1684,22 +1702,22 @@ h1 {
       {
         "id": "p1",
         "left": "El Sol",
-        "right": "Luminoso natural"
+        "right": "Luminoso natural (Estrella)"
       },
       {
         "id": "p2",
         "left": "Las estrellas",
-        "right": "Luminoso natural"
+        "right": "Luminoso natural (Cielo nocturno)"
       },
       {
         "id": "p3",
         "left": "Una lámpara",
-        "right": "Luminoso artificial"
+        "right": "Luminoso artificial (Eléctrico)"
       },
       {
         "id": "p4",
         "left": "Una vela encendida",
-        "right": "Luminoso artificial"
+        "right": "Luminoso artificial (Fuego)"
       }
     ],
     "explain": "El Sol y las estrellas existen en la naturaleza. Las lámparas y las velas son creadas por los humanos."
@@ -1714,25 +1732,97 @@ h1 {
       {
         "id": "p1",
         "left": "El tambor",
-        "right": "Sonido Fuerte"
+        "right": "Sonido Fuerte (Percusión)"
       },
       {
         "id": "p2",
         "left": "La trompeta",
-        "right": "Sonido Fuerte"
+        "right": "Sonido Fuerte (Viento)"
       },
       {
         "id": "p3",
         "left": "La flauta dulce",
-        "right": "Sonido Suave"
+        "right": "Sonido Suave (Viento madera)"
       },
       {
         "id": "p4",
         "left": "El triángulo",
-        "right": "Sonido Suave"
+        "right": "Sonido Suave (Metal)"
       }
     ],
     "explain": "Los tambores y trompetas producen mucha intensidad (fuertes), mientras que los triángulos y las flautas suelen ser más suaves."
+  },
+  {
+    "id": "sonido_11",
+    "type": "label",
+    "subject": "science",
+    "station": "La Luz y el sonido",
+    "prompt": "Completa las afirmaciones sobre el sonido (Toca una palabra y luego el espacio en blanco).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n            <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa las afirmaciones sobre el sonido:</text>\n            <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. El sonido es una forma de</text>\n            <rect x=\"370\" y=\"80\" width=\"150\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"530\" y=\"110\" font-size=\"24\" fill=\"#555\">que los oídos perciben.</text>\n            \n            <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. A diferencia de la luz, el sonido no viaja en el</text>\n            <rect x=\"580\" y=\"150\" width=\"150\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"740\" y=\"180\" font-size=\"24\" fill=\"#555\">.</text>\n            \n            <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. El sonido se transmite en forma de</text>\n            <rect x=\"460\" y=\"220\" width=\"180\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"650\" y=\"250\" font-size=\"24\" fill=\"#555\">.</text>\n            \n            <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. La</text>\n            <rect x=\"100\" y=\"290\" width=\"180\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"290\" y=\"320\" font-size=\"24\" fill=\"#555\">diferencia un sonido fuerte de uno débil.</text>\n            \n            <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. El</text>\n            <rect x=\"100\" y=\"360\" width=\"180\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"290\" y=\"390\" font-size=\"24\" fill=\"#555\">diferencia un sonido agudo de uno grave.</text>\n          </svg>",
+    "labels": [
+      {
+        "word": "energía",
+        "x": 44.5,
+        "y": 22.2
+      },
+      {
+        "word": "vacío",
+        "x": 65.5,
+        "y": 37.7
+      },
+      {
+        "word": "vibraciones",
+        "x": 55,
+        "y": 53.3
+      },
+      {
+        "word": "intensidad",
+        "x": 19,
+        "y": 68.8
+      },
+      {
+        "word": "tono",
+        "x": 19,
+        "y": 84.4
+      }
+    ],
+    "explain": "a. El sonido es una forma de energía.\nb. El sonido no viaja en el vacío.\nc. El sonido se transmite por vibraciones.\nd. La intensidad distingue fuerte/débil.\ne. El tono distingue agudo/grave."
+  },
+  {
+    "id": "luz_22",
+    "type": "label",
+    "subject": "science",
+    "station": "La Luz y el sonido",
+    "prompt": "Clasifica los siguientes objetos según cómo interactúan con la luz.",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n            <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Clasifica los siguientes objetos:</text>\n            <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. El agua limpia y el vidrio son materiales</text>\n            <rect x=\"500\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. El papel celofán es un material</text>\n            <rect x=\"410\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. La madera y el cartón son materiales</text>\n            <rect x=\"470\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Un espejo limpio es un material</text>\n            <rect x=\"430\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. El sol y las estrellas son cuerpos</text>\n            <rect x=\"440\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n          </svg>",
+    "labels": [
+      {
+        "word": "transparentes",
+        "x": 60,
+        "y": 22.2
+      },
+      {
+        "word": "translúcido",
+        "x": 51,
+        "y": 37.7
+      },
+      {
+        "word": "opacos",
+        "x": 57,
+        "y": 53.3
+      },
+      {
+        "word": "reflectante",
+        "x": 53,
+        "y": 68.8
+      },
+      {
+        "word": "luminosos",
+        "x": 54,
+        "y": 84.4
+      }
+    ],
+    "explain": "a. Dejan pasar toda la luz (transparentes).\nb. Dejan pasar parte de la luz (translúcido).\nc. No dejan pasar la luz (opacos).\nd. Reflejan la luz (reflectante).\ne. Emiten luz propia (luminosos)."
   },
   {
     "id": "sis_1",
@@ -2082,6 +2172,42 @@ h1 {
     "explain": "Somos millones y millones de células organizadas."
   },
   {
+    "id": "sis_label_1",
+    "type": "label",
+    "subject": "science",
+    "station": "Sistemas Digestivo y Respiratorio",
+    "prompt": "Completa el recorrido de los alimentos (Toca una palabra y el espacio).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa sobre el sistema digestivo:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. La digestión de los alimentos comienza en la</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. El bolo alimenticio baja a través del</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Allí se mezcla con los jugos en el</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Los nutrientes se absorben en el intestino</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Los desechos sólidos van al intestino</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Boca",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Esófago",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Estómago",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Delgado",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Grueso",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "El sistema digestivo procesa los alimentos paso a paso."
+  },
+  {
     "id": "eng_1",
     "subject": "english",
     "station": "Time",
@@ -2129,20 +2255,6 @@ h1 {
     "explain": "Cheese is yellow, grapes are small fruits, and chicken is a type of meat."
   },
   {
-    "id": "eng_4",
-    "subject": "english",
-    "station": "Grammar",
-    "type": "true_false",
-    "context": "Laura opens her lunchbox. She has sandwiches but no fruit.",
-    "prompt": "Is this sentence correct? 'I don't have some grapes.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "For negative sentences (with 'don't'), we use 'any'. It should be: 'I don't have any grapes.'"
-  },
-  {
     "id": "eng_5",
     "subject": "english",
     "station": "Food",
@@ -2173,20 +2285,6 @@ h1 {
     ],
     "correctAnswer": "Sure, that sounds like fun!",
     "explain": "When someone suggests a good idea with 'Let's...', we can answer 'Sure, that sounds like fun!'"
-  },
-  {
-    "id": "eng_8",
-    "subject": "english",
-    "station": "Grammar",
-    "type": "true_false",
-    "context": null,
-    "prompt": "We use 'some' for affirmative sentences.",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "Yes! We say 'I have some apples' (affirmative) and 'I don't have any apples' (negative)."
   },
   {
     "id": "eng_9",
@@ -2253,20 +2351,6 @@ h1 {
     "explain": "To ask the current time, we say: 'What time is it?'"
   },
   {
-    "id": "eng_12",
-    "subject": "english",
-    "station": "Routine",
-    "type": "true_false",
-    "context": "It is 8:00 at night. You are very tired.",
-    "prompt": "Is this sentence correct? 'It's time to get up.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "At night, when you are tired, it's time to 'go to bed', not 'get up'."
-  },
-  {
     "id": "eng_13",
     "subject": "english",
     "station": "Grammar",
@@ -2281,20 +2365,6 @@ h1 {
     ],
     "correctAnswer": "any",
     "explain": "Because the sentence is negative ('don't have'), we must use 'any'."
-  },
-  {
-    "id": "eng_14",
-    "subject": "english",
-    "station": "Suggestions",
-    "type": "true_false",
-    "context": "Your brother asks: 'Do you want to eat broccoli?' but you hate broccoli.",
-    "prompt": "You can answer: 'Not really.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "Yes, 'Not really' is a polite way to say no to a suggestion."
   },
   {
     "id": "eng_15",
@@ -2406,18 +2476,40 @@ h1 {
     "explain": "Breakfast is the first meal, lunch is in the middle of the day, and you sleep at night."
   },
   {
-    "id": "eng_20",
+    "id": "eng1_label_1",
+    "type": "label",
     "subject": "english",
-    "station": "Suggestions",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'Let's take a bath!' is a suggestion.",
-    "options": [
-      "True",
-      "False"
+    "station": "Time",
+    "prompt": "Complete the sentences (Tap a word, then the blank space).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Complete the sentences about parts of the day:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. I wake up and eat breakfast in the</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. We have lunch exactly at</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. I do my homework in the</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. We eat dinner together in the</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. I go to sleep late at</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Morning",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Noon",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Afternoon",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Evening",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Night",
+        "x": 65,
+        "y": 84.4
+      }
     ],
-    "correctAnswer": "True",
-    "explain": "Yes! Sentences starting with 'Let's...' (Let us) are used to make suggestions."
+    "explain": "These are the different parts of the day."
   },
   {
     "id": "eng_22",
@@ -2467,20 +2559,6 @@ h1 {
     "explain": "We use 'some' for affirmative sentences and 'any' for negative sentences."
   },
   {
-    "id": "eng_24",
-    "subject": "english",
-    "station": "Time",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'What time do you eat lunch?' can be answered with 'Yes, I do.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "Questions starting with 'What time...' must be answered with a time, like 'At one o'clock', not Yes/No."
-  },
-  {
     "id": "eng_25",
     "subject": "english",
     "station": "Suggestions",
@@ -2511,20 +2589,6 @@ h1 {
     ],
     "correctAnswer": "Cheese",
     "explain": "Cows give us milk, and we use milk to make cheese!"
-  },
-  {
-    "id": "eng_27",
-    "subject": "english",
-    "station": "Routine",
-    "type": "true_false",
-    "context": "After you get up, you stay in your pajamas all day.",
-    "prompt": "Is this correct? 'I get dressed.'",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "You 'get dressed' when you take off your pajamas and put on your clothes."
   },
   {
     "id": "eng_28",
@@ -2622,20 +2686,6 @@ h1 {
     "explain": "Doing assignments from school is called 'doing homework'."
   },
   {
-    "id": "eng_33",
-    "subject": "english",
-    "station": "Time",
-    "type": "true_false",
-    "context": null,
-    "prompt": "We use 'At' to talk about the time we do something (e.g., 'At nine o'clock').",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "True",
-    "explain": "Yes! 'What time do you get up?' -> 'AT seven o'clock.'"
-  },
-  {
     "id": "eng_34",
     "subject": "english",
     "station": "Food",
@@ -2651,20 +2701,6 @@ h1 {
       "juice."
     ],
     "explain": "I have some chicken and juice."
-  },
-  {
-    "id": "eng_35",
-    "subject": "english",
-    "station": "Grammar",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'I don't have some milk' is correct.",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "It's wrong! It should be 'I don't have ANY milk'."
   },
   {
     "id": "eng_36",
@@ -2714,20 +2750,6 @@ h1 {
     "explain": "A pear is a green fruit with a bell shape."
   },
   {
-    "id": "eng_38",
-    "subject": "english",
-    "station": "Suggestions",
-    "type": "true_false",
-    "context": null,
-    "prompt": "'Do you want to play?' and 'Let's play!' mean exactly the same.",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False",
-    "explain": "They are similar, but 'Do you want to...?' is a question, and 'Let's...' is a suggestion."
-  },
-  {
     "id": "eng_39",
     "subject": "english",
     "station": "Time",
@@ -2773,6 +2795,42 @@ h1 {
       }
     ],
     "explain": "Affirmative = some. Negative = any."
+  },
+  {
+    "id": "eng2_label_1",
+    "type": "label",
+    "subject": "english",
+    "station": "Routine",
+    "prompt": "Complete the daily routine (Tap a word, then the blank).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Complete the daily routine verbs:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Early in the morning, I wake</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Then, I use a toothbrush to brush my</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Next, I sit at the table to eat</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. After that, I take my bag and go to</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Finally, at night I go to</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Up",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Teeth",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Breakfast",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "School",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Sleep",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Common verbs and nouns for daily routines."
   },
   {
     "id": "mat_1",
@@ -2822,21 +2880,6 @@ h1 {
       }
     ],
     "explain": "Cada parte del cuerpo servía para medir algo diferente: terrenos (pasos) o mesas (palmos)."
-  },
-  {
-    "id": "mat_3",
-    "subject": "matematica",
-    "station": "Medidas Antiguas",
-    "type": "true_false",
-    "context": "Si mides el ancho de tu cuarto con pasos, y luego lo mide tu papá con sus pasos...",
-    "prompt": "¿El cuarto medirá exactamente la misma cantidad de pasos para los dos?",
-    "illustration": "<svg viewBox=\"0 0 200 100\" width=\"200\" height=\"100\">\n      <text x=\"50\" y=\"60\" font-size=\"40\">👨</text>\n      <text x=\"130\" y=\"60\" font-size=\"30\">👦</text>\n      <path d=\"M40,80 L70,80\" stroke=\"#000\" stroke-width=\"4\"/>\n      <path d=\"M120,80 L140,80\" stroke=\"#000\" stroke-width=\"4\"/>\n      <text x=\"100\" y=\"20\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\">Pasos grandes vs Pasos chicos</text>\n    </svg>",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Falso",
-    "explain": "¡Falso! Como los pies de tu papá son más grandes, a él le saldrán menos pasos que a ti."
   },
   {
     "id": "mat_4",
@@ -3037,21 +3080,6 @@ h1 {
     "explain": "¡Muy bien! 1 metro son 10 decímetros, y 1 decímetro son 10 centímetros. ¡Todo va de 10 en 10!"
   },
   {
-    "id": "mat_14",
-    "subject": "matematica",
-    "station": "El Metro",
-    "type": "true_false",
-    "context": "Tomaste la regla de tu escuela y mediste una línea muy larga.",
-    "prompt": "Si logras contar 100 centímetros, significa que tienes exactamente 1 metro completo.",
-    "illustration": "<svg viewBox=\"0 0 200 80\" width=\"200\" height=\"80\">\n      <text x=\"100\" y=\"40\" font-family=\"Arial\" font-size=\"18\" text-anchor=\"middle\" font-weight=\"bold\">100 cm = 1 m</text>\n    </svg>",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! 100 centímetros (cm) son exactamente 1 metro (m)."
-  },
-  {
     "id": "mat_15",
     "subject": "matematica",
     "station": "El Metro",
@@ -3181,21 +3209,6 @@ h1 {
     ],
     "correctAnswer": "El perímetro",
     "explain": "¡Así es! El perímetro es medir todo el bordecito que rodea a una figura."
-  },
-  {
-    "id": "mat_22",
-    "subject": "matematica",
-    "station": "Perímetro",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Para calcular el perímetro de un cuadrado, solo debes sumar la medida de todos sus lados.",
-    "illustration": "<svg viewBox=\"0 0 150 100\" width=\"150\" height=\"100\">\n      <rect x=\"50\" y=\"25\" width=\"50\" height=\"50\" fill=\"none\" stroke=\"#000\" stroke-width=\"2\"/>\n      <text x=\"75\" y=\"15\" font-family=\"Arial\" font-size=\"12\" text-anchor=\"middle\">Lado + Lado + Lado + Lado</text>\n    </svg>",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Sumando el largo de todos los bordes, obtienes el perímetro total."
   },
   {
     "id": "mat_23",
@@ -3395,20 +3408,6 @@ h1 {
     "explain": "La frecuencia absoluta es solo el conteo de votos que obtuvo cada opción."
   },
   {
-    "id": "mat_33",
-    "subject": "matematica",
-    "station": "Tablas y Gráficos",
-    "type": "true_false",
-    "context": null,
-    "prompt": "Los diagramas de barras o los pictogramas usan imágenes y colores para mostrar los datos como si fuera un dibujo.",
-    "options": [
-      "Verdadero",
-      "Falso"
-    ],
-    "correctAnswer": "Verdadero",
-    "explain": "¡Verdadero! Los gráficos transforman los aburridos números en dibujos visuales y fáciles de leer."
-  },
-  {
     "id": "mat_34",
     "subject": "matematica",
     "station": "Tablas y Gráficos",
@@ -3555,6 +3554,42 @@ h1 {
     ],
     "correctAnswer": "1. Preguntar 2. Hacer tabla 3. Dibujar gráfico",
     "explain": "¡Excelente! Primero recolectas los datos, luego los ordenas en tu tabla de frecuencias, ¡y al final los dibujas en tu diagrama de barras!"
+  },
+  {
+    "id": "mat_label_1",
+    "type": "label",
+    "subject": "matematica",
+    "station": "Medidas Antiguas",
+    "prompt": "Completa con las partes del cuerpo (Toca una palabra y el espacio).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Partes del cuerpo usadas para medir:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Para medir distancias usaban pasos con el</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Para longitudes cortas usaban la</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Desde el codo hasta los dedos es un</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Abrir ambos brazos extendidos formaba una</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Del pulgar al meñique estirados es una</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Pie",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Mano",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Codo",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Braza",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Cuarta",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "En la antigüedad se usaban las partes del cuerpo como unidades de medida."
   },
   {
     "id": "soc_p_1",
@@ -3967,6 +4002,42 @@ h1 {
     "explain": "El paisaje es el conjunto integrado de todos los elementos naturales y culturales de un lugar."
   },
   {
+    "id": "soc_p_label_1",
+    "type": "label",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "prompt": "Completa las afirmaciones sobre el paisaje.",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa sobre los tipos de paisaje:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Los ríos y montañas son elementos</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Las casas y carreteras son elementos</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Un lugar con muchas montañas es un paisaje</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Un lugar plano y extenso se llama</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. La intervención humana crea el paisaje</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Naturales",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Culturales",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Montañoso",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Llanura",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Cultural",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Los paisajes tienen componentes creados por la naturaleza o por el hombre."
+  },
+  {
     "id": "soc_r_1",
     "subject": "sociales",
     "station": "Recursos Naturales y Contaminación",
@@ -4040,22 +4111,22 @@ h1 {
       {
         "id": "sr4_1",
         "left": "Petróleo y Carbón",
-        "right": "No renovables"
+        "right": "No renovables (Combustibles)"
       },
       {
         "id": "sr4_2",
-        "left": "Madera (árboles) y Agua",
-        "right": "Renovables"
+        "left": "Madera y Agua",
+        "right": "Renovables (Naturaleza)"
       },
       {
         "id": "sr4_3",
-        "left": "Oro, hierro y cobre (minerales)",
-        "right": "No renovables"
+        "left": "Oro, hierro y cobre",
+        "right": "No renovables (Minerales)"
       },
       {
         "id": "extra_3_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
+        "left": "Sol y Viento",
+        "right": "Inagotables (Energía)"
       }
     ],
     "explain": "Los metales y combustibles fósiles son no renovables. Las plantas y el agua son renovables."
@@ -4360,6 +4431,42 @@ h1 {
     ],
     "correctAnswer": "Si todos cuidamos la naturaleza y usamos los recursos de forma responsable, podremos vivir en un lugar más limpio, sano y feliz",
     "explain": "El cuidado del planeta es responsabilidad de todos para garantizar un futuro saludable."
+  },
+  {
+    "id": "soc_r_label_1",
+    "type": "label",
+    "subject": "sociales",
+    "station": "Recursos Naturales y Contaminación",
+    "prompt": "Completa sobre los recursos y el medio ambiente.",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa sobre los recursos naturales:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Los recursos que se recuperan rápido son</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Los recursos que pueden agotarse son no</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. El agua dulce es un recurso muy</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. El humo y la basura causan</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Es nuestra responsabilidad cuidar el medio</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Renovables",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Renovables",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Importante",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Contaminación",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Ambiente",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Debemos ser conscientes del uso de los recursos para no contaminar."
   }
 ];
 
@@ -4765,8 +4872,10 @@ function renderMatch(q, container) {
                 return;
             }
             
-            // Check if it's a correct pair
-            const isPairCorrect = (prev.item.matchId === item.matchId);
+            // Check if it's a correct pair by comparing the text values instead of strict IDs
+            const leftItem = prev.item.side === 'left' ? prev.item : item;
+            const rightItem = prev.item.side === 'right' ? prev.item : item;
+            const isPairCorrect = q.pairs.some(p => p.left === leftItem.text && p.right === rightItem.text);
             if (!isPairCorrect) {
                 currentQuestionState.errorCount++;
             }
@@ -5117,7 +5226,11 @@ function showSolution() {
                     currentQuestionState.errorCount++;
                 }
             });
-            if (currentQuestionState.errorCount > 0) currentQuestionState.isCorrect = false;
+            if (currentQuestionState.errorCount > 0) {
+                currentQuestionState.isCorrect = false;
+            } else {
+                currentQuestionState.isCorrect = true;
+            }
         }
     }
 

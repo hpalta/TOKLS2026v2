@@ -247,22 +247,22 @@ module.exports = [
       {
         "id": "p16_1",
         "left": "Latido del corazón",
-        "right": "No lo controlo"
+        "right": "Movimiento Involuntario (Corazón)"
       },
       {
         "id": "p16_2",
         "left": "Correr en el parque",
-        "right": "Sí lo controlo"
+        "right": "Movimiento Voluntario (Piernas)"
       },
       {
         "id": "p16_3",
         "left": "Digerir el almuerzo",
-        "right": "No lo controlo"
+        "right": "Movimiento Involuntario (Estómago)"
       },
       {
         "id": "p16_4",
         "left": "Mover los ojos",
-        "right": "Sí lo controlo"
+        "right": "Movimiento Voluntario (Ojos)"
       }
     ],
     "explain": "Esquelético es controlado, cardíaco y liso son independientes."
@@ -345,5 +345,41 @@ module.exports = [
     ],
     "correctAnswer": "Hacer ejercicio y comer saludable",
     "explain": "El ejercicio fortalece nuestros músculos."
+  },
+  {
+    "id": "loc_label_1",
+    "type": "label",
+    "subject": "science",
+    "station": "Locomoción",
+    "prompt": "Completa las afirmaciones (Toca una palabra y luego el espacio en blanco).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa las afirmaciones sobre los músculos:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. El corazón está formado por el músculo</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. A los huesos se une el músculo</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Los órganos internos tienen músculo</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. La contracción muscular permite el</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. Los músculos del estómago se mueven de forma</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Cardíaco",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Esquelético",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Liso",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Movimiento",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Involuntaria",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Diferentes tipos de músculos tienen diferentes funciones y ubicaciones en el cuerpo."
   }
 ];

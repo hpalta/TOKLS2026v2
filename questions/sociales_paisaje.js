@@ -408,5 +408,41 @@ module.exports = [
     ],
     "correctAnswer": "Es la suma de todo lo que vemos: tierra, agua, plantas, animales y construcciones humanas",
     "explain": "El paisaje es el conjunto integrado de todos los elementos naturales y culturales de un lugar."
+  },
+  {
+    "id": "soc_p_label_1",
+    "type": "label",
+    "subject": "sociales",
+    "station": "Paisaje",
+    "prompt": "Completa las afirmaciones sobre el paisaje.",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n  <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa sobre los tipos de paisaje:</text>\n  <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. Los ríos y montañas son elementos</text>\n  <rect x=\"550\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. Las casas y carreteras son elementos</text>\n  <rect x=\"550\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. Un lugar con muchas montañas es un paisaje</text>\n  <rect x=\"550\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Un lugar plano y extenso se llama</text>\n  <rect x=\"550\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n  <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. La intervención humana crea el paisaje</text>\n  <rect x=\"550\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n</svg>",
+    "labels": [
+      {
+        "word": "Naturales",
+        "x": 65,
+        "y": 22.2
+      },
+      {
+        "word": "Culturales",
+        "x": 65,
+        "y": 37.8
+      },
+      {
+        "word": "Montañoso",
+        "x": 65,
+        "y": 53.3
+      },
+      {
+        "word": "Llanura",
+        "x": 65,
+        "y": 68.9
+      },
+      {
+        "word": "Cultural",
+        "x": 65,
+        "y": 84.4
+      }
+    ],
+    "explain": "Los paisajes tienen componentes creados por la naturaleza o por el hombre."
   }
 ];

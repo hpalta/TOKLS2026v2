@@ -247,7 +247,7 @@ module.exports = [
       {
         "id": "p16_1",
         "left": "Fuego / Fogata",
-        "right": "Luminoso"
+        "right": "Luminoso por combustión"
       },
       {
         "id": "p16_2",
@@ -257,12 +257,12 @@ module.exports = [
       {
         "id": "p16_3",
         "left": "Bombillo",
-        "right": "Luminoso Artificial"
+        "right": "Luminoso Artificial Eléctrico"
       },
       {
         "id": "p16_4",
         "left": "Láser",
-        "right": "Luminoso Artificial"
+        "right": "Luminoso Artificial Concentrado"
       }
     ],
     "explain": "El fuego y el sol son ejemplos naturales (o creados químicamente), el bombillo es artificial."
@@ -398,15 +398,6 @@ module.exports = [
     "explain": "El sonido es una forma de energía que es captada por nuestros oídos y se comunica al cerebro a través de señales."
   },
   {
-    "id": "sonido_2",
-    "type": "true_false",
-    "subject": "science",
-    "station": "La Luz y el sonido",
-    "prompt": "El sonido puede viajar y propagarse en el vacío absoluto.",
-    "correctAnswer": "Falso",
-    "explain": "A diferencia de la luz, el sonido necesita un medio material (gas, líquido o sólido) para propagarse y no viaja en el vacío."
-  },
-  {
     "id": "sonido_3",
     "type": "multiple",
     "subject": "science",
@@ -420,15 +411,6 @@ module.exports = [
     ],
     "correctAnswer": "Gases, líquidos y sólidos",
     "explain": "El sonido puede transmitirse por distintos medios materiales como el aire (gas), el agua (líquido) o las paredes (sólidos)."
-  },
-  {
-    "id": "sonido_4",
-    "type": "true_false",
-    "subject": "science",
-    "station": "La Luz y el sonido",
-    "prompt": "El sonido se transmite en forma de vibraciones, que son movimientos de partículas en torno a una posición fija.",
-    "correctAnswer": "Verdadero",
-    "explain": "Las partículas vibran produciendo ondas que transportan la energía sonora."
   },
   {
     "id": "sonido_5",
@@ -515,22 +497,22 @@ module.exports = [
       {
         "id": "p1",
         "left": "El Sol",
-        "right": "Luminoso natural"
+        "right": "Luminoso natural (Estrella)"
       },
       {
         "id": "p2",
         "left": "Las estrellas",
-        "right": "Luminoso natural"
+        "right": "Luminoso natural (Cielo nocturno)"
       },
       {
         "id": "p3",
         "left": "Una lámpara",
-        "right": "Luminoso artificial"
+        "right": "Luminoso artificial (Eléctrico)"
       },
       {
         "id": "p4",
         "left": "Una vela encendida",
-        "right": "Luminoso artificial"
+        "right": "Luminoso artificial (Fuego)"
       }
     ],
     "explain": "El Sol y las estrellas existen en la naturaleza. Las lámparas y las velas son creadas por los humanos."
@@ -545,24 +527,96 @@ module.exports = [
       {
         "id": "p1",
         "left": "El tambor",
-        "right": "Sonido Fuerte"
+        "right": "Sonido Fuerte (Percusión)"
       },
       {
         "id": "p2",
         "left": "La trompeta",
-        "right": "Sonido Fuerte"
+        "right": "Sonido Fuerte (Viento)"
       },
       {
         "id": "p3",
         "left": "La flauta dulce",
-        "right": "Sonido Suave"
+        "right": "Sonido Suave (Viento madera)"
       },
       {
         "id": "p4",
         "left": "El triángulo",
-        "right": "Sonido Suave"
+        "right": "Sonido Suave (Metal)"
       }
     ],
     "explain": "Los tambores y trompetas producen mucha intensidad (fuertes), mientras que los triángulos y las flautas suelen ser más suaves."
+  },
+  {
+    "id": "sonido_11",
+    "type": "label",
+    "subject": "science",
+    "station": "La Luz y el sonido",
+    "prompt": "Completa las afirmaciones sobre el sonido (Toca una palabra y luego el espacio en blanco).",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n            <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Completa las afirmaciones sobre el sonido:</text>\n            <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. El sonido es una forma de</text>\n            <rect x=\"370\" y=\"80\" width=\"150\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"530\" y=\"110\" font-size=\"24\" fill=\"#555\">que los oídos perciben.</text>\n            \n            <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. A diferencia de la luz, el sonido no viaja en el</text>\n            <rect x=\"580\" y=\"150\" width=\"150\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"740\" y=\"180\" font-size=\"24\" fill=\"#555\">.</text>\n            \n            <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. El sonido se transmite en forma de</text>\n            <rect x=\"460\" y=\"220\" width=\"180\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"650\" y=\"250\" font-size=\"24\" fill=\"#555\">.</text>\n            \n            <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. La</text>\n            <rect x=\"100\" y=\"290\" width=\"180\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"290\" y=\"320\" font-size=\"24\" fill=\"#555\">diferencia un sonido fuerte de uno débil.</text>\n            \n            <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. El</text>\n            <rect x=\"100\" y=\"360\" width=\"180\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            <text x=\"290\" y=\"390\" font-size=\"24\" fill=\"#555\">diferencia un sonido agudo de uno grave.</text>\n          </svg>",
+    "labels": [
+      {
+        "word": "energía",
+        "x": 44.5,
+        "y": 22.2
+      },
+      {
+        "word": "vacío",
+        "x": 65.5,
+        "y": 37.7
+      },
+      {
+        "word": "vibraciones",
+        "x": 55,
+        "y": 53.3
+      },
+      {
+        "word": "intensidad",
+        "x": 19,
+        "y": 68.8
+      },
+      {
+        "word": "tono",
+        "x": 19,
+        "y": 84.4
+      }
+    ],
+    "explain": "a. El sonido es una forma de energía.\nb. El sonido no viaja en el vacío.\nc. El sonido se transmite por vibraciones.\nd. La intensidad distingue fuerte/débil.\ne. El tono distingue agudo/grave."
+  },
+  {
+    "id": "luz_22",
+    "type": "label",
+    "subject": "science",
+    "station": "La Luz y el sonido",
+    "prompt": "Clasifica los siguientes objetos según cómo interactúan con la luz.",
+    "svg": "<svg viewBox=\"0 0 1000 450\" width=\"100%\" height=\"100%\" style=\"background:#fff; border-radius:15px; font-family: 'Comic Sans MS', sans-serif;\">\n            <text x=\"40\" y=\"50\" font-size=\"28\" font-weight=\"bold\" fill=\"#333\">Clasifica los siguientes objetos:</text>\n            <text x=\"40\" y=\"110\" font-size=\"24\" fill=\"#555\">a. El agua limpia y el vidrio son materiales</text>\n            <rect x=\"500\" y=\"80\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"180\" font-size=\"24\" fill=\"#555\">b. El papel celofán es un material</text>\n            <rect x=\"410\" y=\"150\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"250\" font-size=\"24\" fill=\"#555\">c. La madera y el cartón son materiales</text>\n            <rect x=\"470\" y=\"220\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"320\" font-size=\"24\" fill=\"#555\">d. Un espejo limpio es un material</text>\n            <rect x=\"430\" y=\"290\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n            \n            <text x=\"40\" y=\"390\" font-size=\"24\" fill=\"#555\">e. El sol y las estrellas son cuerpos</text>\n            <rect x=\"440\" y=\"360\" width=\"200\" height=\"40\" fill=\"#f0f0f0\" rx=\"10\"/>\n          </svg>",
+    "labels": [
+      {
+        "word": "transparentes",
+        "x": 60,
+        "y": 22.2
+      },
+      {
+        "word": "translúcido",
+        "x": 51,
+        "y": 37.7
+      },
+      {
+        "word": "opacos",
+        "x": 57,
+        "y": 53.3
+      },
+      {
+        "word": "reflectante",
+        "x": 53,
+        "y": 68.8
+      },
+      {
+        "word": "luminosos",
+        "x": 54,
+        "y": 84.4
+      }
+    ],
+    "explain": "a. Dejan pasar toda la luz (transparentes).\nb. Dejan pasar parte de la luz (translúcido).\nc. No dejan pasar la luz (opacos).\nd. Reflejan la luz (reflectante).\ne. Emiten luz propia (luminosos)."
   }
 ];
