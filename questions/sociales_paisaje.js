@@ -32,16 +32,6 @@ module.exports = [
         "id": "sp2_2",
         "left": "Casas, carreteras y puentes",
         "right": "Elementos Culturales"
-      },
-      {
-        "id": "extra_1_2",
-        "left": "Elemento Extra 3",
-        "right": "Atributo Extra 3"
-      },
-      {
-        "id": "extra_1_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Los elementos naturales son de la naturaleza, mientras que los culturales son construidos por las personas."
@@ -100,11 +90,6 @@ module.exports = [
         "id": "sp5_3",
         "left": "Valle",
         "right": "Zona baja y llana entre montañas por donde suele pasar un río"
-      },
-      {
-        "id": "extra_4_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada forma de relieve tiene características únicas de altura y forma."
@@ -158,16 +143,6 @@ module.exports = [
         "id": "sp8_2",
         "left": "Paisaje de Costa",
         "right": "Cerca del mar, con playas, acantilados y palmeras"
-      },
-      {
-        "id": "extra_7_2",
-        "left": "Elemento Extra 3",
-        "right": "Atributo Extra 3"
-      },
-      {
-        "id": "extra_7_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "La ubicación respecto al mar define gran parte de los elementos de un paisaje."
@@ -210,11 +185,6 @@ module.exports = [
         "id": "sp10_3",
         "left": "Región con selva tropical espesa al sur",
         "right": "Región Amazonia"
-      },
-      {
-        "id": "extra_9_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada región natural de Colombia tiene clima, relieve y vegetación propios."
@@ -284,16 +254,6 @@ module.exports = [
         "id": "sp14_2",
         "left": "Zorros, ciervos y vacas",
         "right": "Paisaje de Interior / Llanura"
-      },
-      {
-        "id": "extra_13_2",
-        "left": "Elemento Extra 3",
-        "right": "Atributo Extra 3"
-      },
-      {
-        "id": "extra_13_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "La fauna se adapta al clima y relieve de su entorno."
@@ -352,11 +312,6 @@ module.exports = [
         "id": "sp17_3",
         "left": "Región calurosa al norte con el mar Caribe",
         "right": "Región Caribe"
-      },
-      {
-        "id": "extra_16_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "La ubicación geográfica de cada región determina su clima y relieve."

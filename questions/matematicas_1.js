@@ -39,11 +39,6 @@ module.exports = [
         "id": "m2_3",
         "left": "Del codo a los dedos",
         "right": "Codo egipcio"
-      },
-      {
-        "id": "extra_1_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada parte del cuerpo servía para medir algo diferente: terrenos (pasos) o mesas (palmos)."
@@ -121,11 +116,6 @@ module.exports = [
         "id": "m7_3",
         "left": "Una caja muy grande",
         "right": "Cuerdas o palos"
-      },
-      {
-        "id": "extra_6_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Usamos el cuerpo dependiendo del tamaño de lo que queremos medir."
@@ -237,11 +227,6 @@ module.exports = [
         "id": "m13_3",
         "left": "1 centímetro",
         "right": "Tamaño pequeñito para borradores"
-      },
-      {
-        "id": "extra_12_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Muy bien! 1 metro son 10 decímetros, y 1 decímetro son 10 centímetros. ¡Todo va de 10 en 10!"
@@ -302,11 +287,6 @@ module.exports = [
         "id": "m17_3",
         "left": "Un libro de la escuela",
         "right": "Decímetros (dm)"
-      },
-      {
-        "id": "extra_16_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Usamos metros para cosas grandes, decímetros para medianas y centímetros para pequeñitas."
@@ -417,11 +397,6 @@ module.exports = [
         "id": "m24_3",
         "left": "Rectángulo de 5 cm de largo y 2 cm de ancho",
         "right": "14 cm"
-      },
-      {
-        "id": "extra_23_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Súper matemático! Sumaste perfectamente (2+2+2+2=8), (3+3+3=9) y (5+5+2+2=14)."
@@ -498,11 +473,6 @@ module.exports = [
         "id": "m28_3",
         "left": "Darle la vuelta a la manzana trotando",
         "right": "Estás recorriendo el perímetro del parque"
-      },
-      {
-        "id": "extra_27_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡El perímetro está en todas partes, desde las cercas hasta el deporte!"
@@ -597,11 +567,6 @@ module.exports = [
         "id": "m34_3",
         "left": "Diagrama de barras",
         "right": "Dibujar barritas para ver qué ganó"
-      },
-      {
-        "id": "extra_33_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Eres todo un investigador! Preguntas, cuentas y luego dibujas los resultados."
@@ -679,11 +644,6 @@ module.exports = [
         "id": "m38_3",
         "left": "¿Quién tiene la barra más alta?",
         "right": "Los Monos"
-      },
-      {
-        "id": "extra_37_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "¡Perfecto! Analizar gráficos es como leer una historia contada con dibujitos."

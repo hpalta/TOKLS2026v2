@@ -37,11 +37,6 @@ module.exports = [
         "id": "g3_new",
         "left": "We have ______ rice.",
         "right": "some (uncountable)"
-      },
-      {
-        "id": "extra_1_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "We use 'some' for affirmative sentences and 'any' for negative sentences."
@@ -275,11 +270,6 @@ module.exports = [
         "id": "g5",
         "left": "He has...",
         "right": "...some juice."
-      },
-      {
-        "id": "extra_18_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Affirmative = some. Negative = any."

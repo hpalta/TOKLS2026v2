@@ -32,16 +32,6 @@ module.exports = [
         "id": "sr2_2",
         "left": "Recursos renovables que se pueden agotar si no se cuidan",
         "right": "El agua, árboles y plantas"
-      },
-      {
-        "id": "extra_1_2",
-        "left": "Elemento Extra 3",
-        "right": "Atributo Extra 3"
-      },
-      {
-        "id": "extra_1_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "El sol siempre brillará, pero el agua limpia sí se puede agotar si la contaminamos."
@@ -163,11 +153,6 @@ module.exports = [
         "id": "sr8_3",
         "left": "Humo de los tubos de escape de los carros",
         "right": "Contaminación del aire"
-      },
-      {
-        "id": "extra_7_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Toda nuestra basura afecta un elemento diferente de la naturaleza si no somos responsables."
@@ -242,11 +227,6 @@ module.exports = [
         "id": "sr12_3",
         "left": "Cuidar las plantas y animales",
         "right": "Protege la flora y fauna"
-      },
-      {
-        "id": "extra_11_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Cada pequeña acción positiva suma para tener un planeta más sano."
@@ -316,16 +296,6 @@ module.exports = [
         "id": "sr16_2",
         "left": "Arrojar químicos de fábricas al río",
         "right": "Acción Negativa (contamina el agua)"
-      },
-      {
-        "id": "extra_15_2",
-        "left": "Elemento Extra 3",
-        "right": "Atributo Extra 3"
-      },
-      {
-        "id": "extra_15_3",
-        "left": "Elemento Extra 4",
-        "right": "Atributo Extra 4"
       }
     ],
     "explain": "Tenemos el poder de elegir cuidar o dañar la naturaleza con nuestros actos diarios."
