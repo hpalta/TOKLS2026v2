@@ -306,7 +306,7 @@ function renderCurrentQuestion() {
     if (q.context) {
         const ctx = document.createElement('div');
         ctx.className = 'question-context';
-        ctx.textContent = q.context;
+        ctx.innerHTML = q.context.replace(/\n/g, '<br>');
         container.appendChild(ctx);
     }
     
