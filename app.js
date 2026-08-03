@@ -13,6 +13,11 @@ const STR = {
         type_open: "Pregunta Abierta",
         type_order_words: "Ordenar Oración",
         badge_case: "Caso de Investigación",
+        summary_title: "¡Misión Cumplida!",
+        score: "Puntaje perfecto a la primera:",
+        btn_restart: "Volver al inicio",
+        btn_diploma: "Ver Diploma",
+        congrats: "¡Felicidades explorador/a!",
         diploma_title: "¡Misión Cumplida!",
         diploma_text: "Has completado todas las preguntas de esta materia.",
         name_label: "Nombre del explorador/a:",
@@ -20,20 +25,22 @@ const STR = {
         subjects: {
             science: "Ciencias Naturales",
             english: "Inglés",
-            sociales: "Sociales",
-            matematica: "Matemáticas"
+            sociales: "Ciencias Sociales",
+            matematica: "Matemáticas",
+            lenguaje: "Lenguaje y Estudios Literarios"
         },
         desc: {
-            science: "Huesos, músculos y nuestro cuerpo",
-            english: "My Day & Fantastic Food",
-            sociales: "Recursos y Cuidado del Entorno",
-            matematica: "Medidas, geometría y datos"
+            science: "Explora la luz, los sonidos, las plantas y los ecosistemas.",
+            english: "Practice words, feelings, colors, and short stories.",
+            sociales: "Conoce los relieves, recursos naturales y paisajes.",
+            matematica: "Aprende operaciones, series, unidades y figuras geométricas.",
+            lenguaje: "Practica gramática, ortografía y comprensión de cuentos cortos."
         }
     },
     en: {
-        back: "← Change subject",
-        see_solution: "See solution",
-        next: "Next question →",
+        back: "Back",
+        see_solution: "See Solution",
+        next: "Next Question",
         correct: "CORRECT!",
         incorrect: "ALMOST...",
         type_true_false: "True or False",
@@ -43,17 +50,28 @@ const STR = {
         type_open: "Open Question",
         type_order_words: "Order the Sentence",
         badge_case: "Investigation Case",
+        summary_title: "Mission Accomplished!",
+        score: "Perfect score on first try:",
+        btn_restart: "Back to Home",
+        btn_diploma: "View Diploma",
+        congrats: "Congratulations explorer!",
         diploma_title: "Mission Accomplished!",
         diploma_text: "You have completed all the questions for this subject.",
         name_label: "Explorer's name:",
         name_placeholder: "Type your name here",
         subjects: {
             science: "Science",
-            english: "English"
+            english: "English",
+            sociales: "Social Studies",
+            matematica: "Math",
+            lenguaje: "Language Arts"
         },
         desc: {
-            science: "Bones, muscles and our body",
-            english: "My Day & Fantastic Food"
+            science: "Explore light, sound, plants and ecosystems.",
+            english: "Practice words, feelings, colors, and short stories.",
+            sociales: "Learn about landscapes and natural resources.",
+            matematica: "Learn operations, series, units and geometry.",
+            lenguaje: "Practice grammar, spelling and reading comprehension."
         }
     }
 };
