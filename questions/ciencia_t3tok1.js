@@ -165,33 +165,18 @@ module.exports = [
   },
   {
     "id": "t3tok1_11",
-    "type": "match",
+    "type": "multiple",
     "subject": "science",
     "station": "T3TOK1",
-    "prompt": "Clasifica los siguientes elementos como factores Bióticos o Abióticos:",
-    "pairs": [
-      {
-        "id": "p1",
-        "left": "El Ocelote",
-        "right": "Biótico"
-      },
-      {
-        "id": "p2",
-        "left": "La luz solar",
-        "right": "Abiótico"
-      },
-      {
-        "id": "p3",
-        "left": "Un hongo",
-        "right": "Biótico"
-      },
-      {
-        "id": "p4",
-        "left": "El agua del río",
-        "right": "Abiótico"
-      }
+    "prompt": "¿Cuál de los siguientes grupos está formado SOLAMENTE por factores abióticos (sin vida)?",
+    "explain": "Los seres vivos (animales, plantas, hongos) son bióticos. Los elementos no vivos necesarios para vivir (luz, agua, suelo) son abióticos.",
+    "options": [
+      "La luz solar, el agua del río y las rocas.",
+      "El ocelote, un hongo y las bacterias.",
+      "El agua del río, las plantas y el sol.",
+      "Los insectos, los reptiles y las nubes."
     ],
-    "explain": "Los seres vivos (animales, plantas, hongos) son bióticos. Los elementos no vivos necesarios para vivir (luz, agua, suelo) son abióticos."
+    "correctAnswer": "La luz solar, el agua del río y las rocas."
   },
   {
     "id": "t3tok1_12",
