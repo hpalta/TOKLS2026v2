@@ -21,7 +21,11 @@ module.exports = [
     "station": "T3TOK1",
     "prompt": "El agua, el suelo, la luz solar y las rocas son considerados factores abióticos (sin vida) que son muy importantes para el ambiente.",
     "correctAnswer": "Verdadero",
-    "explain": "Estos elementos son factores abióticos. No tienen vida, pero factores bióticos (como plantas y animales) los necesitan para sobrevivir."
+    "explain": "Estos elementos son factores abióticos. No tienen vida, pero factores bióticos (como plantas y animales) los necesitan para sobrevivir.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ]
   },
   {
     "id": "t3tok1_3",
@@ -30,9 +34,21 @@ module.exports = [
     "station": "T3TOK1",
     "prompt": "Relaciona cada hábitat con los seres vivos que lo habitan:",
     "pairs": [
-      { "id": "p1", "left": "Hábitat Acuático", "right": "Peces, corales y ballenas" },
-      { "id": "p2", "left": "Hábitat Terrestre", "right": "Cactus, leones y pinos" },
-      { "id": "p3", "left": "Hábitat Aeroterrestre", "right": "Aves migratorias e insectos voladores" }
+      {
+        "id": "p1",
+        "left": "Hábitat Acuático",
+        "right": "Peces, corales y ballenas"
+      },
+      {
+        "id": "p2",
+        "left": "Hábitat Terrestre",
+        "right": "Cactus, leones y pinos"
+      },
+      {
+        "id": "p3",
+        "left": "Hábitat Aeroterrestre",
+        "right": "Aves migratorias e insectos voladores"
+      }
     ],
     "explain": "Los hábitats acuáticos son de agua (océanos, ríos). Los terrestres son de tierra (desierto, bosque). Los aeroterrestres combinan la tierra con el aire."
   },
@@ -58,7 +74,11 @@ module.exports = [
     "station": "T3TOK1",
     "prompt": "Una 'especie endémica' es aquella que vive en todas partes del mundo y no corre peligro.",
     "correctAnswer": "Falso",
-    "explain": "Una especie endémica tiene una distribución muy limitada (vive en un solo lugar). Debemos cuidarlas porque si desaparecen de ahí, se extinguen para siempre."
+    "explain": "Una especie endémica tiene una distribución muy limitada (vive en un solo lugar). Debemos cuidarlas porque si desaparecen de ahí, se extinguen para siempre.",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ]
   },
   {
     "id": "t3tok1_6",
@@ -67,9 +87,21 @@ module.exports = [
     "station": "T3TOK1",
     "prompt": "Relaciona cada especie o concepto con su característica correspondiente:",
     "pairs": [
-      { "id": "p1", "left": "Loro orejiamarillo", "right": "Asociado a la palma de cera" },
-      { "id": "p2", "left": "Tití cabeciblanco", "right": "Habita en el bosque seco tropical" },
-      { "id": "p3", "left": "Especies invasoras", "right": "Hipopótamos en Colombia" }
+      {
+        "id": "p1",
+        "left": "Loro orejiamarillo",
+        "right": "Asociado a la palma de cera"
+      },
+      {
+        "id": "p2",
+        "left": "Tití cabeciblanco",
+        "right": "Habita en el bosque seco tropical"
+      },
+      {
+        "id": "p3",
+        "left": "Especies invasoras",
+        "right": "Hipopótamos en Colombia"
+      }
     ],
     "explain": "El Loro orejiamarillo depende de la palma de cera. El Tití cabeciblanco es endémico del bosque seco, y los hipopótamos son un peligro por ser invasores."
   },
